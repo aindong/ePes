@@ -4,7 +4,7 @@ class AdminController extends BaseController {
 
     public function index()
     {
-        return View::make('layouts.default');
+        return View::make('admin.dashboard');
     }
 
 }

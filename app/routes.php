@@ -19,7 +19,14 @@ Route::get('/', function()
 // Login page
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-Route::group(['before' => 'auth|hasRole:admin'], function() {
-	// User controller
-	Route::get('/users', ['as' => 'users.dashboard', 'uses' => 'AdminController@index']);
+// Admin controllers
+Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function() {
+	// Admin controller
+	Route::get('/', ['as' => 'users.dashboard', 'uses' => 'AdminController@index']);
+
+	// Users management
+	Route::resource('users', 'UsersController');
+
+	// Departments management
+	Route::resouece('departments', 'DepartmentsController');
 });
