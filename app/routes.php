@@ -16,4 +16,8 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+// Login page
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+
+// User controller
+Route::get('/users', ['as' => 'users.dashboard', 'uses' => 'UsersController@index']);
