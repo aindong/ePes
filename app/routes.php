@@ -26,10 +26,18 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 
 	// Users management
 	Route::resource('users', 'UsersController');
-	// Users_Bios management
-	Route::resource('usersBios', 'UsersBiosController');
-
 
 	// Departments management
 	Route::resource('departments', 'DepartmentsController');
+});
+
+Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employee'], function() {
+	// Users_Bios management
+	Route::resource('usersBios', 'UsersBiosController');
+	// Users_Spouses management
+	Route::resource('usersSpouses', 'UsersSpousesController');
+	// Users_Childrens management
+	Route::resource('usersChildrens', 'UsersChildrensController');
+	// Users_Educations anagement
+	Route::resource('usersEducations', 'UsersEducationsController');
 });
