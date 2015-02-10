@@ -19,5 +19,7 @@ Route::get('/', function()
 // Login page
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-// User controller
-Route::get('/users', ['as' => 'users.dashboard', 'uses' => 'UsersController@index']);
+Route::group(['before' => 'auth|hasRole:admin'], function() {
+	// User controller
+	Route::get('/users', ['as' => 'users.dashboard', 'uses' => 'AdminController@index']);
+});
