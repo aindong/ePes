@@ -17,6 +17,10 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->string('employee_no')->unique();
 			$table->integer('department_id');
+			$table->integer('role_id');
+			$table->string('email')->unique();
+			$table->string('password');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}
