@@ -26,6 +26,9 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 
 	// Users management
 	Route::resource('users', 'UsersController');
+	// Users_Bios management
+	Route::resource('usersBios', 'UsersBiosController');
+
 
 	// Departments management
 	Route::resource('departments', 'DepartmentsController');
