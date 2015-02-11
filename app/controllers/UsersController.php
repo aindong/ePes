@@ -11,7 +11,7 @@ class UsersController extends \BaseController {
 	{
 		$users = User::all();
 
-		return View::make('users.index', compact('users'));
+		return View::make('admin.users.index', compact('users'));
 	}
 
 	/**
@@ -21,7 +21,7 @@ class UsersController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('users.create');
+		return View::make('admin.users.create');
 	}
 
 	/**
@@ -40,7 +40,7 @@ class UsersController extends \BaseController {
 
 		User::create($data);
 
-		return Redirect::route('users.index');
+		return Redirect::route('admin.users.index');
 	}
 
 	/**
@@ -53,7 +53,7 @@ class UsersController extends \BaseController {
 	{
 		$user = User::findOrFail($id);
 
-		return View::make('users.show', compact('user'));
+		return View::make('admin.users.show', compact('user'));
 	}
 
 	/**
@@ -66,7 +66,7 @@ class UsersController extends \BaseController {
 	{
 		$user = User::find($id);
 
-		return View::make('users.edit', compact('user'));
+		return View::make('admin.users.edit', compact('user'));
 	}
 
 	/**
@@ -88,7 +88,7 @@ class UsersController extends \BaseController {
 
 		$user->update($data);
 
-		return Redirect::route('users.index');
+		return Redirect::route('admin.users.index');
 	}
 
 	/**
@@ -101,7 +101,7 @@ class UsersController extends \BaseController {
 	{
 		User::destroy($id);
 
-		return Redirect::route('users.index');
+		return Redirect::route('admin.users.index');
 	}
 
 }

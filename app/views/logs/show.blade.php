@@ -1,0 +1,1 @@
+C:\Users\papabear\Desktop\server\ePes\app/views/logs/show.blade.php

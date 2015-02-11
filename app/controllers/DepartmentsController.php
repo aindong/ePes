@@ -11,7 +11,7 @@ class DepartmentsController extends \BaseController {
 	{
 		$departments = Department::all();
 
-		return View::make('departments.index', compact('departments'));
+		return View::make('admin.departments.index', compact('departments'));
 	}
 
 	/**
@@ -21,7 +21,7 @@ class DepartmentsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('departments.create');
+		return View::make('admin.departments.create');
 	}
 
 	/**
@@ -40,7 +40,7 @@ class DepartmentsController extends \BaseController {
 
 		Department::create($data);
 
-		return Redirect::route('departments.index');
+		return Redirect::route('admin.departments.index');
 	}
 
 	/**
@@ -53,7 +53,7 @@ class DepartmentsController extends \BaseController {
 	{
 		$department = Department::findOrFail($id);
 
-		return View::make('departments.show', compact('department'));
+		return View::make('admin.departments.show', compact('department'));
 	}
 
 	/**
@@ -66,7 +66,7 @@ class DepartmentsController extends \BaseController {
 	{
 		$department = Department::find($id);
 
-		return View::make('departments.edit', compact('department'));
+		return View::make('admin.departments.edit', compact('department'));
 	}
 
 	/**
@@ -88,7 +88,7 @@ class DepartmentsController extends \BaseController {
 
 		$department->update($data);
 
-		return Redirect::route('departments.index');
+		return Redirect::route('admin.departments.index');
 	}
 
 	/**
@@ -101,7 +101,7 @@ class DepartmentsController extends \BaseController {
 	{
 		Department::destroy($id);
 
-		return Redirect::route('departments.index');
+		return Redirect::route('admin.departments.index');
 	}
 
 }
