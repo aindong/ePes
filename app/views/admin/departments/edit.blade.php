@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>Updating a department</h2>
-    {{ Form::model($departments, ['route' => ['admin.departments.update', $departments->id], 'method' => 'put']) }}
+    {{ Form::model($department, ['route' => ['admin.departments.update', $department->id], 'method' => 'put']) }}
     @include('admin.departments.form')
     {{ Form::close() }}
 @stop
