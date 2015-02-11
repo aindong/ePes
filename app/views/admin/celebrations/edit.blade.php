@@ -1,1 +1,12 @@
-C:\Users\papabear\Desktop\server\ePes\app/views/celebrations/edit.blade.php
+@extends('layouts.default')
+
+@section('content')
+    <legend>Updating a event</legend>
+    {{ Form::model($celebration, ['route' => ['admin.celebrations.update', $celebration->id], 'method' => 'put']) }}
+    @include('admin.celebrations.form')
+    {{ Form::close() }}
+@stop
+
+@section('page-script')
+
+@stop

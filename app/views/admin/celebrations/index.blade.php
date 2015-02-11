@@ -6,6 +6,10 @@
         <thead>
         <tr>
             <th>Name</th>
+            <th>Event Name</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
             <th>Created</th>
             <th>Updated</th>
             <th>Actions</th>
@@ -14,7 +18,7 @@
         <tbody>
         @foreach($celebrations as $celebration)
         <tr>
-            <td>My name</td>
+            <td>{{ $celebration->user_id }}</td>
             <td>testing</td>
             <td>testing</td>
             <td>
