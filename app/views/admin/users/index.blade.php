@@ -50,7 +50,8 @@
                     data: { _method:"DELETE" },
                     success: function(data) {
                         alert('Item successfully deleted');
-                        location.reload();
+                        //location.reload();
+                        $(this).parent().parent().remove();
                     }
                 });
             });
