@@ -6,3 +6,8 @@ body {
     color: #ebebeb;
     background-color: #2b3e50;
 }
+
+nav ul li:active {
+    color: #ebebeb;
+    background-color: #485563;
+}

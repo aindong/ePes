@@ -37,7 +37,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 @if(Auth::getUser()->role->name == 'admin')
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/admin">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/admin">Home <span class="sr-only">(current)</span></a></li>
                     <li><a href="/admin/departments">Departments</a></li>
                     <li><a href="/admin/users">Users</a></li>
                     <li><a href="/admin/events">Events</a></li>
