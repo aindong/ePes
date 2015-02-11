@@ -31,6 +31,12 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 
 	// Departments management
 	Route::resource('departments', 'DepartmentsController');
+
+	// Celebrations management
+	Route::resource('events', 'CelebrationsController');
+
+	// Job Vacancies management
+	Route::resource('jobvacancies', 'JobvacanciesController');
 });
 
 // Employee
