@@ -32,7 +32,7 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 });
 
 // Employee
-Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employee'], function() {
+Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employees'], function() {
 	// Users_Bios management
 	Route::resource('bios', 'UsersBiosController');
 	// Users_Spouses management

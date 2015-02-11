@@ -19,6 +19,7 @@ body{
 	color: #fff;
 	font-family: Arial;
 	font-size: 12px;
+	overflow: hidden;
 }
 
 .body{
