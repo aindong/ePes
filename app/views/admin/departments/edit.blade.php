@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.default')
 
 @section('content')
     <h2>Updating a department</h2>
