@@ -1,6 +1,6 @@
 <?php
 
-class LogsController extends \BaseController {
+class AuditTrailController extends \BaseController {
 
 	/**
 	 * Display a listing of logs
