@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+
 class Jobvacancy extends \Eloquent {
 
 	use SoftDeletingTrait;

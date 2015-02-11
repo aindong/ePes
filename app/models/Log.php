@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+
 class Log extends \Eloquent {
 
 	use SoftDeletingTrait;

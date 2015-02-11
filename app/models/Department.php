@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+
 class Department extends \Eloquent {
 
 	use SoftDeletingTrait;
