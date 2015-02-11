@@ -1,1 +1,12 @@
-C:\Users\papabear\Desktop\server\ePes\app/views/departments/create.blade.php
+@extends('layouts.admin')
+
+@section('content')
+    <h2>Create a new department</h2>
+    {{ Form::open(['route' => 'admin.departments.store', 'method' => 'post']) }}
+        @include('admin.departments.form')
+    {{ Form::close() }}
+@stop
+
+@section('page-script')
+
+@stop
