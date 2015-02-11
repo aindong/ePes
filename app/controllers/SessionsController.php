@@ -25,10 +25,7 @@ class SessionsController extends \BaseController {
 
 		$user = Auth::getUser();
 
-		$log = new Log();
-		$log->user_id	= Auth::getUser()->id;
-		$log->action 	= 'User has logged in';
-		$log->save();
+
 
 		// Roles distinction
 		if ($user->role->name == 'admin') {
@@ -49,7 +46,7 @@ class SessionsController extends \BaseController {
 	 */
 	public function logout()
 	{
-		$log = new Log();
+		$log = new AuditTrail();
 		$log->user_id	= Auth::getUser()->id;
 		$log->action 	= 'User has logged in';
 		$log->save();

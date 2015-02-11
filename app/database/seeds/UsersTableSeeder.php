@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder {
 			'employee_no' 	=> 'hraccount',
 			'department_id'	=> '1',
 			'role_id'		=> '1',
-			'password'		=> Hash::make('admin')
+			'password'		=> 'admin'
 		]);
 	}
 
