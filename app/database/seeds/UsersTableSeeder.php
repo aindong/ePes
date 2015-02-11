@@ -1,20 +1,19 @@
 <?php
 
 // Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
+//use Faker\Factory as Faker;
 
 class UsersTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
-
-		foreach(range(1, 10) as $index)
-		{
-			User::create([
-
-			]);
-		}
+		//$faker = Faker::create();
+		User::create([
+			'employee_no' 	=> 'hraccount',
+			'department_id'	=> '0',
+			'role_id'		=> '1',
+			'password'		=> Hash::make('admin')
+		]);
 	}
 
 }
