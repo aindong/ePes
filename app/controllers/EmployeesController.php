@@ -1,10 +1,14 @@
 <?php
 
+Use Jobvacancy;
+
 class EmployeesController extends \BaseController {
 
 
     public function index()
     {
-        return View::make('employees.dashboard');
+        $jobvacancies = Jobvacancy::all();
+
+        return View::make('employees.dashboard', compact('jobvacancies'));
     }
 }
