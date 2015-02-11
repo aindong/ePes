@@ -82,7 +82,23 @@ class UsersController extends \BaseController {
 	{
 		$user = User::find($id);
 
-		return View::make('admin.users.edit', compact('user'));
+		$departments = Department::all();
+		$roles 		 = Role::all();
+
+		$departmentsList = [];
+		$rolesList       = [];
+
+		foreach ($departments as $department) {
+			$departmentsList[$department->id] = ucfirst($department->name);
+		}
+
+		foreach ($roles as $role) {
+			$rolesList[$role->id] = ucfirst($role->name);
+		}
+
+		return View::make('admin.users.edit', compact('user'))
+			->with('roles', $rolesList)
+			->with('departments', $departmentsList);
 	}
 
 	/**
