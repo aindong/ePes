@@ -14,9 +14,9 @@
         <tbody>
         @foreach($departments as $department)
         <tr>
-            <td>{{ department->name }}</td>
-            <td>{{ department->created_at }}</td>
-            <td>{{ department->updated_at }}</td>
+            <td>{{ $department->name }}</td>
+            <td>{{ $department->created_at }}</td>
+            <td>{{ $department->updated_at }}</td>
             <td>
                 <a href="/admin/departments/1/edit" class="btn btn-warning">Update</a>
                 <!-- <a href="#" class="btn btn-danger">Delete</a> -->
