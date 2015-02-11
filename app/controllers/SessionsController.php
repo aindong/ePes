@@ -36,7 +36,7 @@ class SessionsController extends \BaseController {
 		} else if ($user->role->name == 'employee') {
 			return Redirect::to('/employees');
 		} else if ($user->role->name == 'department head' || $user->role->name == 'supervisor') {
-			return Redirect::to('/supervisor');
+			return Redirect::to('/supervisors');
 		}
 
 		Session::flash('error', 'Invalid user credentials please check your username or password');
@@ -51,10 +51,10 @@ class SessionsController extends \BaseController {
 	 */
 	public function logout()
 	{
-		$log = new AuditTrail();
-		$log->user_id	= Auth::getUser()->id;
-		$log->action 	= 'User has logged in';
-		$log->save();
+//		$log = new AuditTrail();
+//		$log->user_id	= Auth::getUser()->id;
+//		$log->action 	= 'User has logged out';
+//		$log->save();
 
 		Auth::logout();
 		return Redirect::to('/');
