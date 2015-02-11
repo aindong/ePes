@@ -8,6 +8,7 @@
             <th>Title</th>
             <th>Created</th>
             <th>Updated</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -16,6 +17,9 @@
             <td>{{ $jobvacancy->title }}</td>
             <td>{{ date('M d Y', strtotime($jobvacancy->created_at)) }}</td>
             <td>{{ date('M d Y', strtotime($jobvacancy->created_at)) }}</td>
+            <td>
+                <a href="#" class="btn btn-primary">View</a>
+            </td>
         </tr>
         @endforeach
         </tbody>
