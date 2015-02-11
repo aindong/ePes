@@ -30,23 +30,39 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                @if(Auth::getUser()->role->name == 'admin')
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Accomplishment Report  <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Create Accomplishment</a></li>
-                            <li><a href="#">View Accomplishment</a></li>
-                        </ul>
+                    <li>
+                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Departments</a>
                     </li>
                     <li>
-                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Performance Evaluation</a>
+                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Users</a>
                     </li>
                     <li>
-                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Profile Information</a>
+                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Events</a>
                     </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Job Vacancies</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Performance Evaluations Reports</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Accomplishment Reports</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Audit Trail</a>
+                    </li>
+                    {{--<li class="dropdown">--}}
+                        {{--<a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Accomplishment Report  <span class="caret"></span></a>--}}
+                        {{--<ul class="dropdown-menu" role="menu">--}}
+                            {{--<li><a href="#">Create Accomplishment</a></li>--}}
+                            {{--<li><a href="#">View Accomplishment</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
                 </ul>
-
+                @endif
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Logout</a></li>
                 </ul>

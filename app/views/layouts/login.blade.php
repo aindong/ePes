@@ -16,7 +16,7 @@ body{
 	padding: 0;
 	background: #fff;
 
-	color: #fff;
+	color: #000;
 	font-family: Arial;
 	font-size: 12px;
 	overflow: hidden;
@@ -34,7 +34,7 @@ body{
 	background-position: center;
 	background-size: cover;
 	-webkit-filter: blur(5px);
-	z-index: 0;
+	z-index: -1;
 }
 
 .grad{
@@ -59,7 +59,7 @@ body{
 
 .header div{
 	float: left;
-	color: #fff;
+	color: #000;
 	font-family: 'Exo', sans-serif;
 	font-size: 35px;
 	font-weight: 200;
@@ -85,7 +85,7 @@ body{
 	background: transparent;
 	border: 1px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
-	color: #fff;
+	color: #000;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -98,7 +98,7 @@ body{
 	background: transparent;
 	border: 1px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
-	color: #fff;
+	color: #000;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -144,36 +144,44 @@ body{
 }
 
 ::-webkit-input-placeholder{
-   color: rgba(255,255,255,0.6);
+   color: #000;
 }
 
 ::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
+   color: #000;
 }
 
 .logo img {
 	margin-top: -35px;
 }
-
 </style>
 
+	<link rel="stylesheet" href="/packages/bootstrap/css/bootstrap.min.css"/>
     <script src="/js/prefixfree.min.js"></script>
 
 </head>
 
 <body>
-
   <div class="body"></div>
+
+      @if(Session::has('error'))
+	  <div class="alert alert-danger">
+		  {{ Session::get('error') }}
+	  </div>
+	  @endif
+
 		<div class="grad"></div>
 		<div class="header">
 			<div class="logo"><img src="/images/logo.png"></div>
 		</div>
 		<br>
+  		{{ Form::open(['url' => '/login', 'method' => 'post']) }}
 		<div class="login">
-			<input type="text" placeholder="username" name="user"><br>
-			<input type="password" placeholder="password" name="password"><br>
-			<input type="button" value="Login">
+			<input type="text" placeholder="username" name="employee_no" class="form-control"><br>
+			<input type="password" placeholder="password" name="password" class="form-control"><br>
+			<input type="submit" class="btn btn-primary" value="Login" class="form-control">
 		</div>
+		{{ Form::close() }}
 
   <script src='/js/jquery.js'></script>
 
