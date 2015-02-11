@@ -1,7 +1,5 @@
 <?php
 
-Use Jobvacancy;
-
 class EmployeesController extends \BaseController {
 
 
