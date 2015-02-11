@@ -5,6 +5,6 @@ class EmployeesController extends \BaseController {
 
     public function index()
     {
-        return View::make('employee.dashboard');
+        return View::make('employees.dashboard');
     }
 }
