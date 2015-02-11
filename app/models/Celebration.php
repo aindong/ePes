@@ -21,9 +21,5 @@ class Celebration extends \Eloquent {
 	// Don't forget to fill this array
 	protected $guarded = [];
 
-	public function setStartAtAttribute($start_at)
-	{
-		$this->attributes['start_at'] = date('Y-m-d H:i:s', strtotime($start_at));
-	}
 
 }

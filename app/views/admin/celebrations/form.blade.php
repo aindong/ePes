@@ -11,7 +11,7 @@
 
 <div class="form-group">
     {{ Form::label('description', 'Event Description *', ['class' => 'form-label']) }}
-    {{ Form::text('description', null, ['class' => 'form-control', 'required' => 'required']) }}
+    {{ Form::textarea('description', null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
 <div class="form-group">
