@@ -8,6 +8,11 @@
 
     <!-- Bootstrap -->
     <link href="/packages/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Datatables bootstrap css plugin -->
+    <link rel="stylesheet" href="/packages/datatables/extensions/Bootstrap/dataTables.bootstrap.css"/>
+    <!-- MASTER CSS -->
+    <link rel="stylesheet" href="/css/style.css"/>
+    @yield('page-style')
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,12 +76,17 @@
     </nav>
 
     <div id="main">
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script type="text/javascript" src="/js/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/packages/bootstrap/js/bootstrap.min.js"></script>
+<script src="/packages/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="/packages/datatables/extensions/Bootstrap/dataTables.bootstrap.js"></script>
+@yield('page-script')
 </body>
 </html>
