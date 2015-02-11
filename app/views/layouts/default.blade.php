@@ -40,14 +40,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 @if(Auth::getUser()->role->name == 'admin')
                 <ul class="nav navbar-nav">
-                    <li><a href="/admin">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="/admin/departments">Departments</a></li>
-                    <li><a href="/admin/users">Users</a></li>
-                    <li><a href="/admin/events">Events</a></li>
-                    <li><a href="/admin/jobvacancies">Job Vacancies</a></li>
-                    <li><a href="/admin/pes">Performance Evaluations Reports</a></li>
-                    <li><a href="/admin/accomplishments">Accomplishment Reports</a></li>
-                    <li><a href="/admin/logs">Audit Trail</a></li>
+                    <li class="<?php echo Request::is('admin') ? 'active' : ''; ?>"><a href="/admin">Home <span class="sr-only">(current)</span></a></li>
+                    <li class="<?php echo Request::is('admin/departments*') ? 'active' : ''; ?>"><a href="/admin/departments">Departments</a></li>
+                    <li class="<?php echo Request::is('admin/users*') ? 'active' : ''; ?>"><a href="/admin/users">Users</a></li>
+                    <li class="<?php echo Request::is('admin/events*') ? 'active' : ''; ?>"><a href="/admin/events">Events</a></li>
+                    <li class="<?php echo Request::is('admin/jobvacancies*') ? 'active' : ''; ?>"><a href="/admin/jobvacancies">Job Vacancies</a></li>
+                    <li class="<?php echo Request::is('admin/pes*') ? 'active' : ''; ?>"><a href="/admin/pes">Performance Evaluations Reports</a></li>
+                    <li class="<?php echo Request::is('admin/accomplishments*') ? 'active' : ''; ?>"><a href="/admin/accomplishments">Accomplishment Reports</a></li>
+                    <li class="<?php echo Request::is('admin/logs*') ? 'active' : ''; ?>"><a href="/admin/logs">Audit Trail</a></li>
                 </ul>
                 @elseif(Auth::getUser()->role->name == 'employee')
                     <ul class="nav navbar-nav">

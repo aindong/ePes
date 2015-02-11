@@ -23,9 +23,17 @@ class SessionsController extends \BaseController {
 		}
 
 		$user = Auth::getUser();
+
+		$log = new Log();
+		$log->user_id	= Auth::getUser()->id;
+		$log->action 	= 'User has logged in';
+		$log->save();
+
 		// Roles distinction
 		if ($user->role->name == 'admin') {
 			return Redirect::to('/admin');
+		} else if ($user->role->name == 'employee') {
+			return Redirect::to('/employees');
 		}
 
 		Session::flash('error', 'Invalid user credentials please check your username or password');
@@ -40,6 +48,11 @@ class SessionsController extends \BaseController {
 	 */
 	public function logout()
 	{
+		$log = new Log();
+		$log->user_id	= Auth::getUser()->id;
+		$log->action 	= 'User has logged in';
+		$log->save();
+
 		Auth::logout();
 		return Redirect::to('/');
 	}
