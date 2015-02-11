@@ -11,7 +11,7 @@ class AuditTrailController extends \BaseController {
 	{
 		$logs = Log::all();
 
-		return View::make('logs.index', compact('logs'));
+		return View::make('admin.logs.index', compact('logs'));
 	}
 
 	/**
@@ -21,7 +21,7 @@ class AuditTrailController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('logs.create');
+		return View::make('admin.logs.create');
 	}
 
 	/**
@@ -40,7 +40,7 @@ class AuditTrailController extends \BaseController {
 
 		Log::create($data);
 
-		return Redirect::route('logs.index');
+		return Redirect::route('admin.logs.index');
 	}
 
 	/**
@@ -53,7 +53,7 @@ class AuditTrailController extends \BaseController {
 	{
 		$log = Log::findOrFail($id);
 
-		return View::make('logs.show', compact('log'));
+		return View::make('admin.logs.show', compact('log'));
 	}
 
 	/**
@@ -66,7 +66,7 @@ class AuditTrailController extends \BaseController {
 	{
 		$log = Log::find($id);
 
-		return View::make('logs.edit', compact('log'));
+		return View::make('admin.logs.edit', compact('log'));
 	}
 
 	/**
@@ -88,7 +88,7 @@ class AuditTrailController extends \BaseController {
 
 		$log->update($data);
 
-		return Redirect::route('logs.index');
+		return Redirect::route('admin.logs.index');
 	}
 
 	/**
@@ -101,7 +101,7 @@ class AuditTrailController extends \BaseController {
 	{
 		Log::destroy($id);
 
-		return Redirect::route('logs.index');
+		return Redirect::route('admin.logs.index');
 	}
 
 }
