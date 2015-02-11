@@ -33,34 +33,13 @@
                 @if(Auth::getUser()->role->name == 'admin')
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/admin">Home <span class="sr-only">(current)</span></a></li>
-                    <li>
-                        <a href="/admin/departments" data-toggle="dropdown" role="button" aria-expanded="false">Departments</a>
-                    </li>
-                    <li>
-                        <a href="/admin/users" data-toggle="dropdown" role="button" aria-expanded="false">Users</a>
-                    </li>
-                    <li>
-                        <a href="/admin/events" data-toggle="dropdown" role="button" aria-expanded="false">Events</a>
-                    </li>
-                    <li>
-                        <a href="/admin/jobvacancies" data-toggle="dropdown" role="button" aria-expanded="false">Job Vacancies</a>
-                    </li>
-                    <li>
-                        <a href="/admin/pes" data-toggle="dropdown" role="button" aria-expanded="false">Performance Evaluations Reports</a>
-                    </li>
-                    <li>
-                        <a href="/admin/accomplishments" data-toggle="dropdown" role="button" aria-expanded="false">Accomplishment Reports</a>
-                    </li>
-                    <li>
-                        <a href="/admin/logs" data-toggle="dropdown" role="button" aria-expanded="false">Audit Trail</a>
-                    </li>
-                    {{--<li class="dropdown">--}}
-                        {{--<a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Accomplishment Report  <span class="caret"></span></a>--}}
-                        {{--<ul class="dropdown-menu" role="menu">--}}
-                            {{--<li><a href="#">Create Accomplishment</a></li>--}}
-                            {{--<li><a href="#">View Accomplishment</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
+                    <li><a href="/admin/departments">Departments</a></li>
+                    <li><a href="/admin/users">Users</a></li>
+                    <li><a href="/admin/events">Events</a></li>
+                    <li><a href="/admin/jobvacancies">Job Vacancies</a></li>
+                    <li><a href="/admin/pes">Performance Evaluations Reports</a></li>
+                    <li><a href="/admin/accomplishments">Accomplishment Reports</a></li>
+                    <li><a href="/admin/logs">Audit Trail</a></li>
                 </ul>
                 @elseif(Auth::getUser()->role->name == 'employee')
                     <ul class="nav navbar-nav">
