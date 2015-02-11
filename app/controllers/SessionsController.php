@@ -26,6 +26,8 @@ class SessionsController extends \BaseController {
 		// Roles distinction
 		if ($user->role->name == 'admin') {
 			return Redirect::to('/admin');
+		} else if ($user->role->name == 'employee') {
+			return Redirect::to('/employees');
 		}
 
 		Session::flash('error', 'Invalid user credentials please check your username or password');
