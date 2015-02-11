@@ -73,6 +73,8 @@
                 @elseif(Auth::getUser()->role->name == 'supervisor')
                     <ul class="nav navbar-nav">
                         <li class="<?php echo Request::is('supervisors') ? 'active' : ''; ?>"><a href="/supervisors">Home</a></li>
+                        <li class="<?php echo Request::is('supervisors/accomplishments*') ? 'active' : ''; ?>"><a href="/supervisors/accomplishments">Accomplishment Reports</a></li>
+                        <li class="<?php echo Request::is('supervisors/pes*') ? 'active' : ''; ?>"><a href="/supervisors/pes">Evaluate an employee</a></li>
                     </ul>
                 @endif
                 <ul class="nav navbar-nav navbar-right">
