@@ -20,6 +20,7 @@
             <td>{{{ ucfirst($user->department->name) or 'N/A'}}}</td>
             <td>{{{ ucfirst($user->role->name) }}}</td>
             <td>{{{ date('M d Y', strtotime($user->created_at)) }}}</td>
+            <td>{{{ date('M d Y', strtotime($user->updated_at)) }}}</td>
             <td>
                 <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
                 {{ Form::open(array('url' => 'admin/articles/' . $user->id, 'class' => 'deleteItem form-inline')) }}
