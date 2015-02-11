@@ -6,6 +6,8 @@ class AuditTrail extends \Eloquent {
 
 	use SoftDeletingTrait;
 
+	protected $table = 'logs';
+
 	/**
 	 * The timestamp when an item is deleted
 	 *
