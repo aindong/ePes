@@ -46,7 +46,8 @@
 
                 $.ajax({
                     url: location.href + '/' + id,
-                    type: 'delete',
+                    type:"post",
+                    data: { _method:"DELETE" },
                     success: function(data) {
                         alert('Item successfully deleted');
                         location.reload();
