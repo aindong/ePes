@@ -15,15 +15,16 @@
         </thead>
         <tbody>
         @foreach($users as $user)
+
         <tr>
             <td>{{{ $user->employee_no }}}</td>
-            <td>{{{ ucfirst($user->department->name) or 'N/A'}}}</td>
+            <td>{{{ ucfirst($user->department->name) }}}</td>
             <td>{{{ ucfirst($user->role->name) }}}</td>
             <td>{{{ date('M d Y', strtotime($user->created_at)) }}}</td>
             <td>{{{ date('M d Y', strtotime($user->updated_at)) }}}</td>
             <td>
                 <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
-                {{ Form::open(array('url' => 'admin/articles/' . $user->id, 'class' => 'deleteItem form-inline')) }}
+                {{ Form::open(array('url' => 'admin/articles/' . $user->id, 'class' => 'deleteItem form-horizontal')) }}
                 {{ Form::hidden('_method', 'DELETE') }}
                 {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
                 {{ Form::close() }}
