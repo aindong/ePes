@@ -49,8 +49,14 @@
                     var id = $(this).attr('data-item');
                     var $that = $(this);
 
+                    var url = location.href;
+
+                    if(url.substr(-1) == '/') {
+                        url = url.substr(0, url.length - 1);
+                    }
+
                     $.ajax({
-                        url: location.href + '/' + id,
+                        url:  url + '/' + id,
                         type:"post",
                         data: { _method:"DELETE" },
                         success: function(data) {
@@ -62,5 +68,5 @@
                     });
                 });
             });
-        </script>
+    </script>
 @stop
