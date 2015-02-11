@@ -21,7 +21,23 @@ class UsersController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('admin.users.create');
+		$departments = Department::all();
+		$roles 		 = Role::all();
+
+		$departmentsList = [];
+		$rolesList       = [];
+
+		foreach ($departments as $department) {
+			$departmentsList[$department->id] = ucfirst($department->name);
+		}
+
+		foreach ($roles as $role) {
+			$rolesList[$role->id] = ucfirst($role->name);
+		}
+
+		return View::make('admin.users.create')
+			->with('departments', $departmentsList)
+			->with('roles', $rolesList);
 	}
 
 	/**
