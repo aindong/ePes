@@ -1,22 +1,23 @@
 @extends('layouts.default')
 
 @section('content')
-    <h2>Article Management <a href="/admin/articles/create" class="btn btn-primary">Add New</a></h2>
+    <h2>Users Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Title</th>
+            <th>Employee No</th>
+            <th>Department</th>
+            <th>Position</th>
             <th>Created</th>
             <th>Updated</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        {{--@foreach($articles as $article)--}}
+        @foreach($users as $user)
         <tr>
-            <td>My name</td>
-            <td>testing</td>
+            <td>{{{ $user->employee_no }}}</td>
+            <td>{{{ $user->department->name }}}</td>
             <td>testing</td>
             <td>testing</td>
             <td>
@@ -28,7 +29,7 @@
                 {{ Form::close() }}
             </td>
         </tr>
-        {{--@endforeach--}}
+        @endforeach
         </tbody>
     </table>
 @stop
