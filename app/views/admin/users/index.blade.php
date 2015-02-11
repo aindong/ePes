@@ -34,7 +34,7 @@
 @section('page-script')
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#example').dataTable();
+            var table = $('#example').DataTable();
 
             $('.deleteItem').on('click', function(e) {
                 e.preventDefault();
@@ -43,6 +43,7 @@
                     return false;
                 }
                 var id = $(this).attr('data-item');
+                var $that = $(this);
 
                 $.ajax({
                     url: location.href + '/' + id,
@@ -50,7 +51,9 @@
                     data: { _method:"DELETE" },
                     success: function(data) {
                         alert('Item successfully deleted');
-                        location.reload();
+                        //location.reload();
+                        var rowSelected = $that.parent().parent();
+                        table.row(rowSelected).remove().draw();
                     }
                 });
             });
