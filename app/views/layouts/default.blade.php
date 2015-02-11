@@ -62,6 +62,27 @@
                         {{--</ul>--}}
                     {{--</li>--}}
                 </ul>
+                @elseif(Auth::getUser()->role->name == 'employee')
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/admin">Home <span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Personal Data Sheet  <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Bio</a></li>
+                                <li><a href="#">Family Background</a></li>
+                                <li><a href="#">Educational Background</a></li>
+                                <li><a href="#">Civil Service</a></li>
+                                <li><a href="#">Work Experience</a></li>
+                                <li><a href="#">Voluntary Work</a></li>
+                                <li><a href="#">Training</a></li>
+                                <li><a href="#">Hobby</a></li>
+                                <li><a href="#">Recognition</a></li>
+                                <li><a href="#">Organization</a></li>
+                                <li><a href="#">Other Questions</a></li>
+                                <li><a href="#">Reference</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 @endif
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/logout">Logout</a></li>
