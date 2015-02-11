@@ -14,16 +14,12 @@
         <tbody>
         @foreach($departments as $department)
         <tr>
-            <td>{{ $department->name }}</td>
-            <td>{{ $department->created_at }}</td>
-            <td>{{ $department->updated_at }}</td>
+            <td>{{ ucfirst($department->name) }}</td>
+            <td>{{ date('M d Y', strtotime($department->created_at)) }}</td>
+            <td>{{ date('M d Y', strtotime($department->updated_at)) }}</td>
             <td>
-                <a href="/admin/departments/1/edit" class="btn btn-warning">Update</a>
-                <!-- <a href="#" class="btn btn-danger">Delete</a> -->
-                {{ Form::open(array('url' => 'admin/departments/' . 1, 'class' => 'deleteItem')) }}
-                {{ Form::hidden('_method', 'DELETE') }}
-                {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-                {{ Form::close() }}
+                <a href="/admin/departments/{{ $department->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $department->id }}">Delete</a>
             </td>
         </tr>
         @endforeach
@@ -36,10 +32,22 @@
         $(document).ready(function() {
             $('#example').dataTable();
 
-            $('.deleteItem').on('submit', function(e) {
+            $('.deleteItem').on('click', function(e) {
+                e.preventDefault();
+
                 if(!confirm('Are you sure to delete this item?')) {
                     return false;
                 }
+                var id = $(this).attr('data-item');
+
+                $.ajax({
+                    url: location.href + '/' + id,
+                    type: 'DELETE',
+                    success: function(data) {
+                        alert('Item successfully deleted');
+                        location.reload();
+                    }
+                });
             });
         });
     </script>

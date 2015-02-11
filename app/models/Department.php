@@ -8,7 +8,7 @@ class Department extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $guarded = ['id'];
 
 	public function user()
 	{
