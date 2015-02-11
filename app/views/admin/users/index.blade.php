@@ -23,10 +23,7 @@
             <td>{{{ date('M d Y', strtotime($user->updated_at)) }}}</td>
             <td>
                 <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
-                {{ Form::open(array('url' => 'admin/articles/' . $user->id, 'class' => 'deleteItem form-horizontal')) }}
-                {{ Form::hidden('_method', 'DELETE') }}
-                {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-                {{ Form::close() }}
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
             </td>
         </tr>
         @endforeach
@@ -39,10 +36,22 @@
         $(document).ready(function() {
             $('#example').dataTable();
 
-            $('.deleteItem').on('submit', function(e) {
+            $('.deleteItem').on('click', function(e) {
+                e.preventDefault();
+
                 if(!confirm('Are you sure to delete this item?')) {
                     return false;
                 }
+                var id = $(this).attr('data-item');
+
+                $.ajax({
+                    url: '/users/delete/' + id,
+                    type: 'delete',
+                    success: function(data) {
+                        alert('Item successfully deleted');
+                        location.reload();
+                    }
+                });
             });
         });
     </script>
