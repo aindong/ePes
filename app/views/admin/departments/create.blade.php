@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <h2>Create a new department</h2>
+    <legend>Create a new department</legend>
     {{ Form::open(['route' => 'admin.departments.store', 'method' => 'post']) }}
         @include('admin.departments.form')
     {{ Form::close() }}
