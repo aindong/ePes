@@ -14,7 +14,10 @@ class CreateJobvacanciesTable extends Migration {
 	{
 		Schema::create('jobvacancies', function(Blueprint $table)
 		{
-			$table->increments('id');
+            $table->increments('id');
+            $table->string('title');
+            $table->mediumText('description');
+            $table->softDeletes();
 			$table->timestamps();
 		});
 	}

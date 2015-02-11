@@ -3,19 +3,19 @@
 class JobvacanciesController extends \BaseController {
 
 	/**
-	 * Display a listing of jobvacanies
+	 * Display a listing of jobvacancies
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$jobvacanies = Jobvacancy::all();
+        $jobvacancies = Jobvacancy::all();
 
 		return View::make('admin.jobvacancies.index', compact('jobvacancies'));
 	}
 
 	/**
-	 * Show the form for creating a new jobvacany
+	 * Show the form for creating a new jobvacancy
 	 *
 	 * @return Response
 	 */
@@ -25,7 +25,7 @@ class JobvacanciesController extends \BaseController {
 	}
 
 	/**
-	 * Store a newly created jobvacany in storage.
+	 * Store a newly created jobvacancy in storage.
 	 *
 	 * @return Response
 	 */
@@ -51,9 +51,9 @@ class JobvacanciesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$jobvacany = Jobvacancy::findOrFail($id);
+		$jobvacancy = Jobvacancy::findOrFail($id);
 
-		return View::make('admin.jobvacancies.show', compact('jobvacany'));
+		return View::make('admin.jobvacancies.show', compact('jobvacancy'));
 	}
 
 	/**
@@ -64,20 +64,20 @@ class JobvacanciesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$jobvacany = Jobvacancy::find($id);
+		$jobvacancy = Jobvacancy::find($id);
 
-		return View::make('admin.jobvacancies.edit', compact('jobvacany'));
+		return View::make('admin.jobvacancies.edit', compact('jobvacancy'));
 	}
 
 	/**
-	 * Update the specified jobvacany in storage.
+	 * Update the specified jobvacancy in storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function update($id)
 	{
-		$jobvacany = Jobvacancy::findOrFail($id);
+		$jobvacancy = Jobvacancy::findOrFail($id);
 
 		$validator = Validator::make($data = Input::all(), Jobvacancy::$rules);
 
@@ -86,13 +86,13 @@ class JobvacanciesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$jobvacany->update($data);
+		$jobvacancy->update($data);
 
 		return Redirect::route('admin.jobvacancies.index');
 	}
 
 	/**
-	 * Remove the specified jobvacany from storage.
+	 * Remove the specified jobvacancy from storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
