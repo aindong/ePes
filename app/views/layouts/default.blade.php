@@ -70,6 +70,10 @@
                             </ul>
                         </li>
                     </ul>
+                @elseif(Auth::getUser()->role->name == 'supervisor')
+                    <ul class="nav navbar-nav">
+                        <li class="<?php echo Request::is('supervisors') ? 'active' : ''; ?>"><a href="/supervisors">Home</a></li>
+                    </ul>
                 @endif
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/logout">Logout</a></li>

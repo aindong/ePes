@@ -1,6 +1,6 @@
 <?php
 
-class AuditTrailController extends \BaseController {
+class LogsController extends \BaseController {
 
 	/**
 	 * Display a listing of logs
@@ -9,7 +9,7 @@ class AuditTrailController extends \BaseController {
 	 */
 	public function index()
 	{
-		$logs = Log::all();
+		$logs = AuditTrail::all();
 
 		return View::make('admin.logs.index', compact('logs'));
 	}
@@ -31,14 +31,14 @@ class AuditTrailController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Log::$rules);
+		$validator = Validator::make($data = Input::all(), AuditTrail::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Log::create($data);
+		AuditTrail::create($data);
 
 		return Redirect::route('admin.logs.index');
 	}
@@ -51,7 +51,7 @@ class AuditTrailController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$log = Log::findOrFail($id);
+		$log = AuditTrail::findOrFail($id);
 
 		return View::make('admin.logs.show', compact('log'));
 	}
@@ -64,7 +64,7 @@ class AuditTrailController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$log = Log::find($id);
+		$log = AuditTrail::find($id);
 
 		return View::make('admin.logs.edit', compact('log'));
 	}
@@ -77,9 +77,9 @@ class AuditTrailController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$log = Log::findOrFail($id);
+		$log = AuditTrail::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Log::$rules);
+		$validator = Validator::make($data = Input::all(), AuditTrail::$rules);
 
 		if ($validator->fails())
 		{
@@ -99,7 +99,7 @@ class AuditTrailController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Log::destroy($id);
+		AuditTrail::destroy($id);
 
 		return Redirect::route('admin.logs.index');
 	}

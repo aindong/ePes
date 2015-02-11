@@ -76,3 +76,8 @@ Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employees'], fun
 	// Users_Accomplishments management
 	Route::resource('accomplishments', 'UsersAccomplishmentsController');
 });
+
+Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'], function() {
+	Route::get('/', ['uses' => 'SupervisorsController@index']);
+
+});
