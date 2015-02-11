@@ -15,6 +15,10 @@ class CreateUsersChildrensTable extends Migration {
 		Schema::create('usersChildrens', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('employee_no');
+			$table->string('name', 150);
+			$table->string('birthdate', 20);
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}
