@@ -19,7 +19,7 @@ Route::get('/', function()
 // Login page
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::post('/login', ['as' => 'home.login', 'uses' => 'SessionsController@login']);
-Route::get('/logouts', ['as' => 'home.logout', 'uses' => 'SessionsController@logout']);
+Route::get('/logout', ['as' => 'home.logout', 'uses' => 'SessionsController@logout']);
 
 // Admin controllers
 Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function() {
