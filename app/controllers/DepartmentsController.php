@@ -99,9 +99,13 @@ class DepartmentsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
+		if ($id == 1) {
+			return Response::json(['message' => 'error'], 400);
+		}
+
 		Department::destroy($id);
 
-		return Redirect::route('admin.departments.index');
+		return Response::json(['message' => 'deleted successfully'], 200);
 	}
 
 }
