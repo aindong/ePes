@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <h2>Events Management <a href="/admin/celebrations/create" class="btn btn-primary">Add New</a></h2>
+    <h2>Events Management <a href="/admin/events/create" class="btn btn-primary">Add New</a></h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
@@ -19,15 +19,15 @@
         @foreach($celebrations as $celebration)
         <tr>
             <td>{{ $celebration->user_id }}</td>
-            <td>testing</td>
-            <td>testing</td>
+            <td>{{ $celebration->name }}</td>
+            <td>{{ $celebration->description }}</td>
+            <td>{{ date('M d Y', strtotime($celebration->start_at)) }}</td>
+            <td>{{ date('M d Y', strtotime($celebration->end_at)) }}</td>
+            <td>{{ date('M d Y', strtotime($celebration->created_at)) }}</td>
+            <td>{{ date('M d Y', strtotime( $celebration->updated_at)) }}</td>
             <td>
-                <a href="/admin/celebrations/1/edit" class="btn btn-warning">Update</a>
-                <!-- <a href="#" class="btn btn-danger">Delete</a> -->
-                {{ Form::open(array('url' => 'admin/celebrations/' . 1, 'class' => 'deleteItem')) }}
-                {{ Form::hidden('_method', 'DELETE') }}
-                {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-                {{ Form::close() }}
+                <a href="/admin/events/{{ $celebration->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $celebration->id }}">Delete</a>
             </td>
         </tr>
         @endforeach
@@ -37,14 +37,30 @@
 
 @section('page-script')
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#example').dataTable();
+            $(document).ready(function() {
+                var table = $('#example').DataTable();
 
-            $('.deleteItem').on('submit', function(e) {
-                if(!confirm('Are you sure to delete this item?')) {
-                    return false;
-                }
+                $('.deleteItem').on('click', function(e) {
+                    e.preventDefault();
+
+                    if(!confirm('Are you sure to delete this item?')) {
+                        return false;
+                    }
+                    var id = $(this).attr('data-item');
+                    var $that = $(this);
+
+                    $.ajax({
+                        url: location.href + '/' + id,
+                        type:"post",
+                        data: { _method:"DELETE" },
+                        success: function(data) {
+                            alert('Item successfully deleted');
+                            //location.reload();
+                            var rowSelected = $that.parent().parent();
+                            table.row(rowSelected).remove().draw();
+                        }
+                    });
+                });
             });
-        });
-    </script>
+        </script>
 @stop

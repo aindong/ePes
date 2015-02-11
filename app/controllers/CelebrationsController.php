@@ -38,9 +38,15 @@ class CelebrationsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+
+        // convert start_at and end _at to store in mysql
+        $test = date('Y-m-d H:i:s', strtotime($data['start_at']));
+        print_r($test); exit;
+        $data['end_at'] = date('Y-m-d H:i:s', strtotime($data['end_at']) );
+        print_r($data); exit;
 		Celebration::create($data);
 
-		return Redirect::route('admin.celebrations.index');
+		return Redirect::route('admin.events.index');
 	}
 
 	/**
@@ -86,9 +92,13 @@ class CelebrationsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+        // convert start_at and end _at to store in mysql
+        $data['start_at'] = date('Y-m-d H:i:s', strtotime($data['start_at']));
+        $data['end_at'] = date('Y-m-d H:i:s', strtotime($data['end_at']) );
+
 		$celebration->update($data);
 
-		return Redirect::route('admin.celebrations.index');
+		return Redirect::route('admin.events.index');
 	}
 
 	/**
@@ -101,7 +111,7 @@ class CelebrationsController extends \BaseController {
 	{
 		Celebration::destroy($id);
 
-		return Redirect::route('admin.celebrations.index');
+		return Redirect::route('admin.events.index');
 	}
 
 }

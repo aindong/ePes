@@ -10,6 +10,9 @@
     <link href="/packages/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Datatables bootstrap css plugin -->
     <link rel="stylesheet" href="/packages/datatables/extensions/Bootstrap/dataTables.bootstrap.css"/>
+    <!-- Datetimepicker bootstrap css plugin -->
+    <link rel="stylesheet" href="/css/bootstrap-datetimepicker.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css"/>
     <!-- MASTER CSS -->
     <link rel="stylesheet" href="/css/style.css"/>
     @yield('page-style')
@@ -87,6 +90,8 @@
 <script src="/packages/bootstrap/js/bootstrap.min.js"></script>
 <script src="/packages/datatables/media/js/jquery.dataTables.min.js"></script>
 <script src="/packages/datatables/extensions/Bootstrap/dataTables.bootstrap.js"></script>
+<script src="/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/js/bootstrap-datetimepicker.js"></script>
 @yield('page-script')
 </body>
 </html>
