@@ -17,9 +17,9 @@ class SessionsController extends \BaseController {
 			'password'		=> $data['password']
 		]);
 
-		if (!$attempt) {
+		if (Auth::check() == false) {
 			Session::flash('error', 'Invalid user credentials please check your username or password');
-			return Redirect::back('/');
+			return Redirect::back();
 		}
 
 		$user = Auth::getUser();
@@ -27,6 +27,9 @@ class SessionsController extends \BaseController {
 		if ($user->role->name == 'admin') {
 			return Redirect::to('/admin');
 		}
+
+		Session::flash('error', 'Invalid user credentials please check your username or password');
+		return Redirect::back();
 	}
 
 
