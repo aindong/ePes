@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
-class Log extends \Eloquent {
+class AuditTrail extends \Eloquent {
 
 	use SoftDeletingTrait;
 
