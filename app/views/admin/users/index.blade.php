@@ -17,13 +17,11 @@
         @foreach($users as $user)
         <tr>
             <td>{{{ $user->employee_no }}}</td>
-            <td>{{{ $user->department->name }}}</td>
-            <td>testing</td>
-            <td>testing</td>
+            <td>{{{ ucfirst($user->department->name) or 'N/A'}}}</td>
+            <td>{{{ ucfirst($user->role->name) }}}</td>
             <td>
-                <a href="/admin/articles/1/edit" class="btn btn-warning">Update</a>
-                <!-- <a href="#" class="btn btn-danger">Delete</a> -->
-                {{ Form::open(array('url' => 'admin/articles/' . 1, 'class' => 'deleteItem')) }}
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                {{ Form::open(array('url' => 'admin/articles/' . $user->id, 'class' => 'deleteItem form-inline')) }}
                 {{ Form::hidden('_method', 'DELETE') }}
                 {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
                 {{ Form::close() }}
