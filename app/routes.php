@@ -31,13 +31,35 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 	Route::resource('departments', 'DepartmentsController');
 });
 
+// Employee
 Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employee'], function() {
 	// Users_Bios management
-	Route::resource('usersBios', 'UsersBiosController');
+	Route::resource('bios', 'UsersBiosController');
 	// Users_Spouses management
-	Route::resource('usersSpouses', 'UsersSpousesController');
+	Route::resource('spouses', 'UsersSpousesController');
 	// Users_Childrens management
-	Route::resource('usersChildrens', 'UsersChildrensController');
-	// Users_Educations anagement
-	Route::resource('usersEducations', 'UsersEducationsController');
+	Route::resource('childrens', 'UsersChildrensController');
+	// Users_Educations management
+	Route::resource('educations', 'UsersEducationsController');
+	// Users_CivilServices management
+	Route::resource('civil-services', 'UsersCivilServicesController');
+	// Users_WorkExperience management
+	Route::resource('work-experiences', 'UsersWorkExperiencesController');
+	// Users_VoluntaryWork management
+	Route::resource('voluntary-works', 'UsersVoluntaryWorksController');
+	// Users_Trainings management
+	Route::resource('trainings', 'UsersTrainingsController');
+	// Users_Hobbies management
+	Route::resource('hobbies', 'UsersHobbiesController');
+	// Users_Recognitions management
+	Route::resource('recognitions', 'UsersRecognitionsController');
+	// Users_Organiations management
+	Route::resource('organizations', 'UsersOrganizationsController');
+	// Users_Questionaire management
+	Route::resource('questionaires', 'UsersQuestionairesController');
+	// Users_References management
+	Route::resource('references', 'UsersReferencesController');
+
+	// Users_Accomplishments management
+	Route::resource('accomplishments', 'UsersAccomplishmentsController');
 });
