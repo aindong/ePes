@@ -45,7 +45,7 @@
                 var id = $(this).attr('data-item');
 
                 $.ajax({
-                    url: '/users/delete/' + id,
+                    url: location.href + '/' + id,
                     type: 'delete',
                     success: function(data) {
                         alert('Item successfully deleted');
