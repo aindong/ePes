@@ -10,12 +10,17 @@
 </div>
 
 <div class="form-group">
+    {{ Form::label('password', 'Password *', ['class' => 'form-label']) }}
+    {{ Form::password('password', ['class' => 'form-control', 'required' => 'required']) }}
+</div>
+
+<div class="form-group">
     {{ Form::label('department_id', 'Department *', ['class' => 'form-label']) }}
     {{ Form::select('department_id', $departments, null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
 <div class="form-group">
-    {{ Form::label('role_id', 'Department *', ['class' => 'form-label']) }}
+    {{ Form::label('role_id', 'Role *', ['class' => 'form-label']) }}
     {{ Form::select('role_id', $roles, null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
