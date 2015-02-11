@@ -15,7 +15,6 @@
         </thead>
         <tbody>
         @foreach($users as $user)
-
         <tr>
             <td>{{{ $user->employee_no }}}</td>
             <td>{{{ ucfirst($user->department->name) }}}</td>
