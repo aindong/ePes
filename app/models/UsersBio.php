@@ -6,6 +6,8 @@ class UsersBio extends \Eloquent {
 
 	use SoftDeletingTrait;
 
+	protected $table = 'usersbios';
+
 	/**
 	 * The timestamp when an item is deleted
 	 *
