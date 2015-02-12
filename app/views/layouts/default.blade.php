@@ -13,6 +13,8 @@
     <!-- Datetimepicker bootstrap css plugin -->
     <link rel="stylesheet" href="/css/bootstrap-datetimepicker.css"/>
     <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css"/>
+    <!-- Fullcalendar -->
+    <link rel="stylesheet" href="/packages/FullCalendar/fullcalendar.min.css"/>
     <!-- MASTER CSS -->
     <link rel="stylesheet" href="/css/style.css"/>
     @yield('page-style')
@@ -100,6 +102,8 @@
 <script src="/packages/datatables/extensions/Bootstrap/dataTables.bootstrap.js"></script>
 <script src="/js/bootstrap-datetimepicker.min.js"></script>
 <script src="/js/bootstrap-datetimepicker.js"></script>
+<script src="/js/moment.js"></script>
+<script src="/packages/FullCalendar/fullcalendar.min.js"></script>
 @yield('page-script')
 </body>
 </html>
