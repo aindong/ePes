@@ -97,14 +97,14 @@
                     <li><a href="#">Family Background</a></li>
                     <li><a href="/employees/pds/educations">Educational Background</a></li>
                     <li><a href="/employees/pds/civil-services">Civil Service</a></li>
-                    <li><a href="#">Work Experience</a></li>
-                    <li><a href="#">Voluntary Work</a></li>
-                    <li><a href="#">Training</a></li>
-                    <li><a href="#">Hobby</a></li>
-                    <li><a href="#">Recognition</a></li>
-                    <li><a href="#">Organization</a></li>
-                    <li><a href="#">Other Questions</a></li>
-                    <li><a href="#">Reference</a></li>
+                    <li><a href="/employees/pds/work-experiences">Work Experience</a></li>
+                    <li><a href="/employees/pds/voluntary-works">Voluntary Work</a></li>
+                    <li><a href="/employees/pds/trainings">Training</a></li>
+                    <li><a href="/employees/pds/hobbies">Hobby</a></li>
+                    <li><a href="/employees/pds/recognitions">Recognition</a></li>
+                    <li><a href="/employees/pds/organizations">Organization</a></li>
+                    <li><a href="/employees/pds/questionaires">Other Questions</a></li>
+                    <li><a href="/employees/pds/references">Reference</a></li>
                 </ul>
             </aside>
 
