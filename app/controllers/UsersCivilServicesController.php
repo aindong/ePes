@@ -9,9 +9,10 @@ class UsersCivilServicesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$userscivilservices = Userscivilservice::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$civilservices = Userscivilservice::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('userscivilservices.index', compact('userscivilservices'));
+		return View::make('employees.userscivilservices.index', compact('civilservices'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class UsersCivilServicesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('userscivilservices.create');
+		return View::make('employees.userscivilservices.create');
 	}
 
 	/**
@@ -40,7 +41,7 @@ class UsersCivilServicesController extends \BaseController {
 
 		Userscivilservice::create($data);
 
-		return Redirect::route('userscivilservices.index');
+		return Redirect::route('employees.pds.civil-services.index');
 	}
 
 	/**
@@ -53,7 +54,7 @@ class UsersCivilServicesController extends \BaseController {
 	{
 		$userscivilservice = Userscivilservice::findOrFail($id);
 
-		return View::make('userscivilservices.show', compact('userscivilservice'));
+		return View::make('employees.userscivilservices.show', compact('userscivilservice'));
 	}
 
 	/**
@@ -66,7 +67,7 @@ class UsersCivilServicesController extends \BaseController {
 	{
 		$userscivilservice = Userscivilservice::find($id);
 
-		return View::make('userscivilservices.edit', compact('userscivilservice'));
+		return View::make('employees.userscivilservices.edit', compact('userscivilservice'));
 	}
 
 	/**
@@ -88,7 +89,7 @@ class UsersCivilServicesController extends \BaseController {
 
 		$userscivilservice->update($data);
 
-		return Redirect::route('userscivilservices.index');
+		return Redirect::route('employees.pds.civil-services.index');
 	}
 
 	/**
@@ -101,7 +102,7 @@ class UsersCivilServicesController extends \BaseController {
 	{
 		Userscivilservice::destroy($id);
 
-		return Redirect::route('userscivilservices.index');
+		return Redirect::route('employees.pds.civil-services.index');
 	}
 
 }

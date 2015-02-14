@@ -96,7 +96,7 @@
                     <li><a href="/employees/pds/bios">Bio</a></li>
                     <li><a href="#">Family Background</a></li>
                     <li><a href="/employees/pds/educations">Educational Background</a></li>
-                    <li><a href="#">Civil Service</a></li>
+                    <li><a href="/employees/pds/civil-services">Civil Service</a></li>
                     <li><a href="#">Work Experience</a></li>
                     <li><a href="#">Voluntary Work</a></li>
                     <li><a href="#">Training</a></li>
