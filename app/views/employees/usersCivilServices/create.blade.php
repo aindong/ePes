@@ -1,1 +1,11 @@
-C:\Users\papabear\Desktop\server\ePes\app/views/usersCivilServices/create.blade.php
+@extends('layouts.default')
+
+@section('content')
+    {{ Form::open(['route' => 'employees.pds.civil-services.store', 'method' => 'put']) }}
+    @include('employees.usersCivilServices.form')
+    {{ Form::close() }}
+@stop
+
+@section('page-script')
+
+@stop

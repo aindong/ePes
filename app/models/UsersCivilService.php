@@ -6,6 +6,8 @@ class UsersCivilService extends \Eloquent {
 
 	use SoftDeletingTrait;
 
+	protected $table = 'userscivilservices';
+
 	/**
 	 * The timestamp when an item is deleted
 	 *
