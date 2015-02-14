@@ -47,31 +47,31 @@ Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employees'], fun
 	Route::get('/', ['uses' => 'EmployeesController@index']);
 
 	// Users_Bios management
-	Route::resource('bios', 'UsersBiosController');
+	Route::resource('pds/bios', 'UsersBiosController');
 	// Users_Spouses management
-	Route::resource('spouses', 'UsersSpousesController');
+	Route::resource('pds/spouses', 'UsersSpousesController');
 	// Users_Childrens management
-	Route::resource('childrens', 'UsersChildrensController');
+	Route::resource('pds/childrens', 'UsersChildrensController');
 	// Users_Educations management
-	Route::resource('educations', 'UsersEducationsController');
+	Route::resource('pds/educations', 'UsersEducationsController');
 	// Users_CivilServices management
-	Route::resource('civil-services', 'UsersCivilServicesController');
+	Route::resource('pds/civil-services', 'UsersCivilServicesController');
 	// Users_WorkExperience management
-	Route::resource('work-experiences', 'UsersWorkExperiencesController');
+	Route::resource('pds/work-experiences', 'UsersWorkExperiencesController');
 	// Users_VoluntaryWork management
-	Route::resource('voluntary-works', 'UsersVoluntaryWorksController');
+	Route::resource('pds/voluntary-works', 'UsersVoluntaryWorksController');
 	// Users_Trainings management
-	Route::resource('trainings', 'UsersTrainingsController');
+	Route::resource('pds/trainings', 'UsersTrainingsController');
 	// Users_Hobbies management
-	Route::resource('hobbies', 'UsersHobbiesController');
+	Route::resource('pds/hobbies', 'UsersHobbiesController');
 	// Users_Recognitions management
-	Route::resource('recognitions', 'UsersRecognitionsController');
+	Route::resource('pds/recognitions', 'UsersRecognitionsController');
 	// Users_Organiations management
-	Route::resource('organizations', 'UsersOrganizationsController');
+	Route::resource('pds/organizations', 'UsersOrganizationsController');
 	// Users_Questionaire management
-	Route::resource('questionaires', 'UsersQuestionairesController');
+	Route::resource('pds/questionaires', 'UsersQuestionairesController');
 	// Users_References management
-	Route::resource('references', 'UsersReferencesController');
+	Route::resource('pds/references', 'UsersReferencesController');
 
 	// Users_Accomplishments management
 	Route::resource('accomplishments', 'UsersAccomplishmentsController');

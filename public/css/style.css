@@ -15,3 +15,12 @@ nav ul li a:active {
 .navbar {
     font-size: 15px !important;
 }
+
+.form-control {
+    opacity: 0.7 !important;
+    transition: 0.5s all;
+}
+
+.form-control:focus {
+    opacity: 1 !important;
+}

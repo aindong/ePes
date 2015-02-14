@@ -55,21 +55,21 @@
                     <ul class="nav navbar-nav">
                         <li  class="<?php echo Request::is('employees') ? 'active' : ''; ?>"><a href="/employees">Home <span class="sr-only">(current)</span></a></li>
                         <li class="dropdown <?php echo Request::is('employees/pes*') ? 'active' : ''; ?>">
-                            <a href="/employees/pes" data-toggle="dropdown" role="button" aria-expanded="false">Personal Data Sheet  <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/employees/bios">Bio</a></li>
-                                <li><a href="#">Family Background</a></li>
-                                <li><a href="#">Educational Background</a></li>
-                                <li><a href="#">Civil Service</a></li>
-                                <li><a href="#">Work Experience</a></li>
-                                <li><a href="#">Voluntary Work</a></li>
-                                <li><a href="#">Training</a></li>
-                                <li><a href="#">Hobby</a></li>
-                                <li><a href="#">Recognition</a></li>
-                                <li><a href="#">Organization</a></li>
-                                <li><a href="#">Other Questions</a></li>
-                                <li><a href="#">Reference</a></li>
-                            </ul>
+                            <a href="/employees/pds/bios">Personal Data Sheet</a>
+                            {{--<ul class="dropdown-menu" role="menu">--}}
+                                {{--<li><a href="/employees/pds/bios">Bio</a></li>--}}
+                                {{--<li><a href="#">Family Background</a></li>--}}
+                                {{--<li><a href="#">Educational Background</a></li>--}}
+                                {{--<li><a href="#">Civil Service</a></li>--}}
+                                {{--<li><a href="#">Work Experience</a></li>--}}
+                                {{--<li><a href="#">Voluntary Work</a></li>--}}
+                                {{--<li><a href="#">Training</a></li>--}}
+                                {{--<li><a href="#">Hobby</a></li>--}}
+                                {{--<li><a href="#">Recognition</a></li>--}}
+                                {{--<li><a href="#">Organization</a></li>--}}
+                                {{--<li><a href="#">Other Questions</a></li>--}}
+                                {{--<li><a href="#">Reference</a></li>--}}
+                            {{--</ul>--}}
                         </li>
                         <li class="<?php echo Request::is('supervisors/pes*') ? 'active' : ''; ?>"><a href="#">Accomplishments</a></li>
                         <li class="<?php echo Request::is('supervisors/pes*') ? 'active' : ''; ?>"><a href="#">Performance Evaluation Results</a></li>
@@ -89,9 +89,34 @@
     </nav>
 
     <div id="main">
-        <div class="container">
-            @yield('content')
+        @if(Request::is('employees/pds*'))
+        <div class="rows">
+            <aside class="col-md-2">
+                <ul>
+                    <li><a href="/employees/bios">Bio</a></li>
+                    <li><a href="#">Family Background</a></li>
+                    <li><a href="#">Educational Background</a></li>
+                    <li><a href="#">Civil Service</a></li>
+                    <li><a href="#">Work Experience</a></li>
+                    <li><a href="#">Voluntary Work</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Hobby</a></li>
+                    <li><a href="#">Recognition</a></li>
+                    <li><a href="#">Organization</a></li>
+                    <li><a href="#">Other Questions</a></li>
+                    <li><a href="#">Reference</a></li>
+                </ul>
+            </aside>
+
+            <div class="container col-md-10">
+                @yield('content')
+            </div>
         </div>
+        @else
+            <div class="container">
+                @yield('content')
+            </div>
+        @endif
     </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

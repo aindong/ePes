@@ -43,7 +43,7 @@ class UsersBiosController extends \BaseController {
 
 		Usersbio::create($data);
 
-		return Redirect::route('employees.usersbios.index');
+		return Redirect::route('employees.pds.usersbios.index');
 	}
 
 	/**
@@ -91,7 +91,7 @@ class UsersBiosController extends \BaseController {
 
 		$usersbio->update($data);
 
-		return Redirect::route('employees.usersbios.index');
+		return Redirect::route('employees.pds.usersbios.index');
 	}
 
 	/**
@@ -104,7 +104,7 @@ class UsersBiosController extends \BaseController {
 	{
 		Usersbio::destroy($id);
 
-		return Redirect::route('employees.usersbios.index');
+		return Redirect::route('employees.pds.usersbios.index');
 	}
 
 }
