@@ -9,9 +9,10 @@ class UsersVoluntaryWorksController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersvoluntaryworks = Usersvoluntarywork::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$voluntaryworks = Usersvoluntarywork::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('usersvoluntaryworks.index', compact('usersvoluntaryworks'));
+		return View::make('employees.usersvoluntaryworks.index', compact('voluntaryworks'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('usersvoluntaryworks.create');
+		return View::make('employees.usersvoluntaryworks.create');
 	}
 
 	/**
@@ -40,7 +41,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 
 		Usersvoluntarywork::create($data);
 
-		return Redirect::route('usersvoluntaryworks.index');
+		return Redirect::route('employees.pds.voluntary-works.index');
 	}
 
 	/**
@@ -53,7 +54,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 	{
 		$usersvoluntarywork = Usersvoluntarywork::findOrFail($id);
 
-		return View::make('usersvoluntaryworks.show', compact('usersvoluntarywork'));
+		return View::make('employees.usersvoluntaryworks.show', compact('usersvoluntarywork'));
 	}
 
 	/**
@@ -66,7 +67,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 	{
 		$usersvoluntarywork = Usersvoluntarywork::find($id);
 
-		return View::make('usersvoluntaryworks.edit', compact('usersvoluntarywork'));
+		return View::make('employees.usersvoluntaryworks.edit', compact('usersvoluntarywork'));
 	}
 
 	/**
@@ -88,7 +89,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 
 		$usersvoluntarywork->update($data);
 
-		return Redirect::route('usersvoluntaryworks.index');
+		return Redirect::route('employees.pds.voluntary-works.index');
 	}
 
 	/**
@@ -101,7 +102,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 	{
 		Usersvoluntarywork::destroy($id);
 
-		return Redirect::route('usersvoluntaryworks.index');
+		return Redirect::route('employees.pds.voluntary-works.index');
 	}
 
 }
