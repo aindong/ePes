@@ -6,6 +6,8 @@ class UsersEducation extends \Eloquent {
 
 	use SoftDeletingTrait;
 
+	protected $table = 'userseducations';
+
 	/**
 	 * The timestamp when an item is deleted
 	 *

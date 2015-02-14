@@ -9,9 +9,10 @@ class UsersEducationsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$userseducations = Userseducation::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$educations = Userseducation::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('userseducations.index', compact('userseducations'));
+		return View::make('employees.userseducations.index', compact('educations'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class UsersEducationsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('userseducations.create');
+		return View::make('employees.userseducations.create');
 	}
 
 	/**
@@ -40,7 +41,7 @@ class UsersEducationsController extends \BaseController {
 
 		Userseducation::create($data);
 
-		return Redirect::route('userseducations.index');
+		return Redirect::route('employees.pds.educations.index');
 	}
 
 	/**
@@ -53,7 +54,7 @@ class UsersEducationsController extends \BaseController {
 	{
 		$userseducation = Userseducation::findOrFail($id);
 
-		return View::make('userseducations.show', compact('userseducation'));
+		return View::make('employees.userseducations.show', compact('userseducation'));
 	}
 
 	/**
@@ -66,7 +67,7 @@ class UsersEducationsController extends \BaseController {
 	{
 		$userseducation = Userseducation::find($id);
 
-		return View::make('userseducations.edit', compact('userseducation'));
+		return View::make('employees.userseducations.edit', compact('userseducation'));
 	}
 
 	/**
@@ -88,7 +89,7 @@ class UsersEducationsController extends \BaseController {
 
 		$userseducation->update($data);
 
-		return Redirect::route('userseducations.index');
+		return Redirect::route('employees.pds.educations.index');
 	}
 
 	/**
@@ -101,7 +102,7 @@ class UsersEducationsController extends \BaseController {
 	{
 		Userseducation::destroy($id);
 
-		return Redirect::route('userseducations.index');
+		return Redirect::route('employees.pds.educations.index');
 	}
 
 }

@@ -93,9 +93,9 @@
         <div class="rows">
             <aside class="col-md-2">
                 <ul>
-                    <li><a href="/employees/bios">Bio</a></li>
+                    <li><a href="/employees/pds/bios">Bio</a></li>
                     <li><a href="#">Family Background</a></li>
-                    <li><a href="#">Educational Background</a></li>
+                    <li><a href="/employees/pds/educations">Educational Background</a></li>
                     <li><a href="#">Civil Service</a></li>
                     <li><a href="#">Work Experience</a></li>
                     <li><a href="#">Voluntary Work</a></li>
