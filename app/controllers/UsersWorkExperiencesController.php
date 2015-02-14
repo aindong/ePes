@@ -9,9 +9,10 @@ class UsersWorkExperiencesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersworkexperiences = Usersworkexperience::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$usersworkexperiences = Usersworkexperience::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('usersworkexperiences.index', compact('usersworkexperiences'));
+		return View::make('employees.usersworkexperiences.index', compact('usersworkexperiences'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('usersworkexperiences.create');
+		return View::make('employees.usersworkexperiences.create');
 	}
 
 	/**
@@ -40,7 +41,7 @@ class UsersWorkExperiencesController extends \BaseController {
 
 		Usersworkexperience::create($data);
 
-		return Redirect::route('usersworkexperiences.index');
+		return Redirect::route('employees.usersworkexperiences.index');
 	}
 
 	/**
@@ -53,7 +54,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	{
 		$usersworkexperience = Usersworkexperience::findOrFail($id);
 
-		return View::make('usersworkexperiences.show', compact('usersworkexperience'));
+		return View::make('employees.usersworkexperiences.show', compact('usersworkexperience'));
 	}
 
 	/**
@@ -66,7 +67,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	{
 		$usersworkexperience = Usersworkexperience::find($id);
 
-		return View::make('usersworkexperiences.edit', compact('usersworkexperience'));
+		return View::make('employees.usersworkexperiences.edit', compact('usersworkexperience'));
 	}
 
 	/**
@@ -88,7 +89,7 @@ class UsersWorkExperiencesController extends \BaseController {
 
 		$usersworkexperience->update($data);
 
-		return Redirect::route('usersworkexperiences.index');
+		return Redirect::route('employees.usersworkexperiences.index');
 	}
 
 	/**
@@ -101,7 +102,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	{
 		Usersworkexperience::destroy($id);
 
-		return Redirect::route('usersworkexperiences.index');
+		return Redirect::route('employees.usersworkexperiences.index');
 	}
 
 }
