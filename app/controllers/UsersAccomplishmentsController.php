@@ -12,7 +12,7 @@ class UsersAccomplishmentsController extends \BaseController {
 		$employee_no = Auth::getUser()->employee_no;
 		$usersaccomplishments = UsersAccomplishment::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('employees.usersaccomplishments.index', compact('usersaccomplishments'));
+		return View::make('employees.usersAccomplishments.index', compact('usersaccomplishments'));
 	}
 
 	/**
@@ -56,7 +56,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	{
 		$usersaccomplishment = UsersAccomplishment::findOrFail($id);
 
-		return View::make('employees.usersaccomplishments.show', compact('usersaccomplishment'));
+		return View::make('employees.usersAccomplishments.show', compact('usersaccomplishment'));
 	}
 
 	/**
@@ -69,7 +69,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	{
 		$usersaccomplishment = UsersAccomplishment::find($id);
 
-		return View::make('employees.usersaccomplishments.edit', compact('usersaccomplishment'));
+		return View::make('employees.usersAccomplishments.edit', compact('usersaccomplishment'));
 	}
 
 	/**
