@@ -10,9 +10,9 @@ class UsersEducationsController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$educations = Userseducation::where('employee_no', '=', $employee_no)->get();
+		$educations = UsersEducation::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('employees.userseducations.index', compact('educations'));
+		return View::make('employees.usersEducations.index', compact('educations'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersEducationsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.userseducations.create');
+		return View::make('employees.usersEducations.create');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class UsersEducationsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Userseducation::$rules);
+		$validator = Validator::make($data = Input::all(), UsersEducation::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,7 +41,7 @@ class UsersEducationsController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		Userseducation::create($data);
+		UsersEducation::create($data);
 
 		return Redirect::route('employees.pds.educations.index');
 	}
@@ -54,9 +54,9 @@ class UsersEducationsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$userseducation = Userseducation::findOrFail($id);
+		$userseducation = UsersEducation::findOrFail($id);
 
-		return View::make('employees.userseducations.show', compact('userseducation'));
+		return View::make('employees.usersEducations.show', compact('userseducation'));
 	}
 
 	/**
@@ -67,9 +67,9 @@ class UsersEducationsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$userseducation = Userseducation::find($id);
+		$userseducation = UsersEducation::find($id);
 
-		return View::make('employees.userseducations.edit', compact('userseducation'));
+		return View::make('employees.usersEducations.edit', compact('userseducation'));
 	}
 
 	/**
@@ -80,9 +80,9 @@ class UsersEducationsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$userseducation = Userseducation::findOrFail($id);
+		$userseducation = UsersEducation::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Userseducation::$rules);
+		$validator = Validator::make($data = Input::all(), UsersEducation::$rules);
 
 		if ($validator->fails())
 		{
@@ -102,7 +102,7 @@ class UsersEducationsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Userseducation::destroy($id);
+		UsersEducation::destroy($id);
 
 		return Redirect::route('employees.pds.educations.index');
 	}
