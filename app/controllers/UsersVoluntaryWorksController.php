@@ -10,9 +10,9 @@ class UsersVoluntaryWorksController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$voluntaryworks = Usersvoluntarywork::where('employee_no', '=', $employee_no)->get();
+		$voluntaryworks = UsersVoluntaryWork::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('employees.usersvoluntaryworks.index', compact('voluntaryworks'));
+		return View::make('employees.usersVoluntaryWorks.index', compact('voluntaryworks'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.usersvoluntaryworks.create');
+		return View::make('employees.usersVoluntaryWorks.create');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Usersvoluntarywork::$rules);
+		$validator = Validator::make($data = Input::all(), UsersVoluntaryWork::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,7 +41,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		Usersvoluntarywork::create($data);
+		UsersVoluntaryWork::create($data);
 
 		return Redirect::route('employees.pds.voluntary-works.index');
 	}
@@ -54,9 +54,9 @@ class UsersVoluntaryWorksController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$usersvoluntarywork = Usersvoluntarywork::findOrFail($id);
+		$usersvoluntarywork = UsersVoluntaryWork::findOrFail($id);
 
-		return View::make('employees.usersvoluntaryworks.show', compact('usersvoluntarywork'));
+		return View::make('employees.usersVoluntaryWorks.show', compact('usersvoluntarywork'));
 	}
 
 	/**
@@ -80,9 +80,9 @@ class UsersVoluntaryWorksController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$usersvoluntarywork = Usersvoluntarywork::findOrFail($id);
+		$usersvoluntarywork = UsersVoluntaryWork::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Usersvoluntarywork::$rules);
+		$validator = Validator::make($data = Input::all(), UsersVoluntaryWork::$rules);
 
 		if ($validator->fails())
 		{
@@ -102,7 +102,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Usersvoluntarywork::destroy($id);
+		UsersVoluntaryWork::destroy($id);
 
 		return Redirect::route('employees.pds.voluntary-works.index');
 	}

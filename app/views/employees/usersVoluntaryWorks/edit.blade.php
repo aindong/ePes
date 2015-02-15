@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    {{ Form::model($userscivilservice, ['route' => ['employees.pds.voluntary-works.update', $userscivilservice->id], 'method' => 'put']) }}
+    {{ Form::model($usersvoluntarywork, ['route' => ['employees.pds.voluntary-works.update', $usersvoluntarywork->id], 'method' => 'put']) }}
     @include('employees.usersVoluntaryWorks.form')
     {{ Form::close() }}
 @stop
