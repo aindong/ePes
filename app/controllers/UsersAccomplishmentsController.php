@@ -10,7 +10,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$usersaccomplishments = Usersaccomplishment::where('employee_no', '=', $employee_no)->get();
+		$usersaccomplishments = UsersAccomplishment::where('employee_no', '=', $employee_no)->get();
 
 		return View::make('employees.usersaccomplishments.index', compact('usersaccomplishments'));
 	}
@@ -32,7 +32,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Usersaccomplishment::$rules);
+		$validator = Validator::make($data = Input::all(), UsersAccomplishment::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,7 +41,7 @@ class UsersAccomplishmentsController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		Usersaccomplishment::create($data);
+		UsersAccomplishment::create($data);
 
 		return Redirect::route('employees.accomplishments.index');
 	}
@@ -54,7 +54,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$usersaccomplishment = Usersaccomplishment::findOrFail($id);
+		$usersaccomplishment = UsersAccomplishment::findOrFail($id);
 
 		return View::make('employees.usersaccomplishments.show', compact('usersaccomplishment'));
 	}
@@ -67,7 +67,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$usersaccomplishment = Usersaccomplishment::find($id);
+		$usersaccomplishment = UsersAccomplishment::find($id);
 
 		return View::make('employees.usersaccomplishments.edit', compact('usersaccomplishment'));
 	}
@@ -80,9 +80,9 @@ class UsersAccomplishmentsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$usersaccomplishment = Usersaccomplishment::findOrFail($id);
+		$usersaccomplishment = UsersAccomplishment::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Usersaccomplishment::$rules);
+		$validator = Validator::make($data = Input::all(), UsersAccomplishment::$rules);
 
 		if ($validator->fails())
 		{
@@ -102,7 +102,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Usersaccomplishment::destroy($id);
+		UsersAccomplishment::destroy($id);
 
 		return Redirect::route('employees.accomplishments.index');
 	}
