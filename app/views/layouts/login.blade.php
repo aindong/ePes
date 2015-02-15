@@ -181,7 +181,7 @@ body{
 			<input type="text" placeholder="username" name="employee_no" class="form-control"><br>
 			<input type="password" placeholder="password" name="password" class="form-control"><br>
 			<input type="submit" class="btn btn-primary" value="Login">
-			<button class="btn btn-default showRegister">Register</button>
+			<button class="btn btn-default showRegister" type="button">Register</button>
 		</div>
 		{{ Form::close() }}
 
@@ -191,7 +191,7 @@ body{
 		  <input type="text" placeholder="username" name="employee_no" class="form-control" required="required"><br>
 		  <input type="password" placeholder="password" name="password" class="form-control" required="required"><br>
 		  <input type="submit" class="btn btn-primary" value="Register" class="form-control">
-		  <button class="btn btn-default showLogin">Login</button>
+		  <button class="btn btn-default showLogin" type="button">Login</button>
 	  </div>
 	  {{ Form::close() }}
 
