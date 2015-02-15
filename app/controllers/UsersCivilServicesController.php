@@ -10,7 +10,7 @@ class UsersCivilServicesController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$civilservices = Userscivilservice::where('employee_no', '=', $employee_no)->get();
+		$civilservices = UsersCivilService::where('employee_no', '=', $employee_no)->get();
 
 		return View::make('employees.userscivilservices.index', compact('civilservices'));
 	}
@@ -32,7 +32,7 @@ class UsersCivilServicesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Userscivilservice::$rules);
+		$validator = Validator::make($data = Input::all(), UsersCivilService::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,7 +41,7 @@ class UsersCivilServicesController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 		
-		Userscivilservice::create($data);
+		UsersCivilService::create($data);
 
 		return Redirect::route('employees.pds.civil-services.index');
 	}
@@ -54,7 +54,7 @@ class UsersCivilServicesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$userscivilservice = Userscivilservice::findOrFail($id);
+		$userscivilservice = UsersCivilService::findOrFail($id);
 
 		return View::make('employees.userscivilservices.show', compact('userscivilservice'));
 	}
@@ -67,7 +67,7 @@ class UsersCivilServicesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$userscivilservice = Userscivilservice::find($id);
+		$userscivilservice = UsersCivilService::find($id);
 
 		return View::make('employees.userscivilservices.edit', compact('userscivilservice'));
 	}
@@ -80,9 +80,9 @@ class UsersCivilServicesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$userscivilservice = Userscivilservice::findOrFail($id);
+		$userscivilservice = UsersCivilService::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Userscivilservice::$rules);
+		$validator = Validator::make($data = Input::all(), UsersCivilService::$rules);
 
 		if ($validator->fails())
 		{
@@ -102,7 +102,7 @@ class UsersCivilServicesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Userscivilservice::destroy($id);
+		UsersCivilService::destroy($id);
 
 		return Redirect::route('employees.pds.civil-services.index');
 	}
