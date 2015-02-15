@@ -177,6 +177,7 @@ body{
 		<br>
   		{{ Form::open(['url' => '/login', 'method' => 'post', 'class' => 'loginForm']) }}
 		<div class="login">
+			<legend>User Authentication</legend>
 			<input type="text" placeholder="username" name="employee_no" class="form-control"><br>
 			<input type="password" placeholder="password" name="password" class="form-control"><br>
 			<input type="submit" class="btn btn-primary" value="Login">
@@ -186,6 +187,7 @@ body{
 
 	  {{ Form::open(['url' => '/register', 'method' => 'post', 'class' => 'registerForm']) }}
 	  <div class="login">
+		  <legend>Registration</legend>
 		  <input type="text" placeholder="username" name="employee_no" class="form-control" required="required"><br>
 		  <input type="password" placeholder="password" name="password" class="form-control" required="required"><br>
 		  <input type="submit" class="btn btn-primary" value="Register" class="form-control">
@@ -203,7 +205,7 @@ body{
 			  showRegister = $('.showRegister');
 
 
-		  registerForm.hide();
+		  registerForm.fadeOut();
 
 		  showLogin.on('click', function(e) {
 			  registerForm.fadeOut();
