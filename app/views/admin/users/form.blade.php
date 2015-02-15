@@ -9,14 +9,19 @@
     {{ Form::text('employee_no', null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
-<div class="form-group">
-    {{ Form::label('password', 'Password *', ['class' => 'form-label']) }}
-    {{ Form::password('password', ['class' => 'form-control', 'required' => 'required']) }}
-</div>
+{{--<div class="form-group">--}}
+    {{--{{ Form::label('password', 'Password *', ['class' => 'form-label']) }}--}}
+    {{--{{ Form::password('password', ['class' => 'form-control', 'required' => 'required']) }}--}}
+{{--</div>--}}
 
 <div class="form-group">
     {{ Form::label('department_id', 'Department *', ['class' => 'form-label']) }}
     {{ Form::select('department_id', $departments, null, ['class' => 'form-control', 'required' => 'required']) }}
+</div>
+
+<div class="form-group">
+    {{ Form::label('position', 'Role *', ['class' => 'form-label']) }}
+    {{ Form::select('position', ['sample position', 'sample position 2'], null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
 <div class="form-group">
