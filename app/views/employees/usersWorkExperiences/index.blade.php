@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <h2>Work Experience Background <a href="/employees/pds/work-experiences/create" class="btn btn-primary">Add New</a></h2>
+    <h2>Work Experience <a href="/employees/pds/work-experiences/create" class="btn btn-primary">Add New</a></h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
