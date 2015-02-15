@@ -10,9 +10,9 @@ class UsersReferencesController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$usersreferences = Usersreference::where('employee_no', '=', $employee_no)->get();
+		$usersreferences = UsersReference::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('employees.usersreferences.index', compact('usersreferences'));
+		return View::make('employees.usersReference.index', compact('usersreferences'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersReferencesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.usersreferences.create');
+		return View::make('employees.usersReference.create');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class UsersReferencesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Usersreference::$rules);
+		$validator = Validator::make($data = Input::all(), UsersReference::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,9 +41,9 @@ class UsersReferencesController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		Usersreference::create($data);
+		UsersReference::create($data);
 
-		return Redirect::route('employees.usersreferences.index');
+		return Redirect::route('employees.pds.usersReference.index');
 	}
 
 	/**
@@ -54,9 +54,9 @@ class UsersReferencesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$usersreference = Usersreference::findOrFail($id);
+		$usersreference = UsersReference::findOrFail($id);
 
-		return View::make('employees.usersreferences.show', compact('usersreference'));
+		return View::make('employees.usersReference.show', compact('usersreference'));
 	}
 
 	/**
@@ -67,9 +67,9 @@ class UsersReferencesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$usersreference = Usersreference::find($id);
+		$usersreference = UsersReference::find($id);
 
-		return View::make('employees.usersreferences.edit', compact('usersreference'));
+		return View::make('employees.usersReference.edit', compact('usersreference'));
 	}
 
 	/**
@@ -80,9 +80,9 @@ class UsersReferencesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$usersreference = Usersreference::findOrFail($id);
+		$usersreference = UsersReference::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Usersreference::$rules);
+		$validator = Validator::make($data = Input::all(), UsersReference::$rules);
 
 		if ($validator->fails())
 		{
@@ -91,7 +91,7 @@ class UsersReferencesController extends \BaseController {
 
 		$usersreference->update($data);
 
-		return Redirect::route('employees.usersreferences.index');
+		return Redirect::route('employees.pds.usersReference.index');
 	}
 
 	/**
@@ -102,9 +102,9 @@ class UsersReferencesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Usersreference::destroy($id);
+		UsersReference::destroy($id);
 
-		return Redirect::route('employees.usersreferences.index');
+		return Redirect::route('employees.pds.usersReference.index');
 	}
 
 }

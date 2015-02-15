@@ -10,9 +10,9 @@ class UsersRecognitionsController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$usersrecognitions = Usersrecognition::where('employee_no', '=', $employee_no)->get();
+		$usersrecognitions = UsersRecognition::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('employees.usersrecognitions.index', compact('usersrecognitions'));
+		return View::make('employees.usersRecognitions.index', compact('usersrecognitions'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersRecognitionsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.usersrecognitions.create');
+		return View::make('employees.usersRecognitions.create');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class UsersRecognitionsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Usersrecognition::$rules);
+		$validator = Validator::make($data = Input::all(), UsersRecognition::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,9 +41,9 @@ class UsersRecognitionsController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		Usersrecognition::create($data);
+		UsersRecognition::create($data);
 
-		return Redirect::route('employees.usersrecognitions.index');
+		return Redirect::route('employees.pds.usersRecognitions.index');
 	}
 
 	/**
@@ -54,9 +54,9 @@ class UsersRecognitionsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$usersrecognition = Usersrecognition::findOrFail($id);
+		$usersrecognition = UsersRecognition::findOrFail($id);
 
-		return View::make('employees.usersrecognitions.show', compact('usersrecognition'));
+		return View::make('employees.usersRecognitions.show', compact('usersrecognition'));
 	}
 
 	/**
@@ -67,9 +67,9 @@ class UsersRecognitionsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$usersrecognition = Usersrecognition::find($id);
+		$usersrecognition = UsersRecognition::find($id);
 
-		return View::make('employees.usersrecognitions.edit', compact('usersrecognition'));
+		return View::make('employees.usersRecognitions.edit', compact('usersrecognition'));
 	}
 
 	/**
@@ -80,9 +80,9 @@ class UsersRecognitionsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$usersrecognition = Usersrecognition::findOrFail($id);
+		$usersrecognition = UsersRecognition::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Usersrecognition::$rules);
+		$validator = Validator::make($data = Input::all(), UsersRecognition::$rules);
 
 		if ($validator->fails())
 		{
@@ -91,7 +91,7 @@ class UsersRecognitionsController extends \BaseController {
 
 		$usersrecognition->update($data);
 
-		return Redirect::route('employees.usersrecognitions.index');
+		return Redirect::route('employees.pds.usersRecognitions.index');
 	}
 
 	/**
@@ -102,9 +102,9 @@ class UsersRecognitionsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Usersrecognition::destroy($id);
+		UsersRecognition::destroy($id);
 
-		return Redirect::route('employees.usersrecognitions.index');
+		return Redirect::route('employees.pds.usersRecognitions.index');
 	}
 
 }

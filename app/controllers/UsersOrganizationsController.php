@@ -10,9 +10,9 @@ class UsersOrganizationsController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$usersorganizations = Usersorganization::where('employee_no', '=', $employee_no)->get();
+		$usersorganizations = UsersOrganization::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('employees.usersorganizations.index', compact('usersorganizations'));
+		return View::make('employees.usersOrganizations.index', compact('usersorganizations'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersOrganizationsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.usersorganizations.create');
+		return View::make('employees.usersOrganizations.create');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class UsersOrganizationsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Usersorganization::$rules);
+		$validator = Validator::make($data = Input::all(), UsersOrganization::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,9 +41,9 @@ class UsersOrganizationsController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		Usersorganization::create($data);
+		UsersOrganization::create($data);
 
-		return Redirect::route('employees.usersorganizations.index');
+		return Redirect::route('employees.pds.usersOrganizations.index');
 	}
 
 	/**
@@ -54,9 +54,9 @@ class UsersOrganizationsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$usersorganization = Usersorganization::findOrFail($id);
+		$usersorganization = UsersOrganization::findOrFail($id);
 
-		return View::make('employees.usersorganizations.show', compact('usersorganization'));
+		return View::make('employees.usersOrganizations.show', compact('usersorganization'));
 	}
 
 	/**
@@ -67,9 +67,9 @@ class UsersOrganizationsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$usersorganization = Usersorganization::find($id);
+		$usersorganization = UsersOrganization::find($id);
 
-		return View::make('employees.usersorganizations.edit', compact('usersorganization'));
+		return View::make('employees.usersOrganizations.edit', compact('usersorganization'));
 	}
 
 	/**
@@ -80,9 +80,9 @@ class UsersOrganizationsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$usersorganization = Usersorganization::findOrFail($id);
+		$usersorganization = UsersOrganization::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Usersorganization::$rules);
+		$validator = Validator::make($data = Input::all(), UsersOrganization::$rules);
 
 		if ($validator->fails())
 		{
@@ -91,7 +91,7 @@ class UsersOrganizationsController extends \BaseController {
 
 		$usersorganization->update($data);
 
-		return Redirect::route('employees.usersorganizations.index');
+		return Redirect::route('employees.pds.usersOrganizations.index');
 	}
 
 	/**
@@ -102,9 +102,9 @@ class UsersOrganizationsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Usersorganization::destroy($id);
+		UsersOrganization::destroy($id);
 
-		return Redirect::route('employees.usersorganizations.index');
+		return Redirect::route('employees.pds.usersOrganizations.index');
 	}
 
 }
