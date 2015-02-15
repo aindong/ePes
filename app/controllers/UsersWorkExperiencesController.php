@@ -10,7 +10,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$usersworkexperiences = UsersWorkexpErience::where('employee_no', '=', $employee_no)->get();
+		$usersworkexperiences = UsersWorkExperience::where('employee_no', '=', $employee_no)->get();
 
 		return View::make('employees.usersWorkExperiences.index', compact('usersworkexperiences'));
 	}
@@ -32,7 +32,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), UsersWorkexpErience::$rules);
+		$validator = Validator::make($data = Input::all(), UsersWorkExperience::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,7 +41,7 @@ class UsersWorkExperiencesController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		UsersWorkexpErience::create($data);
+		UsersWorkExperience::create($data);
 
 		return Redirect::route('employees.pds.work-experiences.index');
 	}
@@ -54,7 +54,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$usersworkexperience = UsersWorkexpErience::findOrFail($id);
+		$usersworkexperience = UsersWorkExperience::findOrFail($id);
 
 		return View::make('employees.usersWorkExperiences.show', compact('usersworkexperience'));
 	}
@@ -67,7 +67,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$usersworkexperience = UsersWorkexpErience::find($id);
+		$usersworkexperience = UsersWorkExperience::find($id);
 
 		return View::make('employees.usersWorkExperiences.edit', compact('usersworkexperience'));
 	}
@@ -80,9 +80,9 @@ class UsersWorkExperiencesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$usersworkexperience = UsersWorkexpErience::findOrFail($id);
+		$usersworkexperience = UsersWorkExperience::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), UsersWorkexpErience::$rules);
+		$validator = Validator::make($data = Input::all(), UsersWorkExperience::$rules);
 
 		if ($validator->fails())
 		{
@@ -102,7 +102,7 @@ class UsersWorkExperiencesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		UsersWorkexpErience::destroy($id);
+		UsersWorkExperience::destroy($id);
 
 		return Redirect::route('employees.pds.work-experiences.index');
 	}
