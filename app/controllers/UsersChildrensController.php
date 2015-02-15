@@ -9,9 +9,10 @@ class UsersChildrensController extends \BaseController {
 	 */
 	public function index()
 	{
-		$userschildrens = Userschildren::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$userschildrens = Userschildren::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('userschildrens.index', compact('userschildrens'));
+		return View::make('employees.userschildrens.index', compact('userschildrens'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class UsersChildrensController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('userschildrens.create');
+		return View::make('employees.userschildrens.create');
 	}
 
 	/**
@@ -37,10 +38,12 @@ class UsersChildrensController extends \BaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
+		
+		$data['employee_no'] = Auth::getUser()->employee_no;
+		
 		Userschildren::create($data);
 
-		return Redirect::route('userschildrens.index');
+		return Redirect::route('employees.userschildrens.index');
 	}
 
 	/**
@@ -53,7 +56,7 @@ class UsersChildrensController extends \BaseController {
 	{
 		$userschildren = Userschildren::findOrFail($id);
 
-		return View::make('userschildrens.show', compact('userschildren'));
+		return View::make('employees.userschildrens.show', compact('userschildren'));
 	}
 
 	/**
@@ -66,7 +69,7 @@ class UsersChildrensController extends \BaseController {
 	{
 		$userschildren = Userschildren::find($id);
 
-		return View::make('userschildrens.edit', compact('userschildren'));
+		return View::make('employees.userschildrens.edit', compact('userschildren'));
 	}
 
 	/**
@@ -88,7 +91,7 @@ class UsersChildrensController extends \BaseController {
 
 		$userschildren->update($data);
 
-		return Redirect::route('userschildrens.index');
+		return Redirect::route('employees.userschildrens.index');
 	}
 
 	/**
@@ -101,7 +104,7 @@ class UsersChildrensController extends \BaseController {
 	{
 		Userschildren::destroy($id);
 
-		return Redirect::route('userschildrens.index');
+		return Redirect::route('employees.userschildrens.index');
 	}
 
 }

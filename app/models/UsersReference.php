@@ -13,12 +13,14 @@ class UsersReference extends \Eloquent {
 	 */
 	protected $dates = ['deleted_at'];
 
+	protected $table = 'usersreferences';
+
 	// Add your validation rules here
 	public static $rules = [
 		// 'title' => 'required'
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $guarded = [];
 
 }

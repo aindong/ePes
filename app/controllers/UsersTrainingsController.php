@@ -9,7 +9,8 @@ class UsersTrainingsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$userstrainings = Userstraining::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$userstrainings = Userstraining::where('employee_no', '=', $employee_no)->get();
 
 		return View::make('userstrainings.index', compact('userstrainings'));
 	}
@@ -37,6 +38,8 @@ class UsersTrainingsController extends \BaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
+
+		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		Userstraining::create($data);
 

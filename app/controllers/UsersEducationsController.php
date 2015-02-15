@@ -39,6 +39,8 @@ class UsersEducationsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$data['employee_no'] = Auth::getUser()->employee_no;
+
 		Userseducation::create($data);
 
 		return Redirect::route('employees.pds.educations.index');

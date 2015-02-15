@@ -39,6 +39,8 @@ class UsersWorkExperiencesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$data['employee_no'] = Auth::getUser()->employee_no;
+
 		Usersworkexperience::create($data);
 
 		return Redirect::route('employees.usersworkexperiences.index');

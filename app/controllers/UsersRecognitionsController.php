@@ -12,7 +12,7 @@ class UsersRecognitionsController extends \BaseController {
 		$employee_no = Auth::getUser()->employee_no;
 		$usersrecognitions = Usersrecognition::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('usersrecognitions.index', compact('usersrecognitions'));
+		return View::make('employees.usersrecognitions.index', compact('usersrecognitions'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersRecognitionsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('usersrecognitions.create');
+		return View::make('employees.usersrecognitions.create');
 	}
 
 	/**
@@ -39,9 +39,11 @@ class UsersRecognitionsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$data['employee_no'] = Auth::getUser()->employee_no;
+
 		Usersrecognition::create($data);
 
-		return Redirect::route('usersrecognitions.index');
+		return Redirect::route('employees.usersrecognitions.index');
 	}
 
 	/**
@@ -54,7 +56,7 @@ class UsersRecognitionsController extends \BaseController {
 	{
 		$usersrecognition = Usersrecognition::findOrFail($id);
 
-		return View::make('usersrecognitions.show', compact('usersrecognition'));
+		return View::make('employees.usersrecognitions.show', compact('usersrecognition'));
 	}
 
 	/**
@@ -67,7 +69,7 @@ class UsersRecognitionsController extends \BaseController {
 	{
 		$usersrecognition = Usersrecognition::find($id);
 
-		return View::make('usersrecognitions.edit', compact('usersrecognition'));
+		return View::make('employees.usersrecognitions.edit', compact('usersrecognition'));
 	}
 
 	/**
@@ -89,7 +91,7 @@ class UsersRecognitionsController extends \BaseController {
 
 		$usersrecognition->update($data);
 
-		return Redirect::route('usersrecognitions.index');
+		return Redirect::route('employees.usersrecognitions.index');
 	}
 
 	/**
@@ -102,7 +104,7 @@ class UsersRecognitionsController extends \BaseController {
 	{
 		Usersrecognition::destroy($id);
 
-		return Redirect::route('usersrecognitions.index');
+		return Redirect::route('employees.usersrecognitions.index');
 	}
 
 }

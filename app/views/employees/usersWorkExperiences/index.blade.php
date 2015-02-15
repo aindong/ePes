@@ -20,13 +20,13 @@
         @foreach($usersworkexperiences as $usersworkexperience)
             <tr>
                 <td>{{ $usersworkexperience->position }}</td>
-                <td>{{ $usersworkexperience->usersworkexperience }}</td>
+                <td>{{ $usersworkexperience->department }}</td>
                 <td>{{ $usersworkexperience->salary }}</td>
                 <td>{{ $usersworkexperience->salarygrade }}</td>
                 <td>{{ $usersworkexperience->statusappointment }}</td>
                 <td>{{ $usersworkexperience->govermentservice }}</td>
-                <td>{{ $usersworkexperience->datefrom }}</td>
-                <td>{{ $usersworkexperience->dateto }}</td>
+                <td>{{ date('M d Y', strtotime($usersworkexperience->datefrom)) }}</td>
+                <td>{{ date('M d Y', strtotime($usersworkexperience->dateto)) }}</td>
                 <td>
                     <a href="/admin/work-experiences/{{ $usersworkexperience->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usersworkexperience->id }}">Delete</a>

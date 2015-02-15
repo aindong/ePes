@@ -9,9 +9,10 @@ class UsersReferencesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersreferences = Usersreference::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$usersreferences = Usersreference::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('usersreferences.index', compact('usersreferences'));
+		return View::make('employees.usersreferences.index', compact('usersreferences'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class UsersReferencesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('usersreferences.create');
+		return View::make('employees.usersreferences.create');
 	}
 
 	/**
@@ -38,9 +39,11 @@ class UsersReferencesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$data['employee_no'] = Auth::getUser()->employee_no;
+
 		Usersreference::create($data);
 
-		return Redirect::route('usersreferences.index');
+		return Redirect::route('employees.usersreferences.index');
 	}
 
 	/**
@@ -53,7 +56,7 @@ class UsersReferencesController extends \BaseController {
 	{
 		$usersreference = Usersreference::findOrFail($id);
 
-		return View::make('usersreferences.show', compact('usersreference'));
+		return View::make('employees.usersreferences.show', compact('usersreference'));
 	}
 
 	/**
@@ -66,7 +69,7 @@ class UsersReferencesController extends \BaseController {
 	{
 		$usersreference = Usersreference::find($id);
 
-		return View::make('usersreferences.edit', compact('usersreference'));
+		return View::make('employees.usersreferences.edit', compact('usersreference'));
 	}
 
 	/**
@@ -88,7 +91,7 @@ class UsersReferencesController extends \BaseController {
 
 		$usersreference->update($data);
 
-		return Redirect::route('usersreferences.index');
+		return Redirect::route('employees.usersreferences.index');
 	}
 
 	/**
@@ -101,7 +104,7 @@ class UsersReferencesController extends \BaseController {
 	{
 		Usersreference::destroy($id);
 
-		return Redirect::route('usersreferences.index');
+		return Redirect::route('employees.usersreferences.index');
 	}
 
 }

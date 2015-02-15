@@ -9,7 +9,8 @@ class UsersQuestionairesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersquestionaires = Usersquestionaire::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$usersquestionaires = Usersquestionaire::where('employee_no', '=', $employee_no)->get();
 
 		return View::make('usersquestionaires.index', compact('usersquestionaires'));
 	}
@@ -37,6 +38,8 @@ class UsersQuestionairesController extends \BaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
+
+		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		Usersquestionaire::create($data);
 

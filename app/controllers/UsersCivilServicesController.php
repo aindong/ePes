@@ -39,6 +39,8 @@ class UsersCivilServicesController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$data['employee_no'] = Auth::getUser()->employee_no;
+		
 		Userscivilservice::create($data);
 
 		return Redirect::route('employees.pds.civil-services.index');

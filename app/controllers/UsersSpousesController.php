@@ -9,7 +9,8 @@ class UsersSpousesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersspouses = Usersspous::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$usersspouses = Usersspous::where('employee_no', '=', $employee_no)->get();
 
 		return View::make('usersspouses.index', compact('usersspouses'));
 	}
@@ -37,6 +38,8 @@ class UsersSpousesController extends \BaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
+
+		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		Usersspous::create($data);
 

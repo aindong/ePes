@@ -19,10 +19,10 @@
             <tr>
                 <td>{{ $civilservice->careerservice }}</td>
                 <td>{{ $civilservice->rating }}</td>
-                <td>{{ $civilservice->examinationdate }}</td>
+                <td>{{ date('M d Y', strtotime($civilservice->examinationdate)) }}</td>
                 <td>{{ $civilservice->examinationplace }}</td>
                 <td>{{ $civilservice->licensenumber }}</td>
-                <td>{{ $civilservice->licensereleasedate }}</td>
+                <td>{{ date('M d Y', strtotime($civilservice->licensereleasedate)) }}</td>
                 <td>
                     <a href="/admin/departments/{{ $civilservice->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $civilservice->id }}">Delete</a>

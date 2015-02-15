@@ -39,6 +39,8 @@ class UsersVoluntaryWorksController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$data['employee_no'] = Auth::getUser()->employee_no;
+
 		Usersvoluntarywork::create($data);
 
 		return Redirect::route('employees.pds.voluntary-works.index');

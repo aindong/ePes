@@ -17,8 +17,8 @@
         @foreach($voluntaryworks as $voluntarywork)
             <tr>
                 <td>{{ $voluntarywork->organization }}</td>
-                <td>{{ $voluntarywork->datefrom }}</td>
-                <td>{{ $voluntarywork->dateto }}</td>
+                <td>{{ date('M d Y', strtotime($voluntarywork->datefrom)) }}</td>
+                <td>{{ date('M d Y', strtotime($voluntarywork->dateto)) }}</td>
                 <td>{{ $voluntarywork->numberofhours }}</td>
                 <td>{{ $voluntarywork->position }}</td>
                 <td>

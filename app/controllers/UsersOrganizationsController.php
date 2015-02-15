@@ -9,9 +9,10 @@ class UsersOrganizationsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersorganizations = Usersorganization::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$usersorganizations = Usersorganization::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('usersorganizations.index', compact('usersorganizations'));
+		return View::make('employees.usersorganizations.index', compact('usersorganizations'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class UsersOrganizationsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('usersorganizations.create');
+		return View::make('employees.usersorganizations.create');
 	}
 
 	/**
@@ -38,9 +39,11 @@ class UsersOrganizationsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$data['employee_no'] = Auth::getUser()->employee_no;
+
 		Usersorganization::create($data);
 
-		return Redirect::route('usersorganizations.index');
+		return Redirect::route('employees.usersorganizations.index');
 	}
 
 	/**
@@ -53,7 +56,7 @@ class UsersOrganizationsController extends \BaseController {
 	{
 		$usersorganization = Usersorganization::findOrFail($id);
 
-		return View::make('usersorganizations.show', compact('usersorganization'));
+		return View::make('employees.usersorganizations.show', compact('usersorganization'));
 	}
 
 	/**
@@ -66,7 +69,7 @@ class UsersOrganizationsController extends \BaseController {
 	{
 		$usersorganization = Usersorganization::find($id);
 
-		return View::make('usersorganizations.edit', compact('usersorganization'));
+		return View::make('employees.usersorganizations.edit', compact('usersorganization'));
 	}
 
 	/**
@@ -88,7 +91,7 @@ class UsersOrganizationsController extends \BaseController {
 
 		$usersorganization->update($data);
 
-		return Redirect::route('usersorganizations.index');
+		return Redirect::route('employees.usersorganizations.index');
 	}
 
 	/**
@@ -101,7 +104,7 @@ class UsersOrganizationsController extends \BaseController {
 	{
 		Usersorganization::destroy($id);
 
-		return Redirect::route('usersorganizations.index');
+		return Redirect::route('employees.usersorganizations.index');
 	}
 
 }

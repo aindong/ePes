@@ -9,9 +9,10 @@ class UsersAccomplishmentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersaccomplishments = Usersaccomplishment::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$usersaccomplishments = Usersaccomplishment::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('usersaccomplishments.index', compact('usersaccomplishments'));
+		return View::make('employees.usersaccomplishments.index', compact('usersaccomplishments'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('usersaccomplishments.create');
+		return View::make('employees.usersaccomplishments.create');
 	}
 
 	/**
@@ -38,9 +39,11 @@ class UsersAccomplishmentsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		$data['employee_no'] = Auth::getUser()->employee_no;
+
 		Usersaccomplishment::create($data);
 
-		return Redirect::route('usersaccomplishments.index');
+		return Redirect::route('employees.accomplishments.index');
 	}
 
 	/**
@@ -53,7 +56,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	{
 		$usersaccomplishment = Usersaccomplishment::findOrFail($id);
 
-		return View::make('usersaccomplishments.show', compact('usersaccomplishment'));
+		return View::make('employees.usersaccomplishments.show', compact('usersaccomplishment'));
 	}
 
 	/**
@@ -66,7 +69,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	{
 		$usersaccomplishment = Usersaccomplishment::find($id);
 
-		return View::make('usersaccomplishments.edit', compact('usersaccomplishment'));
+		return View::make('employees.usersaccomplishments.edit', compact('usersaccomplishment'));
 	}
 
 	/**
@@ -88,7 +91,7 @@ class UsersAccomplishmentsController extends \BaseController {
 
 		$usersaccomplishment->update($data);
 
-		return Redirect::route('usersaccomplishments.index');
+		return Redirect::route('employees.accomplishments.index');
 	}
 
 	/**
@@ -101,7 +104,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	{
 		Usersaccomplishment::destroy($id);
 
-		return Redirect::route('usersaccomplishments.index');
+		return Redirect::route('employees.accomplishments.index');
 	}
 
 }

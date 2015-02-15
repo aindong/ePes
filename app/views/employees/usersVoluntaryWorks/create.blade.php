@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    {{ Form::open(['route' => 'employees.pds.voluntary-works.store', 'method' => 'put']) }}
+    {{ Form::open(['route' => 'employees.pds.voluntary-works.store', 'method' => 'post']) }}
     @include('employees.usersVoluntaryWorks.form')
     {{ Form::close() }}
 @stop

@@ -13,12 +13,14 @@ class UsersHobby extends \Eloquent {
 	 */
 	protected $dates = ['deleted_at'];
 
+	protected $table = 'usershobbies';
+
 	// Add your validation rules here
 	public static $rules = [
 		// 'title' => 'required'
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $guarded = [];
 
 }

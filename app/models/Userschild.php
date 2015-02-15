@@ -13,6 +13,8 @@ class Userschild extends \Eloquent {
 	 */
 	protected $dates = ['deleted_at'];
 
+	protected $table = 'userschildrens';
+
 	// Add your validation rules here
 	public static $rules = [
 		// 'title' => 'required'

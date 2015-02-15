@@ -40,13 +40,13 @@
 </div>
 
 <div class="form-group col-md-12">
-    {{ Form::label('attendancefrom', 'Attendance from', ['class' => 'form-label']) }}
-    {{ Form::text('attendancefrom', null, ['class' => 'form-control', 'placeholder' => 'Attendance From']) }}
+    {{ Form::label('attendancefrom', 'Attendance From *', ['class' => 'form-label']) }}
+    {{ Form::text('attendancefrom', null, ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}
 </div>
 
 <div class="form-group col-md-12">
-    {{ Form::label('attendanceto', 'Attendance to', ['class' => 'form-label']) }}
-    {{ Form::text('attendanceto', null, ['class' => 'form-control', 'placeholder' => 'Attendance Toss']) }}
+    {{ Form::label('attendanceto', 'Attendance To *', ['class' => 'form-label']) }}
+    {{ Form::text('attendanceto', null, ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}
 </div>
 
 <div class="form-group col-md-12">
@@ -56,3 +56,14 @@
 
 <a href="/employees/pds/educations" class="btn btn-danger">Back</a>
 <button type="submit" class="btn btn-primary">Submit</button>
+
+@section('page-script')
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "yyyy-mm-dd - hh:ii:ss",
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+</script>
+@stop

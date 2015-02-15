@@ -24,8 +24,8 @@
                 <td>{{ $education->degreecourse }}</td>
                 <td>{{ $education->yeargraduated }}</td>
                 <td>{{ $education->units }}</td>
-                <td>{{ $education->attendancefrom }}</td>
-                <td>{{ $education->attendanceto }}</td>
+                <td>{{ date('M d Y', strtotime($education->attendancefrom)) }}</td>
+                <td>{{ date('M d Y', strtotime($education->attendanceto)) }}</td>
                 <td>{{ $education->awards }}</td>
                 <td>
                     <a href="/admin/educations/{{ $education->id }}/edit" class="btn btn-warning">Update</a>
