@@ -11,9 +11,9 @@ class UsersBiosController extends \BaseController {
 	{
 		$usersbio = UsersBio::where('employee_no', '=', Auth::getUser()->employee_no)->first();
 		if (!is_null($usersbio)) {
-			return View::make('employees.usersbios.edit', compact('usersbio'));
+			return View::make('employees.usersBios.edit', compact('usersbio'));
 		} else {
-			return View::make('employees.usersbios.create');
+			return View::make('employees.usersBios.create');
 		}
 	}
 
@@ -24,7 +24,7 @@ class UsersBiosController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.usersbios.create');
+		return View::make('employees.usersBios.create');
 	}
 
 	/**
@@ -43,7 +43,7 @@ class UsersBiosController extends \BaseController {
 
 		UsersBio::create($data);
 
-		return Redirect::route('employees.pds.usersbios.index');
+		return Redirect::route('employees.pds.bios.index');
 	}
 
 	/**
@@ -56,7 +56,7 @@ class UsersBiosController extends \BaseController {
 	{
 		$usersbio = UsersBio::findOrFail($id);
 
-		return View::make('employees.usersbios.show', compact('usersbio'));
+		return View::make('employees.usersBios.show', compact('usersbio'));
 	}
 
 	/**
@@ -69,7 +69,7 @@ class UsersBiosController extends \BaseController {
 	{
 		$usersbio = UsersBio::find($id);
 
-		return View::make('employees.usersbios.edit', compact('usersbio'));
+		return View::make('employees.usersBios.edit', compact('usersbio'));
 	}
 
 	/**
@@ -91,7 +91,7 @@ class UsersBiosController extends \BaseController {
 
 		$usersbio->update($data);
 
-		return Redirect::route('employees.pds.usersbios.index');
+		return Redirect::route('employees.pds.bios.index');
 	}
 
 	/**
@@ -104,7 +104,7 @@ class UsersBiosController extends \BaseController {
 	{
 		UsersBio::destroy($id);
 
-		return Redirect::route('employees.pds.usersbios.index');
+		return Redirect::route('employees.pds.bios.index');
 	}
 
 }
