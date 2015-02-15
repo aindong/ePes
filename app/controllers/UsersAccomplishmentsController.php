@@ -22,7 +22,7 @@ class UsersAccomplishmentsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.usersaccomplishments.create');
+		return View::make('employees.usersAccomplishments.create');
 	}
 
 	/**
