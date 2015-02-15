@@ -12,7 +12,7 @@ class UsersCivilServicesController extends \BaseController {
 		$employee_no = Auth::getUser()->employee_no;
 		$civilservices = UsersCivilService::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('employees.userscivilservices.index', compact('civilservices'));
+		return View::make('employees.usersCivilServices.index', compact('civilservices'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersCivilServicesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.userscivilservices.create');
+		return View::make('employees.usersCivilServices.create');
 	}
 
 	/**
@@ -56,7 +56,7 @@ class UsersCivilServicesController extends \BaseController {
 	{
 		$userscivilservice = UsersCivilService::findOrFail($id);
 
-		return View::make('employees.userscivilservices.show', compact('userscivilservice'));
+		return View::make('employees.usersCivilServices.show', compact('userscivilservice'));
 	}
 
 	/**
@@ -69,7 +69,7 @@ class UsersCivilServicesController extends \BaseController {
 	{
 		$userscivilservice = UsersCivilService::find($id);
 
-		return View::make('employees.userscivilservices.edit', compact('userscivilservice'));
+		return View::make('employees.usersCivilServices.edit', compact('userscivilservice'));
 	}
 
 	/**
