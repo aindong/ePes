@@ -2,7 +2,7 @@
 
 @section('content')
     {{ Form::model($usersworkexperience, ['route' => ['employees.pds.work-experiences.update', $usersworkexperience->id], 'method' => 'put']) }}
-        @include('employees.usersworkexperiences.form')
+        @include('employees.usersWorkExperiences.form')
     {{ Form::close() }}
 @stop
 

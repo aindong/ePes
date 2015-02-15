@@ -2,7 +2,7 @@
 
 @section('content')
     {{ Form::open(['route' => 'employees.pds.work-experiences.store', 'method' => 'post']) }}
-        @include('employees.usersworkexperiences.form')
+        @include('employees.usersWorkExperiences.form')
     {{ Form::close() }}
 @stop
 
