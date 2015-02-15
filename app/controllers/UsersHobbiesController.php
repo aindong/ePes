@@ -10,9 +10,9 @@ class UsersHobbiesController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$usershobbies = Usershobby::where('employee_no', '=', $employee_no)->get();
+		$usershobbies = UsersHobby::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('employees.usershobbies.index', compact('usershobbies'));
+		return View::make('employees.usersHobbies.index', compact('usershobbies'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersHobbiesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('employees.usershobbies.create');
+		return View::make('employees.usersHobbies.create');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class UsersHobbiesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Usershobby::$rules);
+		$validator = Validator::make($data = Input::all(), UsersHobby::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,9 +41,9 @@ class UsersHobbiesController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		Usershobby::create($data);
+		UsersHobby::create($data);
 
-		return Redirect::route('employees.usershobbies.index');
+		return Redirect::route('employees.pds.hobbies.index');
 	}
 
 	/**
@@ -54,9 +54,9 @@ class UsersHobbiesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$usershobby = Usershobby::findOrFail($id);
+		$usershobby = UsersHobby::findOrFail($id);
 
-		return View::make('employees.usershobbies.show', compact('usershobby'));
+		return View::make('employees.usersHobbies.show', compact('usershobby'));
 	}
 
 	/**
@@ -67,9 +67,9 @@ class UsersHobbiesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$usershobby = Usershobby::find($id);
+		$usershobby = UsersHobby::find($id);
 
-		return View::make('employees.usershobbies.edit', compact('usershobby'));
+		return View::make('employees.usersHobbies.edit', compact('usershobby'));
 	}
 
 	/**
@@ -80,9 +80,9 @@ class UsersHobbiesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$usershobby = Usershobby::findOrFail($id);
+		$usershobby = UsersHobby::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Usershobby::$rules);
+		$validator = Validator::make($data = Input::all(), UsersHobby::$rules);
 
 		if ($validator->fails())
 		{
@@ -91,7 +91,7 @@ class UsersHobbiesController extends \BaseController {
 
 		$usershobby->update($data);
 
-		return Redirect::route('employees.usershobbies.index');
+		return Redirect::route('employees.pds.hobbies.index');
 	}
 
 	/**
@@ -102,9 +102,9 @@ class UsersHobbiesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Usershobby::destroy($id);
+		UsersHobby::destroy($id);
 
-		return Redirect::route('employees.usershobbies.index');
+		return Redirect::route('employees.pds.hobbies.index');
 	}
 
 }

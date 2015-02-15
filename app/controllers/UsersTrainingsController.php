@@ -10,9 +10,9 @@ class UsersTrainingsController extends \BaseController {
 	public function index()
 	{
 		$employee_no = Auth::getUser()->employee_no;
-		$userstrainings = Userstraining::where('employee_no', '=', $employee_no)->get();
+		$userstrainings = UsersTraining::where('employee_no', '=', $employee_no)->get();
 
-		return View::make('userstrainings.index', compact('userstrainings'));
+		return View::make('employees.usersTrainings.index', compact('userstrainings'));
 	}
 
 	/**
@@ -22,7 +22,7 @@ class UsersTrainingsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('userstrainings.create');
+		return View::make('employees.usersTrainings.create');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class UsersTrainingsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Userstraining::$rules);
+		$validator = Validator::make($data = Input::all(), UsersTraining::$rules);
 
 		if ($validator->fails())
 		{
@@ -41,9 +41,9 @@ class UsersTrainingsController extends \BaseController {
 
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
-		Userstraining::create($data);
+		UsersTraining::create($data);
 
-		return Redirect::route('userstrainings.index');
+		return Redirect::route('employees.pds.trainings.index');
 	}
 
 	/**
@@ -54,9 +54,9 @@ class UsersTrainingsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$userstraining = Userstraining::findOrFail($id);
+		$userstraining = UsersTraining::findOrFail($id);
 
-		return View::make('userstrainings.show', compact('userstraining'));
+		return View::make('employees.usersTrainings.show', compact('userstraining'));
 	}
 
 	/**
@@ -67,9 +67,9 @@ class UsersTrainingsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$userstraining = Userstraining::find($id);
+		$userstraining = UsersTraining::find($id);
 
-		return View::make('userstrainings.edit', compact('userstraining'));
+		return View::make('employees.usersTrainings.edit', compact('userstraining'));
 	}
 
 	/**
@@ -80,9 +80,9 @@ class UsersTrainingsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$userstraining = Userstraining::findOrFail($id);
+		$userstraining = UsersTraining::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Userstraining::$rules);
+		$validator = Validator::make($data = Input::all(), UsersTraining::$rules);
 
 		if ($validator->fails())
 		{
@@ -91,7 +91,7 @@ class UsersTrainingsController extends \BaseController {
 
 		$userstraining->update($data);
 
-		return Redirect::route('userstrainings.index');
+		return Redirect::route('employees.pds.trainings.index');
 	}
 
 	/**
@@ -102,9 +102,9 @@ class UsersTrainingsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Userstraining::destroy($id);
+		UsersTraining::destroy($id);
 
-		return Redirect::route('userstrainings.index');
+		return Redirect::route('employees.pds.trainings.index');
 	}
 
 }
