@@ -9,7 +9,8 @@ class UsersRecognitionsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersrecognitions = Usersrecognition::all();
+		$employee_no = Auth::getUser()->employee_no;
+		$usersrecognitions = Usersrecognition::where('employee_no', '=', $employee_no)->get();
 
 		return View::make('usersrecognitions.index', compact('usersrecognitions'));
 	}
