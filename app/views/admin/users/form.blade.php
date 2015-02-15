@@ -20,7 +20,7 @@
 </div>
 
 <div class="form-group">
-    {{ Form::label('position', 'Role *', ['class' => 'form-label']) }}
+    {{ Form::label('position', 'Position *', ['class' => 'form-label']) }}
     {{ Form::select('position', ['sample position', 'sample position 2'], null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
