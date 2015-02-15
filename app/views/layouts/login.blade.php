@@ -180,7 +180,7 @@ body{
 			<legend>User Authentication</legend>
 			<input type="text" placeholder="username" name="employee_no" class="form-control"><br>
 			<input type="password" placeholder="password" name="password" class="form-control"><br>
-			<input type="submit" class="btn btn-primary" value="Login">
+			<input type="submit" class="btn btn-primary" value="Submit">
 			<button class="btn btn-default showRegister" type="button">Register</button>
 		</div>
 		{{ Form::close() }}
@@ -190,7 +190,7 @@ body{
 		  <legend>Registration</legend>
 		  <input type="text" placeholder="username" name="employee_no" class="form-control" required="required"><br>
 		  <input type="password" placeholder="password" name="password" class="form-control" required="required"><br>
-		  <input type="submit" class="btn btn-primary" value="Register" class="form-control">
+		  <input type="submit" class="btn btn-primary" value="Submit" class="form-control">
 		  <button class="btn btn-default showLogin" type="button">Login</button>
 	  </div>
 	  {{ Form::close() }}
