@@ -12,7 +12,7 @@ class CreateUsersReferencesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('usersReferences', function(Blueprint $table)
+		Schema::create('usersreferences', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('employee_no');

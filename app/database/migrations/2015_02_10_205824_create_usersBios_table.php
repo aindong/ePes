@@ -12,7 +12,7 @@ class CreateUsersBiosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('usersBios', function(Blueprint $table)
+		Schema::create('usersbios', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('employee_no');

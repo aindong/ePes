@@ -12,7 +12,7 @@ class CreateUsersSpousesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('usersSpouses', function(Blueprint $table)
+		Schema::create('usersspouses', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('employee_no');

@@ -12,7 +12,7 @@ class CreateUsersChildrensTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('usersChildrens', function(Blueprint $table)
+		Schema::create('userschildrens', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('employee_no');

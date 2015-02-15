@@ -12,7 +12,7 @@ class CreateUsersOrganizationsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('usersOrganizations', function(Blueprint $table)
+		Schema::create('usersorganizations', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('employee_no');
