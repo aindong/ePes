@@ -2,7 +2,7 @@
 
 @section('content')
     {{ Form::model($usersaccomplishment, ['route' => ['employees.accomplishments.update', $usersaccomplishment->id], 'method' => 'put']) }}
-        @include('employees.usersaccomplishments.form')
+        @include('employees.usersAccomplishments.form')
     {{ Form::close() }}
 @stop
 

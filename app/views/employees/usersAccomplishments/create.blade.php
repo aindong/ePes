@@ -2,7 +2,7 @@
 
 @section('content')
     {{ Form::open(['route' => 'employees.accomplishments.store', 'method' => 'post']) }}
-        @include('employees.usersaccomplishments.form')
+        @include('employees.usersAccomplishments.form')
     {{ Form::close() }}
 @stop
 
