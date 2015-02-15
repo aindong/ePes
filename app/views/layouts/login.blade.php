@@ -175,15 +175,47 @@ body{
 			<div class="logo"><img src="/images/logo.png"></div>
 		</div>
 		<br>
-  		{{ Form::open(['url' => '/login', 'method' => 'post']) }}
+  		{{ Form::open(['url' => '/login', 'method' => 'post', 'class' => 'loginForm']) }}
 		<div class="login">
 			<input type="text" placeholder="username" name="employee_no" class="form-control"><br>
 			<input type="password" placeholder="password" name="password" class="form-control"><br>
-			<input type="submit" class="btn btn-primary" value="Login" class="form-control">
+			<input type="submit" class="btn btn-primary" value="Login">
+			<button class="btn btn-default showRegister">Register</button>
 		</div>
 		{{ Form::close() }}
 
+	  {{ Form::open(['url' => '/register', 'method' => 'post', 'class' => 'registerForm']) }}
+	  <div class="login">
+		  <input type="text" placeholder="username" name="employee_no" class="form-control" required="required"><br>
+		  <input type="password" placeholder="password" name="password" class="form-control" required="required"><br>
+		  <input type="submit" class="btn btn-primary" value="Register" class="form-control">
+		  <button class="btn btn-default showLogin">Login</button>
+	  </div>
+	  {{ Form::close() }}
+
   <script src='/js/jquery.js'></script>
+
+  <script>
+	  $(function() {
+		  var registerForm = $('.registerForm'),
+			  loginForm	   = $('.loginForm'),
+			  showLogin    = $('.showLogin'),
+			  showRegister = $('.showRegister');
+
+
+		  registerForm.hide();
+
+		  showLogin.on('click', function(e) {
+			  registerForm.fadeOut();
+			  loginForm.fadeIn();
+		  });
+
+		  showRegister.on('click', function(e) {
+			  loginForm.fadeOut();
+			  registerForm.fadeIn();
+		  });
+	  });
+  </script>
 
 </body>
 

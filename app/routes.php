@@ -19,6 +19,7 @@ Route::get('/', function()
 // Login page
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::post('/login', ['as' => 'home.login', 'uses' => 'SessionsController@login']);
+Route::post('/register', ['as' => 'home.register', 'uses' => 'SessionsController@register']);
 Route::get('/logout', ['as' => 'home.logout', 'uses' => 'SessionsController@logout']);
 
 // Admin controllers

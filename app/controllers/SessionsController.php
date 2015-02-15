@@ -43,6 +43,29 @@ class SessionsController extends \BaseController {
 		return Redirect::back();
 	}
 
+	public function register()
+	{
+		$data = Input::all();
+
+		$user = User::where('employee_no', '=', $data['employee_no'])->first();
+
+		if (is_null($user)) {
+			Session::flash('error', 'Sorry but we cant find that employee number on our database');
+			return Redirect::back()->withInput();
+		}
+
+		$user->password = $data['password'];
+		$user->save();
+
+		// Roles distinction
+		if ($user->role->name == 'admin') {
+			return Redirect::to('/admin');
+		} else if ($user->role->name == 'employee') {
+			return Redirect::to('/employees');
+		} else if ($user->role->name == 'department head' || $user->role->name == 'supervisor') {
+			return Redirect::to('/supervisors');
+		}
+	}
 
 	/**
 	 * Logout an authenticated user
