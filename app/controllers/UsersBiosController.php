@@ -9,7 +9,7 @@ class UsersBiosController extends \BaseController {
 	 */
 	public function index()
 	{
-		$usersbio = Usersbio::where('employee_no', '=', Auth::getUser()->employee_no)->first();
+		$usersbio = UsersBio::where('employee_no', '=', Auth::getUser()->employee_no)->first();
 		if (!is_null($usersbio)) {
 			return View::make('employees.usersbios.edit', compact('usersbio'));
 		} else {
@@ -34,14 +34,14 @@ class UsersBiosController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Usersbio::$rules);
+		$validator = Validator::make($data = Input::all(), UsersBio::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Usersbio::create($data);
+		UsersBio::create($data);
 
 		return Redirect::route('employees.pds.usersbios.index');
 	}
@@ -54,7 +54,7 @@ class UsersBiosController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$usersbio = Usersbio::findOrFail($id);
+		$usersbio = UsersBio::findOrFail($id);
 
 		return View::make('employees.usersbios.show', compact('usersbio'));
 	}
@@ -67,7 +67,7 @@ class UsersBiosController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$usersbio = Usersbio::find($id);
+		$usersbio = UsersBio::find($id);
 
 		return View::make('employees.usersbios.edit', compact('usersbio'));
 	}
@@ -80,9 +80,9 @@ class UsersBiosController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$usersbio = Usersbio::findOrFail($id);
+		$usersbio = UsersBio::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Usersbio::$rules);
+		$validator = Validator::make($data = Input::all(), UsersBio::$rules);
 
 		if ($validator->fails())
 		{
@@ -102,7 +102,7 @@ class UsersBiosController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Usersbio::destroy($id);
+		UsersBio::destroy($id);
 
 		return Redirect::route('employees.pds.usersbios.index');
 	}
