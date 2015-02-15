@@ -2,7 +2,7 @@
 
 @section('content')
     {{ Form::model($usersrecognition, ['route' => ['employees.pds.recognitions.update', $usersrecognition->id], 'method' => 'put']) }}
-        @include('employees.usersrecognitions.form')
+        @include('employees.usersRecognitions.form')
     {{ Form::close() }}
 @stop
 
