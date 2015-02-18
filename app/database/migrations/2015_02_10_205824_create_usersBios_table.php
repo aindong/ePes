@@ -41,6 +41,12 @@ class CreateUsersBiosTable extends Migration {
 			$table->string('tin', 60);
 			$table->string('fathername', 60);
 			$table->string('mothername', 60);
+            $table->string('spousefirstname', 60);
+            $table->string('spouselastname', 60);
+            $table->string('spousemiddlename', 60);
+            $table->string('spouseoccupation', 160);
+            $table->string('spouseemployername', 160);
+            $table->string('spousetelno', 10);
 			$table->string('image', 60);
 			$table->softDeletes();
 			$table->timestamps();

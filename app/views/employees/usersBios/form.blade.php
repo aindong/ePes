@@ -145,6 +145,36 @@
         {{ Form::label('mothername', 'Mother Name *', ['class' => 'form-label']) }}
         {{ Form::text('mothername', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Mother name']) }}
     </div>
+
+    <div class="form-group col-md-5">
+        {{ Form::label('spousefirstname', 'Spouse First Name*', ['class' => 'form-label']) }}
+        {{ Form::text('spousefirstname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Spouse First name']) }}
+    </div>
+
+    <div class="form-group col-md-5">
+        {{ Form::label('spouselastname', 'Spouse Last Name*', ['class' => 'form-label']) }}
+        {{ Form::text('spouselastname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Spouse Last name']) }}
+    </div>
+
+    <div class="form-group col-md-2">
+        {{ Form::label('spousemiddlename', 'Spouse Middle Name*', ['class' => 'form-label']) }}
+        {{ Form::text('spousemiddlename', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Spouse Middle name']) }}
+    </div>
+
+    <div class="form-group col-md-6">
+        {{ Form::label('spouseoccupation', 'Spouse Occupation *', ['class' => 'form-label']) }}
+        {{ Form::text('spouseoccupation', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Spouse Occupation']) }}
+    </div>
+
+    <div class="form-group col-md-6">
+        {{ Form::label('spouseemployername', 'Spouse Employer Name *', ['class' => 'form-label']) }}
+        {{ Form::text('spouseemployername', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Spouse Employer Name']) }}
+    </div>
+
+    <div class="form-group col-md-12">
+        {{ Form::label('spousetelno', 'Spouse Telephone Number *', ['class' => 'form-label']) }}
+        {{ Form::text('spousetelno', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Spouse Telephone Number']) }}
+    </div>
 </div>
 
 <a href="/employees/pds/bios" class="btn btn-danger">Back</a>
