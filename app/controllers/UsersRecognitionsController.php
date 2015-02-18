@@ -43,7 +43,7 @@ class UsersRecognitionsController extends \BaseController {
 
 		UsersRecognition::create($data);
 
-		return Redirect::route('employees.pds.usersRecognitions.index');
+		return Redirect::route('employees.pds.recognitions.index');
 	}
 
 	/**
@@ -91,7 +91,7 @@ class UsersRecognitionsController extends \BaseController {
 
 		$usersrecognition->update($data);
 
-		return Redirect::route('employees.pds.usersRecognitions.index');
+		return Redirect::route('employees.pds.recognitions.index');
 	}
 
 	/**
@@ -104,7 +104,7 @@ class UsersRecognitionsController extends \BaseController {
 	{
 		UsersRecognition::destroy($id);
 
-		return Redirect::route('employees.pds.usersRecognitions.index');
+		return Redirect::route('employees.pds.recognitions.index');
 	}
 
 }

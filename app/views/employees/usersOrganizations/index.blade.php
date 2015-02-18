@@ -12,9 +12,9 @@
         <tbody>
         @foreach($usersorganizations as $usersorganization)
             <tr>
-                <td>{{ $usersorganization->level }}</td>
+                <td>{{ $usersorganization->organization }}</td>
                 <td>
-                    <a href="/admin/organizations/{{ $usersorganization->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="organizations/{{ $usersorganization->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usersorganization->id }}">Delete</a>
                 </td>
             </tr>

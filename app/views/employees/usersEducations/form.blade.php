@@ -50,7 +50,7 @@
 </div>
 
 <div class="form-group col-md-12">
-    {{ Form::label('awards', 'Year Graduated', ['class' => 'form-label']) }}
+    {{ Form::label('awards', 'Awards', ['class' => 'form-label']) }}
     {{ Form::text('awards', null, ['class' => 'form-control', 'placeholder' => 'awards']) }}
 </div>
 

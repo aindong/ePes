@@ -43,7 +43,7 @@ class UsersOrganizationsController extends \BaseController {
 
 		UsersOrganization::create($data);
 
-		return Redirect::route('employees.pds.usersOrganizations.index');
+		return Redirect::route('employees.pds.organizations.index');
 	}
 
 	/**
@@ -91,7 +91,7 @@ class UsersOrganizationsController extends \BaseController {
 
 		$usersorganization->update($data);
 
-		return Redirect::route('employees.pds.usersOrganizations.index');
+		return Redirect::route('employees.pds.organizations.index');
 	}
 
 	/**
@@ -104,7 +104,7 @@ class UsersOrganizationsController extends \BaseController {
 	{
 		UsersOrganization::destroy($id);
 
-		return Redirect::route('employees.pds.usersOrganizations.index');
+		return Redirect::route('employees.pds.organizations.index');
 	}
 
 }

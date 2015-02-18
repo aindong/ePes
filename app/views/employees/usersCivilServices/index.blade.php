@@ -24,7 +24,7 @@
                 <td>{{ $civilservice->licensenumber }}</td>
                 <td>{{ date('M d Y', strtotime($civilservice->licensereleasedate)) }}</td>
                 <td>
-                    <a href="/admin/departments/{{ $civilservice->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="civil-services/{{ $civilservice->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $civilservice->id }}">Delete</a>
                 </td>
             </tr>

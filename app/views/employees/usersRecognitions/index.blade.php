@@ -14,7 +14,7 @@
             <tr>
                 <td>{{ $usersrecognition->recognition }}</td>
                 <td>
-                    <a href="/admin/recognitions/{{ $usersrecognition->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="recognitions/{{ $usersrecognition->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usersrecognition->id }}">Delete</a>
                 </td>
             </tr>

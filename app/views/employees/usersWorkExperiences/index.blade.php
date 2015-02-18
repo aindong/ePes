@@ -28,7 +28,7 @@
                 <td>{{ date('M d Y', strtotime($usersworkexperience->datefrom)) }}</td>
                 <td>{{ date('M d Y', strtotime($usersworkexperience->dateto)) }}</td>
                 <td>
-                    <a href="/admin/work-experiences/{{ $usersworkexperience->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="work-experiences/{{ $usersworkexperience->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usersworkexperience->id }}">Delete</a>
                 </td>
             </tr>

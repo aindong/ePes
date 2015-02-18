@@ -28,7 +28,7 @@
                 <td>{{ date('M d Y', strtotime($education->attendanceto)) }}</td>
                 <td>{{ $education->awards }}</td>
                 <td>
-                    <a href="/admin/educations/{{ $education->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="educations/{{ $education->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $education->id }}">Delete</a>
                 </td>
             </tr>

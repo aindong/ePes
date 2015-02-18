@@ -3,7 +3,7 @@
         <span>{{ Session::get('error') }}</span>
     </div>
 @endif
-<legend>Users Educations</legend>
+<legend>Civil Service</legend>
 
 <div class="form-group col-md-12">
     {{ Form::label('careerservice', 'Career Service', ['class' => 'form-label']) }}

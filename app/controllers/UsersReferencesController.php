@@ -43,7 +43,7 @@ class UsersReferencesController extends \BaseController {
 
 		UsersReference::create($data);
 
-		return Redirect::route('employees.pds.usersReferences.index');
+		return Redirect::route('employees.pds.references.index');
 	}
 
 	/**
@@ -91,7 +91,7 @@ class UsersReferencesController extends \BaseController {
 
 		$usersreference->update($data);
 
-		return Redirect::route('employees.pds.usersReferences.index');
+		return Redirect::route('employees.pds.references.index');
 	}
 
 	/**
@@ -104,7 +104,7 @@ class UsersReferencesController extends \BaseController {
 	{
 		UsersReference::destroy($id);
 
-		return Redirect::route('employees.pds.usersReferences.index');
+		return Redirect::route('employees.pds.references.index');
 	}
 
 }

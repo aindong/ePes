@@ -18,7 +18,7 @@
                 <td>{{ $usersreference->address }}</td>
                 <td>{{ $usersreference->telno }}</td>
                 <td>
-                    <a href="/admin/references/{{ $usersreference->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="references/{{ $usersreference->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usersreference->id }}">Delete</a>
                 </td>
             </tr>

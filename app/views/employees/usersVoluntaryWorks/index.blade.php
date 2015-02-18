@@ -22,7 +22,7 @@
                 <td>{{ $voluntarywork->numberofhours }}</td>
                 <td>{{ $voluntarywork->position }}</td>
                 <td>
-                    <a href="/admin/departments/{{ $voluntarywork->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="voluntary-works/{{ $voluntarywork->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $voluntarywork->id }}">Delete</a>
                 </td>
             </tr>

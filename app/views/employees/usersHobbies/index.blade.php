@@ -14,7 +14,7 @@
             <tr>
                 <td>{{ $usershobby->hobby }}</td>
                 <td>
-                    <a href="/admin/hobbies/{{ $usershobby->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="hobbies/{{ $usershobby->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usershobby->id }}">Delete</a>
                 </td>
             </tr>
