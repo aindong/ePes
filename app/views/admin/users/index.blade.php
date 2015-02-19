@@ -8,6 +8,19 @@
             <th>Employee No</th>
             <th>Department</th>
             <th>Position</th>
+            <th>Role</th>
+            <th>Bio</th>
+            <th>Childrens</th>
+            <th>Education</th>
+            <th>Civil Service</th>
+            <th>Work Experience</th>
+            <th>Voluntary Work</th>
+            <th>Training</th>
+            <th>Hobby</th>
+            <th>Recognition</th>
+            <th>Organization</th>
+            <th>Questions</th>
+            <th>Reference</th>
             <th>Created</th>
             <th>Updated</th>
             <th>Actions</th>
@@ -18,6 +31,7 @@
         <tr>
             <td>{{{ $user->employee_no }}}</td>
             <td>{{{ ucfirst($user->department->name) }}}</td>
+            <td>{{{ ucfirst($user->position) }}}</td>
             <td>{{{ ucfirst($user->role->name) }}}</td>
             <td>{{{ date('M d Y', strtotime($user->created_at)) }}}</td>
             <td>{{{ date('M d Y', strtotime($user->updated_at)) }}}</td>
