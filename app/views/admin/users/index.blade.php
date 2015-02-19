@@ -33,6 +33,54 @@
             <td>{{{ ucfirst($user->department->name) }}}</td>
             <td>{{{ ucfirst($user->position) }}}</td>
             <td>{{{ ucfirst($user->role->name) }}}</td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
+            <td>
+                <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
+                <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
+            </td>
             <td>{{{ date('M d Y', strtotime($user->created_at)) }}}</td>
             <td>{{{ date('M d Y', strtotime($user->updated_at)) }}}</td>
             <td>
