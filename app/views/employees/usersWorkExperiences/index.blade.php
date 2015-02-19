@@ -24,7 +24,7 @@
                 <td>{{ $usersworkexperience->salary }}</td>
                 <td>{{ $usersworkexperience->salarygrade }}</td>
                 <td>{{ $usersworkexperience->statusappointment }}</td>
-                <td>{{ $usersworkexperience->govermentservice }}</td>
+                <td>{{ $usersworkexperience->governmentservice }}</td>
                 <td>{{ date('M d Y', strtotime($usersworkexperience->datefrom)) }}</td>
                 <td>{{ date('M d Y', strtotime($usersworkexperience->dateto)) }}</td>
                 <td>

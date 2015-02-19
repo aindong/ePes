@@ -36,7 +36,7 @@
 @section('page-script')
 <script type="text/javascript">
     $(".form_datetime").datetimepicker({
-        format: "yyyy-mm-dd - hh:ii:ss",
+        format: "yyyy-mm-dd hh:ii:ss",
         autoclose: true,
         todayBtn: true,
         pickerPosition: "bottom-left"
