@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
 			$table->string('position', 100);
 			$table->integer('role_id');
 			$table->string('password');
+            $table->string('lockpds', 10);
 			$table->rememberToken();
 			$table->softDeletes();
 			$table->timestamps();

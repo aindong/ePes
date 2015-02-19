@@ -54,6 +54,8 @@ class UsersController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+        $data['lockpds'] = 'locked';
+
 		User::create($data);
 
 		return Redirect::route('admin.users.index');
