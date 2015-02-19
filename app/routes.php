@@ -43,6 +43,9 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 
     // Audit Trail management
     Route::resource('logs', 'LogsController');
+
+    // Evaluations management
+    Route::resource('evaluations', 'LogsController');
 });
 
 // Employee
