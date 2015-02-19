@@ -25,6 +25,28 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        .lock {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0px;
+            z-index: 100;
+        }
+
+        .lock h1 {
+            text-align: center;
+            margin-top: 100px;
+            font-weight: 600;
+        }
+
+        .lock p {
+            text-align: center;
+            font-weight: 400;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">

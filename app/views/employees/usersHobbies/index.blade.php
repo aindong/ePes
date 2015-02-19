@@ -1,6 +1,12 @@
 @extends('layouts.default')
 
 @section('content')
+    @if(Auth::getUser()->lockpds == 'locked')
+        <div class="lock">
+            <h1>YOUR PDS IS LOCKED.</h1>
+            <p>If you need to change something, ask the HR Department to unlock it.</p>
+        </div>
+    @endif
     <h2>Hobbies <a href="/employees/pds/hobbies/create" class="btn btn-primary">Add New</a></h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
