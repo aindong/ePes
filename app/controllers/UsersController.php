@@ -125,6 +125,38 @@ class UsersController extends \BaseController {
 		return Redirect::route('admin.users.index');
 	}
 
+    /**
+     * Lock a user pds
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function lock($id)
+    {
+        $user = User::findOrFail($id);
+
+        $user->lockpds = 'locked';
+        $user->save();
+
+        return Redirect::route('admin.users.index');
+    }
+
+    /**
+     * Unlock a user pds
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function unLock($id)
+    {
+        $user = User::findOrFail($id);
+
+        $user->lockpds = 'unlocked';
+        $user->save();
+
+        return Redirect::route('admin.users.index');
+    }
+
 	/**
 	 * Remove the specified user from storage.
 	 *

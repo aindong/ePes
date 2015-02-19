@@ -29,6 +29,8 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 
 	// Users management
 	Route::resource('users', 'UsersController');
+    Route::get('users/{id}/unlock', ['as' => 'admin.users.unlock', 'uses' => 'UsersController@unLock']);
+    Route::get('users/{id}/lock', ['as' => 'admin.users.lock', 'uses' => 'UsersController@lock']);
 
 	// Departments management
 	Route::resource('departments', 'DepartmentsController');
