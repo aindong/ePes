@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <h2>Users Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
+    <h2>Users Accomplishments</h2>
     <div>
         <form action="" method="get">
             <div class="row">

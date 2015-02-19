@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <h2>Users Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
+    <h2>Accomplishments</h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
@@ -23,7 +23,14 @@
                     <td>{{{ ucfirst($user->position) }}}</td>
                     <td>{{{ ucfirst($user->role->name) }}}</td>
                     <td>
-                        <a href="/supervisors/accomplishments/{{ $user->employee_no }}" class="btn btn-info">View Accomplishments</a>
+
+                        @if(Auth::getUser()->role->name != 'admin')
+                            <a href="/supervisors/accomplishments/{{ $user->employee_no }}" class="btn btn-info">View Accomplishments</a>
+                            <a href="/supervisors/pes/{{ $user->employee_no }}" class="btn btn-primary">Evaluate</a>
+                            <a href="/supervisors/employees/{{ $user->employee_no }}/pds" class="btn btn-info">View PDS</a>
+                        @else
+                            <a href="/admin/accomplishments/{{ $user->employee_no }}" class="btn btn-info">View Accomplishments</a>
+                        @endif
                     </td>
                 </tr>
             @endif

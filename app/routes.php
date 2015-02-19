@@ -46,6 +46,10 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 
     // Evaluations management
     Route::resource('evaluations', 'EvaluationsController');
+
+    // Accomplishments
+    Route::get('accomplishments', ['uses' => 'AdminController@accomplishments']);
+    Route::get('accomplishments/{id}', ['uses' => 'AdminController@singleAccomplishments']);
 });
 
 // Employee
@@ -85,6 +89,9 @@ Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employees'], fun
 
 Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'], function() {
 	Route::get('/', ['uses' => 'SupervisorsController@index']);
-    Route::get('accomplishments', ['uses' => 'SupervisorsController@accomplishments']);
+    Route::get('accomplishments', ['as' => 'supervisors.user.list', 'uses' => 'SupervisorsController@accomplishments']);
     Route::get('accomplishments/{id}', ['uses' => 'SupervisorsController@singleAccomplishments']);
+
+    Route::get('pes/{id}', ['uses' => 'SupervisorsController@pes']);
+    Route::post('doPes/{id}', ['uses' => 'SupervisorsController@doPes']);
 });
