@@ -85,5 +85,6 @@ Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employees'], fun
 
 Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'], function() {
 	Route::get('/', ['uses' => 'SupervisorsController@index']);
-
+    Route::get('accomplishments', ['uses' => 'SupervisorsController@accomplishments']);
+    Route::get('accomplishments/{id}', ['uses' => 'SupervisorsController@singleAccomplishments']);
 });

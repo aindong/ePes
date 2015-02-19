@@ -41,6 +41,8 @@ class UsersBiosController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+        $data['employee_no'] = Auth::getUser()->employee_no;
+
 		UsersBio::create($data);
 
 		return Redirect::route('employees.pds.bios.index');
@@ -88,7 +90,7 @@ class UsersBiosController extends \BaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
+        $data['employee_no'] = Auth::getUser()->employee_no;
 		$usersbio->update($data);
 
 		return Redirect::route('employees.pds.bios.index');

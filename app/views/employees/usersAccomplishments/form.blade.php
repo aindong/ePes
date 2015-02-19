@@ -11,14 +11,14 @@
 </div>
 
 <div class="form-group col-md-12">
-    {{ Form::label('dateto', 'Date To *', ['class' => 'form-label']) }}
-    {{ Form::text('dateto', null, ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}
+    {{ Form::label('dateto', 'Date *', ['class' => 'form-label']) }}
+    {{ Form::text('dateto', date('Y-m-d H:i:s', time()), ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}
 </div>
 
-<div class="form-group col-md-12">
-    {{ Form::label('datefrom', 'Date From *', ['class' => 'form-label']) }}
-    {{ Form::text('datefrom', null, ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}
-</div>
+{{--<div class="form-group col-md-12">--}}
+    {{--{{ Form::label('datefrom', 'Date From *', ['class' => 'form-label']) }}--}}
+    {{--{{ Form::text('datefrom', null, ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}--}}
+{{--</div>--}}
 
 <a href="/employees/pds/accomplishments" class="btn btn-danger">Back</a>
 <button type="submit" class="btn btn-primary">Submit</button>

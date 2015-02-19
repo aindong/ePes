@@ -6,8 +6,8 @@
         <thead>
         <tr>
             <th>Accomplishments</th>
-            <th>Date To</th>
-            <th>Date From</th>
+            <th>Date</th>
+            {{--<th>Date From</th>--}}
             <th>Actions</th>
         </tr>
         </thead>
@@ -16,7 +16,7 @@
             <tr>
                 <td>{{ $usersaccomplishment->accomplishment }}</td>
                 <td>{{ date('M d Y', strtotime($usersaccomplishment->dateto)) }}</td>
-                <td>{{ date('M d Y', strtotime($usersaccomplishment->datefrom)) }}</td>
+                {{--<td>{{ date('M d Y', strtotime($usersaccomplishment->datefrom)) }}</td>--}}
                 <td>
                     <a href="/admin/accomplishments/{{ $usersaccomplishment->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usersaccomplishment->id }}">Delete</a>
