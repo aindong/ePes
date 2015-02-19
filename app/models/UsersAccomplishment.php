@@ -23,4 +23,9 @@ class UsersAccomplishment extends \Eloquent {
 	// Don't forget to fill this array
 	protected $guarded = [];
 
+    public function user()
+    {
+        return $this->belongsTo('User', 'employee_no', 'employee_no');
+    }
+
 }

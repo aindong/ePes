@@ -24,15 +24,19 @@ class SupervisorsController extends \BaseController {
             $from = strtotime(Input::get('from'));
             $to = strtotime(Input::get('to'));
 
+            $range = [
+                \Carbon\Carbon::createFromTimestamp($from),
+                \Carbon\Carbon::createFromTimestamp($to)
+            ];
+
             $accomplishments = UsersAccomplishment::where('employee_no', '=', $id)
-                ->where('dateto', '>=', $from)
-                ->where('dateto', '<=', $to)
+                ->whereBetween('dateto', $range)
                 ->get();
         } else {
             $accomplishments = UsersAccomplishment::where('employee_no', '=', $id)->get();
         }
 
-        print_r($accomplishments);
+        //print_r($accomplishments);
         return View::make('supervisors.singleaccomplishments', compact('accomplishments'));
     }
 }

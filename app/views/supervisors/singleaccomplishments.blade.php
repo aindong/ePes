@@ -2,30 +2,38 @@
 
 @section('content')
     <h2>Users Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
+    <div>
+        <form action="" method="get">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" name="from" class="form-control form_datetime" placeholder="Select From Date"/>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="to" class="form-control form_datetime" placeholder="Select To Date"/>
+                </div>
+
+                <button type="submit" class="btn btn-primary col-md-4">Filter Date</button>
+            </div>
+        </form>
+        <br/>
+    </div>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
             <th>Employee No</th>
             <th>Name</th>
-            <th>Department</th>
-            <th>Position</th>
-            <th>Role</th>
-            <th>Actions</th>
+            <th>Accomplishment</th>
+            <th>Date</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $user)
-            @if($user->role->name == 'employee')
-                <tr>
-                    <td>{{{ $user->employee_no }}}</td>
-                    <td>{{{ ucfirst($user->department->name) }}}</td>
-                    <td>{{{ ucfirst($user->position) }}}</td>
-                    <td>{{{ ucfirst($user->role->name) }}}</td>
-                    <td>
-                        <a href="/supervisors/accomplishments/{{ $user->employee_no }}" class="btn btn-info">View Accomplishments</a>
-                    </td>
-                </tr>
-            @endif
+        @foreach($accomplishments as $accomplishment)
+            <tr>
+                <td>{{{ $accomplishment->user->employee_no }}}</td>
+                <td>{{{ isset($accomplishment->user->bio->lastname) ? ucfirst($accomplishment->user->bio->lastname) : '' }}}, {{{ isset($accomplishment->user->bio->firstname) ? ucfirst($accomplishment->user->bio->firstname) : '' }}} {{{ isset($accomplishment->user->bio->middlename) ? ucfirst($accomplishment->user->bio->middlename) : '' }}}.</td>
+                <td>{{{ ucfirst($accomplishment->accomplishment) }}}</td>
+                <td>{{{ ucfirst($accomplishment->dateto) }}}</td>
+            </tr>
         @endforeach
         </tbody>
     </table>
@@ -35,6 +43,15 @@
     <script type="text/javascript">
         $(document).ready(function() {
             var table = $('#example').DataTable();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(".form_datetime").datetimepicker({
+            format: "yyyy-mm-dd hh:ii:ss",
+            autoclose: true,
+            todayBtn: true,
+            pickerPosition: "bottom-left"
         });
     </script>
 @stop
