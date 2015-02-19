@@ -47,6 +47,7 @@
                     <li class="<?php echo Request::is('admin/users*') ? 'active' : ''; ?>"><a href="/admin/users">Users</a></li>
                     <li class="<?php echo Request::is('admin/events*') ? 'active' : ''; ?>"><a href="/admin/events">Events</a></li>
                     <li class="<?php echo Request::is('admin/jobvacancies*') ? 'active' : ''; ?>"><a href="/admin/jobvacancies">Job Vacancies</a></li>
+                    <li class="<?php echo Request::is('admin/evaluations*') ? 'active' : ''; ?>"><a href="/admin/evaluations">Evaluation Schedules</a></li>
                     <li class="<?php echo Request::is('admin/pes*') ? 'active' : ''; ?>"><a href="/admin/pes">Performance Evaluations Reports</a></li>
                     <li class="<?php echo Request::is('admin/accomplishments*') ? 'active' : ''; ?>"><a href="/admin/accomplishments">Accomplishment Reports</a></li>
                     <li class="<?php echo Request::is('admin/logs*') ? 'active' : ''; ?>"><a href="/admin/logs">Audit Trail</a></li>

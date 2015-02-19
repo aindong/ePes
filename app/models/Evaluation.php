@@ -8,6 +8,6 @@ class Evaluation extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $fillable = ['start_at', 'end_at'];
 
 }

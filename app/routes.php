@@ -45,7 +45,7 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
     Route::resource('logs', 'LogsController');
 
     // Evaluations management
-    Route::resource('evaluations', 'LogsController');
+    Route::resource('evaluations', 'EvaluationsController');
 });
 
 // Employee
