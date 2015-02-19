@@ -27,10 +27,11 @@
             <td>{{{ date('M d Y', strtotime($user->updated_at)) }}}</td>
             <td>
                 @if($user->lockpds == 'locked')
-                    <a href="/admin/users/{{ $user->id }}/unlock" class="btn btn-warning">Unlock</a>
+                    <a href="/admin/users/{{ $user->id }}/unlock" class="btn btn-primary">Unlock</a>
                 @else
-                    <a href="/admin/users/{{ $user->id }}/lock" class="btn btn-warning">Lock</a>
+                    <a href="/admin/users/{{ $user->id }}/lock" class="btn btn-primary">Lock</a>
                 @endif
+                <a href="/admin/users/{{ $user->id }}/show" class="btn btn-info">View PDS</a>
                 <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
                 <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
             </td>
