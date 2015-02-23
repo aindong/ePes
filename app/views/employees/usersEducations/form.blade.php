@@ -25,8 +25,8 @@
 </div>
 
 <div class="form-group col-md-12">
-    {{ Form::label('degreecourse', 'Degree Course *', ['class' => 'form-label']) }}
-    {{ Form::text('degreecourse', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Degree Course']) }}
+    {{ Form::label('degreecourse', 'Degree Course', ['class' => 'form-label']) }}
+    {{ Form::text('degreecourse', null, ['class' => 'form-control', 'placeholder' => 'Degree Course']) }}
 </div>
 
 <div class="form-group col-md-12">
@@ -40,13 +40,13 @@
 </div>
 
 <div class="form-group col-md-12">
-    {{ Form::label('attendancefrom', 'Attendance From *', ['class' => 'form-label']) }}
-    {{ Form::text('attendancefrom', null, ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}
+    {{ Form::label('attendancefrom', 'Attendance From', ['class' => 'form-label']) }}
+    {{ Form::text('attendancefrom', null, ['class' => 'form-control input-append date form_datetime']) }}
 </div>
 
 <div class="form-group col-md-12">
-    {{ Form::label('attendanceto', 'Attendance To *', ['class' => 'form-label']) }}
-    {{ Form::text('attendanceto', null, ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}
+    {{ Form::label('attendanceto', 'Attendance To', ['class' => 'form-label']) }}
+    {{ Form::text('attendanceto', null, ['class' => 'form-control input-append date form_datetime']) }}
 </div>
 
 <div class="form-group col-md-12">

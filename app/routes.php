@@ -94,4 +94,6 @@ Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'],
 
     Route::get('pes/{id}', ['uses' => 'SupervisorsController@pes']);
     Route::post('doPes/{id}', ['uses' => 'SupervisorsController@doPes']);
+
+    Route::get('employees/{employee}/pds', ['as' => 'supervisors.pds.view', 'uses' => 'SupervisorsController@viewPds']);
 });

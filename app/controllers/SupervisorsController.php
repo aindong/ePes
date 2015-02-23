@@ -71,4 +71,39 @@ class SupervisorsController extends \BaseController {
         //print_r($accomplishments);
         return View::make('supervisors.singleaccomplishments', compact('accomplishments'));
     }
+
+    public function viewPds($employee)
+    {
+        // Get user bio
+        $bio = UsersBio::where('employee_no', '=', $employee)->first();
+
+        // Get user education
+        $educations = UsersEducation::where('employee_no', '=', $employee)->get();
+
+        $education = [];
+
+        foreach ($educations as $education) {
+            switch ($education->level) {
+                case 'elementary':
+                    $education['elementary'] = $education;
+                    break;
+                case 'secondary':
+                    $education['secondary']  = $education;
+                    break;
+                case 'vocational':
+                    $education['vocational'] = $education;
+                    break;
+                case 'college':
+                    $education['college']    = $education;
+                    break;
+                case 'graduate studies':
+                    $education['graduate']   = $education;
+                    break;
+            }
+        }
+
+        return View::make('supervisors.pds')
+            ->with('bio', $bio)
+            ->with('educations', $education);
+    }
 }
