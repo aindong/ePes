@@ -2,6 +2,8 @@
 
 @section('content')
     <h2>Users Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
+    <span>No. of Active Male Employees : {{ $male }}</span><br/>
+    <span>No. of Active Female Employees : {{ $female }}</span><br/>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
