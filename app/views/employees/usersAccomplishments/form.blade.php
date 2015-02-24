@@ -20,8 +20,15 @@
     {{--{{ Form::text('datefrom', null, ['class' => 'form-control input-append date form_datetime', 'required' => 'required']) }}--}}
 {{--</div>--}}
 
+<p style="font-size: 20px;">
+    <label for="honest">
+        <input type="checkbox" id="honest"/>
+        I hereby certify that the above rating is an objective, honest, and an impartial evaluation of the employee’s performance and that I am responsible and liable for its correctness and truthfulness. I also confirm that I am cognizant that I may be held accountable in case the PHRMO and/or the PERC finds the above rating as unsound or erroneous.
+    </label>
+</p>
+
 <a href="/employees/pds/accomplishments" class="btn btn-danger">Back</a>
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary btnSubmit" disabled>Submit</button>
 
 @section('page-script')
 <script type="text/javascript">
@@ -30,6 +37,14 @@
         autoclose: true,
         todayBtn: true,
         pickerPosition: "bottom-left"
+    });
+
+    $('#honest').on('change', function(e) {
+        if($(this).is(':checked')) {
+            $('.btnSubmit').attr('disabled', false);
+        } else {
+            $('.btnSubmit').attr('disabled', true);
+        }
     });
 </script>
 @stop
