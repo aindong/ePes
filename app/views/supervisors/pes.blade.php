@@ -243,7 +243,10 @@
 
     <br/>
     <p style="font-size: 20px;">
-        I hereby certify that the above rating is an objective, honest, and an impartial evaluation of the employee’s performance and that I am responsible and liable for its correctness and truthfulness. I also confirm that I am cognizant that I may be held accountable in case the PHRMO and/or the PERC finds the above rating as unsound or erroneous.
+        <label for="honest">
+            <input type="checkbox" id="honest"/>
+            I hereby certify that the above rating is an objective, honest, and an impartial evaluation of the employee’s performance and that I am responsible and liable for its correctness and truthfulness. I also confirm that I am cognizant that I may be held accountable in case the PHRMO and/or the PERC finds the above rating as unsound or erroneous.
+        </label>
     </p>
 
     <button type="submit" class="btn btn-primary">Submit Evaluation</button>
