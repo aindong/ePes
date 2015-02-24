@@ -249,12 +249,20 @@
         </label>
     </p>
 
-    <button type="submit" class="btn btn-primary">Submit Evaluation</button>
+    <button type="submit" class="btn btn-primary btnSubmit" disabled>Submit Evaluation</button>
     {{ Form::close() }}
 @stop
 
 @section('page-script')
     <script type="text/javascript">
+        $('#honest').on('change', function(e) {
+            if($(this).is(':checked')) {
+                $('.btnSubmit').attr('disabled', false);
+            } else {
+                $('.btnSubmit').attr('disabled', true);
+            }
+        });
+
         $(".form_datetime").datetimepicker({
             format: "yyyy-mm-dd hh:ii:ss",
             autoclose: true,
