@@ -20,6 +20,19 @@ class AdminController extends BaseController {
         return View::make('supervisors.accomplishments', compact('users'));
     }
 
+    public function pes()
+    {
+        $evaluations = Evaluation::all();
+
+        $schedules = [];
+        foreach ($evaluations as $evaluation) {
+
+        }
+
+        return View::make('admin.pes')
+            ->with('schedules', $schedules);
+    }
+
     public function singleAccomplishments($id)
     {
 

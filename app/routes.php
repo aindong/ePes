@@ -27,6 +27,8 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 	// Admin controller
 	Route::get('/', ['as' => 'users.dashboard', 'uses' => 'AdminController@index']);
 
+    Route::get('/pes', ['as' => 'admin.pes', 'uses' => 'AdminController@pes']);
+
 	// Users management
 	Route::resource('users', 'UsersController');
     Route::get('users/{id}/unlock', ['as' => 'admin.users.unlock', 'uses' => 'UsersController@unLock']);
