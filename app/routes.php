@@ -57,6 +57,7 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 // Employee
 Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employees'], function() {
 	Route::get('/', ['uses' => 'EmployeesController@index']);
+    Route::get('/pes', ['uses' => 'EmployeesController@pes']);
 
 	// Users_Bios management
 	Route::resource('pds/bios', 'UsersBiosController');

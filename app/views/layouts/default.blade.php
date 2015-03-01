@@ -95,8 +95,8 @@
                                 {{--<li><a href="#">Reference</a></li>--}}
                             {{--</ul>--}}
                         </li>
-                        <li class="<?php echo Request::is('supervisors/accomplishments') ? 'active' : ''; ?>"><a href="/employees/accomplishments">Accomplishments</a></li>
-                        <li class="<?php echo Request::is('supervisors/pes*') ? 'active' : ''; ?>"><a href="#">Performance Evaluation Results</a></li>
+                        <li class="<?php echo Request::is('employees/accomplishments') ? 'active' : ''; ?>"><a href="/employees/accomplishments">Accomplishments</a></li>
+                        <li class="<?php echo Request::is('employees/pes*') ? 'active' : ''; ?>"><a href="/employees/pes">Performance Evaluation Results</a></li>
                     </ul>
                 @elseif(Auth::getUser()->role->name == 'supervisor')
                     <ul class="nav navbar-nav">
