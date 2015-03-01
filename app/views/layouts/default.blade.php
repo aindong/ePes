@@ -77,7 +77,8 @@
                 @elseif(Auth::getUser()->role->name == 'employee')
                     <ul class="nav navbar-nav">
                         <li  class="<?php echo Request::is('employees') ? 'active' : ''; ?>"><a href="/employees">Home <span class="sr-only">(current)</span></a></li>
-                        <li class="dropdown <?php echo Request::is('employees/pes*') ? 'active' : ''; ?>">
+                        <li class="<?php echo Request::is('employees/events*') ? 'active' : ''; ?>"><a href="#">Events</a></li>
+                        <li class="dropdown <?php echo Request::is('employees/pds*') ? 'active' : ''; ?>">
                             <a href="/employees/pds/bios">Personal Data Sheet</a>
                             {{--<ul class="dropdown-menu" role="menu">--}}
                                 {{--<li><a href="/employees/pds/bios">Bio</a></li>--}}
@@ -94,7 +95,7 @@
                                 {{--<li><a href="#">Reference</a></li>--}}
                             {{--</ul>--}}
                         </li>
-                        <li class="<?php echo Request::is('supervisors/pes*') ? 'active' : ''; ?>"><a href="/employees/accomplishments">Accomplishments</a></li>
+                        <li class="<?php echo Request::is('supervisors/accomplishments') ? 'active' : ''; ?>"><a href="/employees/accomplishments">Accomplishments</a></li>
                         <li class="<?php echo Request::is('supervisors/pes*') ? 'active' : ''; ?>"><a href="#">Performance Evaluation Results</a></li>
                     </ul>
                 @elseif(Auth::getUser()->role->name == 'supervisor')
