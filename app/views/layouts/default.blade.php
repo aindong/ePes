@@ -71,13 +71,12 @@
                     <li class="<?php echo Request::is('admin/evaluations*') ? 'active' : ''; ?>"><a href="/admin/evaluations">Evaluation Schedules</a></li>
                     <li class="<?php echo Request::is('admin/pes*') ? 'active' : ''; ?>"><a href="/admin/pes">Performance Evaluations Reports</a></li>
                     <li class="<?php echo Request::is('admin/accomplishments*') ? 'active' : ''; ?>"><a href="/admin/accomplishments">Accomplishment Reports</a></li>
-                    <li class="<?php echo Request::is('admin/statistics*') ? 'active' : ''; ?>"><a href="/admin/logs">Statistics</a></li>
+
                     <li class="<?php echo Request::is('admin/logs*') ? 'active' : ''; ?>"><a href="/admin/logs">Audit Trail</a></li>
                 </ul>
                 @elseif(Auth::getUser()->role->name == 'employee')
                     <ul class="nav navbar-nav">
                         <li  class="<?php echo Request::is('employees') ? 'active' : ''; ?>"><a href="/employees">Home <span class="sr-only">(current)</span></a></li>
-                        <li class="<?php echo Request::is('employees/events*') ? 'active' : ''; ?>"><a href="#">Events</a></li>
                         <li class="dropdown <?php echo Request::is('employees/pds*') ? 'active' : ''; ?>">
                             <a href="/employees/pds/bios">Personal Data Sheet</a>
                             {{--<ul class="dropdown-menu" role="menu">--}}
