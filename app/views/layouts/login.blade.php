@@ -170,6 +170,12 @@ body{
 	  </div>
 	  @endif
 
+    @if(Session::has('success'))
+      <div class="alert alert-success">
+          {{ Session::get('success') }}
+      </div>
+    @endif
+
 		<div class="grad"></div>
 		<div class="header">
 			<div class="logo"><img src="/images/logo.png"></div>
@@ -178,7 +184,7 @@ body{
   		{{ Form::open(['url' => '/login', 'method' => 'post', 'class' => 'loginForm']) }}
 		<div class="login">
 			<legend>User Authentication</legend>
-			<input type="text" placeholder="username" name="employee_no" class="form-control"><br>
+			<input type="text" placeholder="Employee ID" name="employee_no" class="form-control"><br>
 			<input type="password" placeholder="password" name="password" class="form-control"><br>
 			<input type="submit" class="btn btn-primary" value="Submit">
 			<button class="btn btn-default showRegister" type="button">Register</button>
@@ -188,8 +194,9 @@ body{
 	  {{ Form::open(['url' => '/register', 'method' => 'post', 'class' => 'registerForm']) }}
 	  <div class="login">
 		  <legend>Registration</legend>
-		  <input type="text" placeholder="username" name="employee_no" class="form-control" required="required"><br>
+		  <input type="text" placeholder="Employee ID" name="employee_no" class="form-control" required="required"><br>
 		  <input type="password" placeholder="password" name="password" class="form-control" required="required"><br>
+          <input type="password" placeholder="confirm password" name="password2" class="form-control" required="required"><br>
 		  <input type="submit" class="btn btn-primary" value="Submit" class="form-control">
 		  <button class="btn btn-default showLogin" type="button">Login</button>
 	  </div>

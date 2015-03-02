@@ -47,6 +47,11 @@ class SessionsController extends \BaseController {
 	{
 		$data = Input::all();
 
+        if ($data['password'] != $data['password2']) {
+            Session::flash('error', 'Password confirmation does not match');
+            return Redirect::back()->withInput();
+        }
+
 		$user = User::where('employee_no', '=', $data['employee_no'])->first();
 
 		if (is_null($user)) {
@@ -57,14 +62,8 @@ class SessionsController extends \BaseController {
 		$user->password = $data['password'];
 		$user->save();
 
-		// Roles distinction
-		if ($user->role->name == 'admin') {
-			return Redirect::to('/admin');
-		} else if ($user->role->name == 'employee') {
-			return Redirect::to('/employees');
-		} else if ($user->role->name == 'department head' || $user->role->name == 'supervisor') {
-			return Redirect::to('/supervisors');
-		}
+        Session::flash('success', 'Successfully registered! You can try to login now.k');
+        return Redirect::back()->withInput();
 	}
 
 	/**
