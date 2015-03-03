@@ -2,8 +2,11 @@
 
 @section('content')
     <h2>Users Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
+    <span style="font-style: italic; color: red">Note: This statistics is based on the number of employees who have filled up their BIOS/PDS</span><br/>
+    <span>Total number of Job Orber Employees : {{ (int)$male + (int)$female }}</span><br/>
     <span>No. of Active Male Employees : {{ $male }}</span><br/>
     <span>No. of Active Female Employees : {{ $female }}</span><br/>
+    <br/>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
