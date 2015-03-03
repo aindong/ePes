@@ -101,6 +101,7 @@
                     <ul class="nav navbar-nav">
                         <li class="<?php echo Request::is('supervisors') ? 'active' : ''; ?>"><a href="/supervisors">Home</a></li>
                         <li class="<?php echo Request::is('supervisors/accomplishments*') ? 'active' : ''; ?>"><a href="/supervisors/accomplishments">Employees</a></li>
+                        <li class="<?php echo Request::is('supervisors/pes-results*') ? 'active' : ''; ?>"><a href="/supervisors/pes-results">Performance Evaluation Results</a></li>
                     </ul>
                 @endif
                 <ul class="nav navbar-nav navbar-right">

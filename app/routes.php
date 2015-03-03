@@ -99,6 +99,7 @@ Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'],
     Route::get('accomplishments/{id}', ['uses' => 'SupervisorsController@singleAccomplishments']);
 
     Route::get('pes/{id}', ['uses' => 'SupervisorsController@pes']);
+    Route::get('pes-results', ['uses' => 'SupervisorsController@pesResults']);
     Route::post('doPes/{id}', ['uses' => 'SupervisorsController@doPes']);
 
     Route::get('employees/{employee}/pds', ['as' => 'supervisors.pds.view', 'uses' => 'SupervisorsController@viewPds']);

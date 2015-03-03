@@ -1,6 +1,16 @@
 @extends('layouts.default')
 
 @section('content')
+    @if(Session::has('error'))
+        <div class="alert alert-danger">
+            <span>{{ Session::get('error') }}</span>
+        </div>
+    @endif
+    @if(Session::has('success'))
+        <div class="alert alert-success">
+            <span>{{ Session::get('success') }}</span>
+        </div>
+    @endif
     <h2>Accomplishments</h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
