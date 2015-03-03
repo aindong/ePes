@@ -42,7 +42,7 @@ class UsersWorkExperiencesController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersWorkExperience::create($data);
-
+        Session::flash('key', 'Successfully created a new work experience');
 		return Redirect::route('employees.pds.work-experiences.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersWorkExperiencesController extends \BaseController {
 		}
 
 		$usersworkexperience->update($data);
-
+        Session::flash('success', 'Successfully updated a work experience');
 		return Redirect::route('employees.pds.work-experiences.index');
 	}
 

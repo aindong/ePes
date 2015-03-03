@@ -7,6 +7,11 @@
             <p>If you need to change something, ask the HR Department to unlock it.</p>
         </div>
     @endif
+    @if(Session::has('success'))
+        <div class="alert alert-success">
+            <span>{{ Session::get('success') }}</span>
+        </div>
+    @endif
     <h2>Work Experience <a href="/employees/pds/work-experiences/create" class="btn btn-primary">Add New</a></h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>

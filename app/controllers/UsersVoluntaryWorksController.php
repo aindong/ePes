@@ -42,7 +42,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersVoluntaryWork::create($data);
-
+        Session::flash('success', 'Successfully added a new voluntary work');
 		return Redirect::route('employees.pds.voluntary-works.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersVoluntaryWorksController extends \BaseController {
 		}
 
 		$usersvoluntarywork->update($data);
-
+        Session::flash('success', 'Successfully updated a voluntary work');
 		return Redirect::route('employees.pds.voluntary-works.index');
 	}
 
