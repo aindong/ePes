@@ -60,6 +60,7 @@ Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employees'], fun
 	Route::get('/', ['uses' => 'EmployeesController@index']);
     Route::get('/pes', ['uses' => 'EmployeesController@pes']);
     Route::get('/pes-single/{id}', ['uses' => 'EmployeesController@pesSingle']);
+    Route::post('/submit-pes/{id}', ['uses' => 'EmployeesController@submitPes']);
 
 	// Users_Bios management
 	Route::resource('pds/bios', 'UsersBiosController');

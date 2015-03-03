@@ -211,7 +211,15 @@
 
     {{ Form::close() }}
 
-    <a href="#" class="btn btn-primary">Accept and Send Performance Evaluation to HR</a>
+    @if(Auth::getUser()->employee_no == $evaluation->employee_no && $evaluation->status == 'inactive')
+        {{ Form::open(['url' => '/employees/submit-pes/'. $evaluation->id, 'method' => 'post']) }}
+            <button class="btn btn-primary" type="submit">Accept and Send Performance Evaluation to HR</button>
+        {{ Form::close() }}
+    @endif
+
+    @if( $evaluation->status == 'active' )
+        <p>This evaluation was already submitted to the HR.</p>
+    @endif
 @stop
 
 @section('page-script')

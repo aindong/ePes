@@ -56,7 +56,8 @@ class EmployeesController extends \BaseController {
                 'performance' => $performance,
                 'critical'    => $critical,
                 'overall'     => $overall,
-                'adjective'   => $adjective
+                'adjective'   => $adjective,
+                'status'      => $result->status
             ];
         }
 
@@ -72,5 +73,15 @@ class EmployeesController extends \BaseController {
         return View::make('admin.pes-single')
             ->with('evaluation', $evaluation)
             ->with('user', $user);
+    }
+
+    public function submitPes($id)
+    {
+        $pes = Pes::findOrFail($id);
+        $pes->status = 'active';
+        $pes->save();
+
+        Session::flash('success', 'Evaluation was successfully confirmed and submitted to HR.');
+        return Redirect::to('/employees/pes');
     }
 }

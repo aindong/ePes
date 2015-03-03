@@ -63,7 +63,8 @@ class AdminController extends BaseController {
                 'performance' => $performance,
                 'critical'    => $critical,
                 'overall'     => $overall,
-                'adjective'   => $adjective
+                'adjective'   => $adjective,
+                'status'      => $result->status
             ];
         }
 

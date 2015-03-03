@@ -1,6 +1,11 @@
 @extends('layouts.default')
 
 @section('content')
+    @if(Session::has('success'))
+        <div class="alert alert-success">
+            <span>{{ Session::get('success') }}</span>
+        </div>
+    @endif
     <h3>Performance Evaluation Results</h3>
     {{ Form::open(['method' => 'get']) }}
         <div class="row">
@@ -27,6 +32,7 @@
             <th>Critical Factors</th>
             <th>Overall Score</th>
             <th>Adjective Rating</th>
+            <th>Status</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -39,11 +45,13 @@
                 <td>{{ $final['critical'] }}</td>
                 <td>{{ $final['overall'] }}</td>
                 <td>{{ $final['adjective'] }}</td>
+                <td>{{ $final['status'] }}</td>
                 @if(Auth::getUser()->role->name == 'admin')
                     <td><a href="/admin/pes-single/{{ $final['id'] }}" class="btn btn-primary">View Evaluation</a></td>
                 @else
                     <td><a href="/employees/pes-single/{{ $final['id'] }}" class="btn btn-primary">View Evaluation</a></td>
                 @endif
+
             </tr>
         @endforeach
         </tbody>
