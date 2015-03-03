@@ -27,6 +27,7 @@
             <th>Critical Factors</th>
             <th>Overall Score</th>
             <th>Adjective Rating</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -38,6 +39,11 @@
                 <td>{{ $final['critical'] }}</td>
                 <td>{{ $final['overall'] }}</td>
                 <td>{{ $final['adjective'] }}</td>
+                @if(Auth::getUser()->role->name == 'admin')
+                    <td><a href="/admin/pes-single/{{ $final['id'] }}" class="btn btn-primary">View Evaluation</a></td>
+                @else
+                    <td><a href="/employees/pes-single/{{ $final['id'] }}" class="btn btn-primary">View Evaluation</a></td>
+                @endif
             </tr>
         @endforeach
         </tbody>

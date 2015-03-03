@@ -57,6 +57,7 @@ class AdminController extends BaseController {
             }
 
             $finals[] = [
+                'id'          => $result->id,
                 'employee_no' => $result->employee_no,
                 'name'        => $result->user->bio->lastname . ', ' . $result->user->bio->firstname,
                 'performance' => $performance,

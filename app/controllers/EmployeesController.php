@@ -50,6 +50,7 @@ class EmployeesController extends \BaseController {
             }
 
             $finals[] = [
+                'id'          => $result->id,
                 'employee_no' => $result->employee_no,
                 'name'        => $result->user->bio->lastname . ', ' . $result->user->bio->firstname,
                 'performance' => $performance,
@@ -62,5 +63,14 @@ class EmployeesController extends \BaseController {
         return View::make('admin.pes')
             ->with('schedules', $schedules)
             ->with('finals', $finals);
+    }
+
+    public function pesSingle($id)
+    {
+        $evaluation = Pes::findOrFail($id);
+        $user = User::where('employee_no', '=', $evaluation->employee_no)->first();
+        return View::make('admin.pes-single')
+            ->with('evaluation', $evaluation)
+            ->with('user', $user);
     }
 }

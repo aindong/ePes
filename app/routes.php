@@ -28,6 +28,7 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 	Route::get('/', ['as' => 'users.dashboard', 'uses' => 'AdminController@index']);
 
     Route::get('/pes', ['as' => 'admin.pes', 'uses' => 'AdminController@pes']);
+    Route::get('/pes-single/{id}', ['uses' => 'EmployeesController@pesSingle']);
 
 	// Users management
 	Route::resource('users', 'UsersController');
@@ -58,6 +59,7 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 Route::group(['before' => 'auth|hasRole:employee', 'prefix' => 'employees'], function() {
 	Route::get('/', ['uses' => 'EmployeesController@index']);
     Route::get('/pes', ['uses' => 'EmployeesController@pes']);
+    Route::get('/pes-single/{id}', ['uses' => 'EmployeesController@pesSingle']);
 
 	// Users_Bios management
 	Route::resource('pds/bios', 'UsersBiosController');
