@@ -21,7 +21,7 @@
 
 <div class="form-group">
     {{ Form::label('position', 'Position *', ['class' => 'form-label']) }}
-    {{ Form::select('position', ['sample position', 'sample position 2'], null, ['class' => 'form-control', 'required' => 'required']) }}
+    {{ Form::select('position', $positions, null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
 <div class="form-group">

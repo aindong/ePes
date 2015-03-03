@@ -26,9 +26,11 @@ class UsersController extends \BaseController {
 	{
 		$departments = Department::all();
 		$roles 		 = Role::all();
+        $positions   = Position::all();
 
 		$departmentsList = [];
 		$rolesList       = [];
+        $positionsList   = [];
 
 		foreach ($departments as $department) {
 			$departmentsList[$department->id] = ucfirst($department->name);
@@ -38,9 +40,14 @@ class UsersController extends \BaseController {
 			$rolesList[$role->id] = ucfirst($role->name);
 		}
 
+        foreach ($positions as $position) {
+            $positionsList[$position->name] = ucfirst($position->name);
+        }
+
 		return View::make('admin.users.create')
 			->with('departments', $departmentsList)
-			->with('roles', $rolesList);
+			->with('roles', $rolesList)
+            ->with('positions', $positionsList);
 	}
 
 	/**
@@ -89,9 +96,11 @@ class UsersController extends \BaseController {
 
 		$departments = Department::all();
 		$roles 		 = Role::all();
+        $positions   = Position::all();
 
 		$departmentsList = [];
 		$rolesList       = [];
+        $positionsList   = [];
 
 		foreach ($departments as $department) {
 			$departmentsList[$department->id] = ucfirst($department->name);
@@ -101,9 +110,14 @@ class UsersController extends \BaseController {
 			$rolesList[$role->id] = ucfirst($role->name);
 		}
 
+        foreach ($positions as $position) {
+            $positionsList[$position->name] = ucfirst($position->name);
+        }
+
 		return View::make('admin.users.edit', compact('user'))
 			->with('roles', $rolesList)
-			->with('departments', $departmentsList);
+			->with('departments', $departmentsList)
+            ->with('positions', $positionsList);
 	}
 
 	/**
