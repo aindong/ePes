@@ -42,7 +42,7 @@ class UsersTrainingsController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersTraining::create($data);
-
+        Session::flash('success', 'Successfully added a training');
 		return Redirect::route('employees.pds.trainings.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersTrainingsController extends \BaseController {
 		}
 
 		$userstraining->update($data);
-
+        Session::flash('success', 'Successfully updated a training');
 		return Redirect::route('employees.pds.trainings.index');
 	}
 

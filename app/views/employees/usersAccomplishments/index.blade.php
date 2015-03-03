@@ -1,6 +1,11 @@
 @extends('layouts.default')
 
 @section('content')
+    @if(Session::has('success'))
+        <div class="alert alert-success">
+            <span>{{ Session::get('success') }}</span>
+        </div>
+    @endif
     <h2>Accomplishments<a href="/employees/accomplishments/create" class="btn btn-primary">Add New</a></h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
@@ -18,7 +23,7 @@
                 <td>{{ date('M d Y', strtotime($usersaccomplishment->dateto)) }}</td>
                 {{--<td>{{ date('M d Y', strtotime($usersaccomplishment->datefrom)) }}</td>--}}
                 <td>
-                    <a href="/admin/accomplishments/{{ $usersaccomplishment->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="/employees/accomplishments/{{ $usersaccomplishment->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usersaccomplishment->id }}">Delete</a>
                 </td>
             </tr>

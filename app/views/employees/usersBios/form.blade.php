@@ -3,6 +3,11 @@
         <span>{{ Session::get('error') }}</span>
     </div>
 @endif
+@if(Session::has('success'))
+    <div class="alert alert-success">
+        <span>{{ Session::get('success') }}</span>
+    </div>
+@endif
 <legend>Bio</legend>
 <div class="rows">
     <div class="form-group col-md-4">

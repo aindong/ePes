@@ -42,7 +42,7 @@ class UsersEducationsController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersEducation::create($data);
-
+        Session::flash('success', 'Successfully added a new education level');
 		return Redirect::route('employees.pds.educations.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersEducationsController extends \BaseController {
 		}
 
 		$userseducation->update($data);
-
+        Session::flash('success', 'Successfully updated an education level');
 		return Redirect::route('employees.pds.educations.index');
 	}
 

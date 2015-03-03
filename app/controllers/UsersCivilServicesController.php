@@ -42,7 +42,7 @@ class UsersCivilServicesController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 		
 		UsersCivilService::create($data);
-
+        Session::flash('success', 'Successfully added a new civil service');
 		return Redirect::route('employees.pds.civil-services.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersCivilServicesController extends \BaseController {
 		}
 
 		$userscivilservice->update($data);
-
+        Session::flash('success', 'Successfully updated a civil service');
 		return Redirect::route('employees.pds.civil-services.index');
 	}
 

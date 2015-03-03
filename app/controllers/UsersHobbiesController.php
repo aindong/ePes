@@ -42,7 +42,7 @@ class UsersHobbiesController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersHobby::create($data);
-
+        Session::flash('success', 'Successfully added a new skill/hobby');
 		return Redirect::route('employees.pds.hobbies.index');
 	}
 
@@ -68,7 +68,7 @@ class UsersHobbiesController extends \BaseController {
 	public function edit($id)
 	{
 		$usershobby = UsersHobby::find($id);
-
+        Session::flash('success', 'Successfully updated a hobby/skill');
 		return View::make('employees.usersHobbies.edit', compact('usershobby'));
 	}
 

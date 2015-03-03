@@ -42,7 +42,7 @@ class UsersRecognitionsController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersRecognition::create($data);
-
+        Session::flash('success', 'Successfully added a recognition');
 		return Redirect::route('employees.pds.recognitions.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersRecognitionsController extends \BaseController {
 		}
 
 		$usersrecognition->update($data);
-
+        Session::flash('success', 'Successfully updated a recognition');
 		return Redirect::route('employees.pds.recognitions.index');
 	}
 

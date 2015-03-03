@@ -42,7 +42,7 @@ class UsersReferencesController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersReference::create($data);
-
+        Session::flash('success', 'Successfully added a reference');
 		return Redirect::route('employees.pds.references.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersReferencesController extends \BaseController {
 		}
 
 		$usersreference->update($data);
-
+        Session::flash('success', 'Successfully updated a reference');
 		return Redirect::route('employees.pds.references.index');
 	}
 

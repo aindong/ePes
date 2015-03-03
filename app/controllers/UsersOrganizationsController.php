@@ -42,7 +42,7 @@ class UsersOrganizationsController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersOrganization::create($data);
-
+        Session::flash('success', 'Successfully added on organization');
 		return Redirect::route('employees.pds.organizations.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersOrganizationsController extends \BaseController {
 		}
 
 		$usersorganization->update($data);
-
+        Session::flash('success', 'Successfully updated an organization');
 		return Redirect::route('employees.pds.organizations.index');
 	}
 

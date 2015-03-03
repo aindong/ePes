@@ -44,7 +44,7 @@ class UsersBiosController extends \BaseController {
         $data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersBio::create($data);
-
+        Session::flash('success', 'Successfully updated your bio');
 		return Redirect::route('employees.pds.bios.index');
 	}
 
@@ -92,7 +92,7 @@ class UsersBiosController extends \BaseController {
 		}
         $data['employee_no'] = Auth::getUser()->employee_no;
 		$usersbio->update($data);
-
+        Session::flash('success', 'Successfully updated your bio');
 		return Redirect::route('employees.pds.bios.index');
 	}
 

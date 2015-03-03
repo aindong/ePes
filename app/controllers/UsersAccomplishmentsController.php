@@ -42,7 +42,7 @@ class UsersAccomplishmentsController extends \BaseController {
 		$data['employee_no'] = Auth::getUser()->employee_no;
 
 		UsersAccomplishment::create($data);
-
+        Session::flash('success', 'Successfully added a new accomplishment');
 		return Redirect::route('employees.accomplishments.index');
 	}
 
@@ -90,7 +90,7 @@ class UsersAccomplishmentsController extends \BaseController {
 		}
 
 		$usersaccomplishment->update($data);
-
+        Session::flash('success', 'Successfully updated an accomplishments');
 		return Redirect::route('employees.accomplishments.index');
 	}
 
