@@ -31,9 +31,9 @@ class AdminController extends BaseController {
 
         if (Input::has('schedule')) {
             $sched = Input::get('schedule');
-            $results = Pes::where('evaluation_id', '=', $sched)->get();
+            $results = Pes::where('evaluation_id', '=', $sched)->where('status', '=', 'active')->get();
         } else {
-            $results = Pes::All();
+            $results = Pes::where('status', '=', 'active')->get();
         }
 
         $finals = [];

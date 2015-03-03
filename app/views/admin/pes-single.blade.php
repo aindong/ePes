@@ -210,6 +210,8 @@
     <br/>
 
     {{ Form::close() }}
+
+    <a href="#" class="btn btn-primary">Accept and Send Performance Evaluation to HR</a>
 @stop
 
 @section('page-script')

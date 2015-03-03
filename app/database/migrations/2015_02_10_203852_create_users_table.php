@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->integer('role_id');
 			$table->string('password');
             $table->string('lockpds', 10);
+            $table->integer('registered');
 			$table->rememberToken();
 			$table->softDeletes();
 			$table->timestamps();

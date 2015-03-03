@@ -17,6 +17,7 @@ class CreatePes extends Migration {
 			$table->increments('id');
             $table->string('employee_no');
             $table->string('evaluation_id');
+            $table->string('status')->default('inactive');
             $table->integer('q1');
             $table->integer('q2');
             $table->integer('q3');

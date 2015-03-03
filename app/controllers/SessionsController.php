@@ -59,7 +59,13 @@ class SessionsController extends \BaseController {
 			return Redirect::back()->withInput();
 		}
 
-		$user->password = $data['password'];
+        if ($user->registered > 0) {
+            Session::flash('error', 'Sorry but this user is already registered on the system.');
+            return Redirect::back()->withInput();
+        }
+
+        $user->registered = 1;
+		$user->password   = $data['password'];
 		$user->save();
 
         Session::flash('success', 'Successfully registered! You can try to login now.');
