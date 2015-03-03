@@ -62,7 +62,7 @@ class SessionsController extends \BaseController {
 		$user->password = $data['password'];
 		$user->save();
 
-        Session::flash('success', 'Successfully registered! You can try to login now.k');
+        Session::flash('success', 'Successfully registered! You can try to login now.');
         return Redirect::back()->withInput();
 	}
 
