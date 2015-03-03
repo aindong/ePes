@@ -53,6 +53,9 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
     // Accomplishments
     Route::get('accomplishments', ['uses' => 'AdminController@accomplishments']);
     Route::get('accomplishments/{id}', ['uses' => 'AdminController@singleAccomplishments']);
+
+    // Position
+    Route::resource('positions', 'PositionsController');
 });
 
 // Employee
