@@ -24,6 +24,7 @@ class SupervisorsController extends \BaseController {
         $pes = new Pes();
         $pes->employee_no    = $id;
         $pes->evaluation_id  = $schedule->id;
+        $pes->status         = 'inactive';
         $pes->q1             = $data['q1'];
         $pes->q2             = $data['q2'];
         $pes->q3             = $data['q3'];
