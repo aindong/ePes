@@ -18,8 +18,8 @@
                 <div class="col-md-8">
                     {{ Form::select('department', $departments, null, ['class' => 'form-control']) }}
                 </div>
-                <div class="col-md-3">
-                    <button type="submit" class="btn btn-primary col-md-4">Filter Date</button>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary col-md-4">Filter</button>
                 </div>
 
             </div>
