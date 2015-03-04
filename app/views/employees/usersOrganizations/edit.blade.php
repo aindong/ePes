@@ -8,7 +8,7 @@
         </div>
     @endif
     {{ Form::model($usersorganization, ['route' => ['employees.pds.organizations.update', $usersorganization->id], 'method' => 'put']) }}
-        @include('employees.usersorganizations.form')
+        @include('employees.usersOrganizations.form')
     {{ Form::close() }}
 @stop
 
