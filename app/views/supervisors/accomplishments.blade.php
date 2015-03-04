@@ -25,7 +25,7 @@
         </thead>
         <tbody>
         @foreach($users as $user)
-            @if($user->role->name == 'employee')
+            {{--@if($user->role->name == 'employee')--}}
                 <tr>
                     <td>{{{ $user->employee_no }}}</td>
                     <td>{{{ isset($user->bio->lastname) ? ucfirst($user->bio->lastname) : '' }}}, {{{ isset($user->bio->firstname) ? ucfirst($user->bio->firstname) : '' }}} {{{ isset($user->bio->middlename) ? ucfirst($user->bio->middlename) : '' }}}.</td>
@@ -43,7 +43,7 @@
                         @endif
                     </td>
                 </tr>
-            @endif
+            {{--@endif--}}
         @endforeach
         </tbody>
     </table>
