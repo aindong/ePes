@@ -48,6 +48,8 @@
                     @else
                         <td><a class="btn btn-danger" href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}/waiting">Unconfirm</a></td>
                     @endif
+                @else
+                    <td></td>
                 @endif
             </tr>
         @endforeach
