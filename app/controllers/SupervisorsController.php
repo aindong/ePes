@@ -57,10 +57,10 @@ class SupervisorsController extends \BaseController {
         return View::make('supervisors.accomplishments', compact('users'));
     }
 
-    public function confirmAccomplishments($id)
+    public function confirmAccomplishments($id, $status)
     {
         $accomplishment = UsersAccomplishment::findOrFail($id);
-        $accomplishment->status = 'confirmed';
+        $accomplishment->status = $status;
         $accomplishment->save();
 
         Session::flash('success', 'Successfully confirmed an accomplishment');

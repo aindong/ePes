@@ -42,7 +42,11 @@
                 <td>{{{ ucfirst($accomplishment->accomplishment) }}}</td>
                 <td>{{{ ucfirst($accomplishment->dateto) }}}</td>
                 <td>{{ ucfirst($accomplishment->status) }}</td>
-                <td><a href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}">Confirm</a></td>
+                @if($accomplishment->status == 'waiting')
+                    <td><a href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}/confirmed">Confirm</a></td>
+                @else
+                    <td><a href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}/waiting">Unconfirm</a></td>
+                @endif
             </tr>
         @endforeach
         </tbody>
