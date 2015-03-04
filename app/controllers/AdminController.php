@@ -12,9 +12,10 @@ class AdminController extends BaseController {
 
         if (Input::has('department')) {
             $department = Input::get('department');
-            $users = User::where('department_id', '=', $department)->get();
+            $users = User::where('department_id', '=', $department)
+                ->where('role_id', '=', 4)->get();
         } else {
-            $users = User::all();
+            $users = User::where('role_id', '=', 4)->get();
         }
 
         return View::make('supervisors.accomplishments', compact('users'));
