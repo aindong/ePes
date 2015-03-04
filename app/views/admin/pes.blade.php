@@ -49,9 +49,9 @@
                 @if(Auth::getUser()->role->name == 'admin')
                     <td><a href="/admin/pes-single/{{ $final['id'] }}" class="btn btn-primary">View Evaluation</a></td>
                 @elseif(Auth::getUser()->role->name == 'employee')
-                    <td><a href="/supervisor/pes-single/{{ $final['id'] }}" class="btn btn-primary">View Evaluation</a></td>
-                @else
                     <td><a href="/employees/pes-single/{{ $final['id'] }}" class="btn btn-primary">View Evaluation</a></td>
+                @else
+                    <td><a href="/supervisor/pes-single/{{ $final['id'] }}" class="btn btn-primary">View Evaluation</a></td>
                 @endif
 
             </tr>
