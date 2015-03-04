@@ -1,6 +1,12 @@
 @extends('layouts.default')
 
 @section('content')
+    @if(Session::has('success'))
+        <div class="alert alert-success">
+            <span>{{ Session::get('success') }}</span>
+        </div>
+    @endif
+
     <h2>Users Accomplishments</h2>
     <div>
         <form action="" method="get">
@@ -24,6 +30,8 @@
             <th>Name</th>
             <th>Accomplishment</th>
             <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -33,6 +41,8 @@
                 <td>{{{ isset($accomplishment->user->bio->lastname) ? ucfirst($accomplishment->user->bio->lastname) : '' }}}, {{{ isset($accomplishment->user->bio->firstname) ? ucfirst($accomplishment->user->bio->firstname) : '' }}} {{{ isset($accomplishment->user->bio->middlename) ? ucfirst($accomplishment->user->bio->middlename) : '' }}}.</td>
                 <td>{{{ ucfirst($accomplishment->accomplishment) }}}</td>
                 <td>{{{ ucfirst($accomplishment->dateto) }}}</td>
+                <td>{{ ucfirst($accomplishment->status) }}</td>
+                <td><a href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}">Confirm</a></td>
             </tr>
         @endforeach
         </tbody>

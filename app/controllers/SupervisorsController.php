@@ -53,8 +53,18 @@ class SupervisorsController extends \BaseController {
 
     public function accomplishments()
     {
-        $users = User::where('department_id', '=', Auth::getUser()->department_id)->get();
+        $users = User::where('department_id', '=', Auth::getUser()->department_id)->where('role_id', '=', 4)->get();
         return View::make('supervisors.accomplishments', compact('users'));
+    }
+
+    public function confirmAccomplishments($id)
+    {
+        $accomplishment = UsersAccomplishment::findOrFail($id);
+        $accomplishment->status = 'confirmed';
+        $accomplishment->save();
+
+        Session::flash('success', 'Successfully confirmed an accomplishment');
+        return Redirect::back();
     }
 
     public function singleAccomplishments($id)

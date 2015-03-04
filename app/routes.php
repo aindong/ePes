@@ -100,6 +100,7 @@ Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'],
 	Route::get('/', ['uses' => 'SupervisorsController@index']);
     Route::get('accomplishments', ['as' => 'supervisors.user.list', 'uses' => 'SupervisorsController@accomplishments']);
     Route::get('accomplishments/{id}', ['uses' => 'SupervisorsController@singleAccomplishments']);
+    Route::get('confirm-accomplishment/{id}', ['uses' => 'SupervisorsController@confirmAccomplishments']);
 
     Route::get('pes/{id}', ['uses' => 'SupervisorsController@pes']);
     Route::get('pes-results', ['uses' => 'SupervisorsController@pesResults']);
