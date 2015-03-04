@@ -9,6 +9,12 @@ class AdminController extends BaseController {
 
     public function accomplishments()
     {
+        $departments = Department::all();
+
+        $departmentList = [];
+        foreach($departments as $key => $department) {
+            $departmentList[$department->id] = $department->name;
+        }
 
         if (Input::has('department')) {
             $department = Input::get('department');
@@ -18,7 +24,8 @@ class AdminController extends BaseController {
             $users = User::where('role_id', '=', 4)->get();
         }
 
-        return View::make('supervisors.accomplishments', compact('users'));
+        return View::make('supervisors.accomplishments', compact('users'))
+            ->with('departments', $departmentList);
     }
 
     public function pes()

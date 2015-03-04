@@ -11,6 +11,22 @@
             <span>{{ Session::get('success') }}</span>
         </div>
     @endif
+
+    @if(Auth::getUser()->role->name == 'admin')
+        {{ Form::open(['method' => 'get']) }}
+            <div class="row">
+                <div class="col-md-8">
+                    {{ Form::select('department', $departments, null, ['class' => 'form-control']) }}
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary col-md-4">Filter Date</button>
+                </div>
+
+            </div>
+
+        {{ Form::close() }}
+    @endif
+
     <h2>Accomplishments</h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
