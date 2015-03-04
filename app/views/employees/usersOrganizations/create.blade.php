@@ -9,7 +9,7 @@
     @endif
 
     {{ Form::open(['route' => 'employees.pds.organizations.store', 'method' => 'post']) }}
-        @include('employees.usersorganizations.form')
+        @include('employees.usersOrganizations.form')
     {{ Form::close() }}
 @stop
 

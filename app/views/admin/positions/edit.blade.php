@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <legend>Updating a department</legend>
+    <legend>Updating a position</legend>
     {{ Form::model($position, ['route' => ['admin.positions.update', $position->id], 'method' => 'put']) }}
     @include('admin.positions.form')
     {{ Form::close() }}

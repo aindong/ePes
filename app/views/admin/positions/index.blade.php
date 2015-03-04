@@ -23,7 +23,7 @@
                 <td>{{ date('M d Y', strtotime($position->created_at)) }}</td>
                 <td>{{ date('M d Y', strtotime($position->updated_at)) }}</td>
                 <td>
-                    <a href="/admin/departments/{{ $position->id }}/edit" class="btn btn-warning">Update</a>
+                    <a href="/admin/positions/{{ $position->id }}/edit" class="btn btn-warning">Update</a>
                     <a href="#" class="deleteItem btn btn-danger" data-item="{{ $position->id }}">Delete</a>
                 </td>
             </tr>

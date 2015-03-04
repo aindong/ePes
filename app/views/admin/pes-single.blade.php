@@ -212,8 +212,13 @@
     {{ Form::close() }}
 
     @if(Auth::getUser()->employee_no == $evaluation->employee_no && $evaluation->status == 'inactive')
+        <label for="honest" style="font-size: 20px">
+            <input type="checkbox" id="honest"/>
+            The above rating has been discussed with me by my immediate supervisor on _________________. Areas for improvement have been mutually agreed upon and I fully commit myself to achieve these objectives.
+        </label>
+
         {{ Form::open(['url' => '/employees/submit-pes/'. $evaluation->id, 'method' => 'post']) }}
-            <button class="btn btn-primary" type="submit">Accept and Send Performance Evaluation to HR</button>
+            <button class="btn btn-primary btnSubmit" type="submit" disabled>Accept and Send Performance Evaluation to HR</button>
         {{ Form::close() }}
     @endif
 
