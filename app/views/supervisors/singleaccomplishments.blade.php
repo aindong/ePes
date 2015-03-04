@@ -42,10 +42,12 @@
                 <td>{{{ ucfirst($accomplishment->accomplishment) }}}</td>
                 <td>{{{ ucfirst($accomplishment->dateto) }}}</td>
                 <td>{{ ucfirst($accomplishment->status) }}</td>
-                @if($accomplishment->status == 'waiting')
-                    <td><a class="btn btn-primary" href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}/confirmed">Confirm</a></td>
-                @else
-                    <td><a class="btn btn-danger" href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}/waiting">Unconfirm</a></td>
+                @if(Auth::getUser()->role->name == 'supervisor')
+                    @if($accomplishment->status == 'waiting')
+                        <td><a class="btn btn-primary" href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}/confirmed">Confirm</a></td>
+                    @else
+                        <td><a class="btn btn-danger" href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}/waiting">Unconfirm</a></td>
+                    @endif
                 @endif
             </tr>
         @endforeach
