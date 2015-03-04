@@ -15,7 +15,7 @@
         <tbody>
         @foreach($logs as $log)
         <tr>
-            <td>{{ ucfirst($log->user_id) }}</td>
+            <td>{{ ucfirst($log->user->employee_no) }}</td>
             <td>{{ ucfirst($log->action) }}</td>
             <td>{{ date('M d Y', strtotime($log->created_at)) }}</td>
             <td>{{ date('M d Y', strtotime($log->updated_at)) }}</td>
