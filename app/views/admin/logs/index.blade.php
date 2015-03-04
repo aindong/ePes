@@ -5,7 +5,7 @@
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
-            <th>Name</th>
+            <th>Employee No.</th>
             <th>Details</th>
             <th>Created</th>
             <th>Updated</th>
