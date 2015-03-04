@@ -99,9 +99,12 @@ class AdminController extends BaseController {
 
             $accomplishments = UsersAccomplishment::where('employee_no', '=', $id)
                 ->whereBetween('dateto', $range)
+                ->where('status', '=', 'confirmed')
                 ->get();
         } else {
-            $accomplishments = UsersAccomplishment::where('employee_no', '=', $id)->get();
+            $accomplishments = UsersAccomplishment::where('employee_no', '=', $id)
+                ->where('status', '=', 'confirmed')
+                ->get();
         }
 
         //print_r($accomplishments);
