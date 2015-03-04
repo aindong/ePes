@@ -28,7 +28,7 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 	Route::get('/', ['as' => 'users.dashboard', 'uses' => 'AdminController@index']);
 
     Route::get('/pes', ['as' => 'admin.pes', 'uses' => 'AdminController@pes']);
-    Route::get('/pes-single/{id}', ['uses' => 'EmployeesController@pesSingle']);
+    Route::get('/pes-single/{id}/{emp}', ['uses' => 'AdminController@pesSingle']);
 
 	// Users management
 	Route::resource('users', 'UsersController');
@@ -104,6 +104,7 @@ Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'],
     Route::get('pes/{id}', ['uses' => 'SupervisorsController@pes']);
     Route::get('pes-results', ['uses' => 'SupervisorsController@pesResults']);
     Route::post('doPes/{id}', ['uses' => 'SupervisorsController@doPes']);
+    Route::get('/pes-single/{id}/{emp}', ['uses' => 'SupervisorsController@pesSingle']);
 
     Route::get('employees/{employee}/pds', ['as' => 'supervisors.pds.view', 'uses' => 'SupervisorsController@viewPds']);
 });

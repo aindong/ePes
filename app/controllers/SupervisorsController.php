@@ -118,6 +118,15 @@ class SupervisorsController extends \BaseController {
             ->with('educations', $education);
     }
 
+    public function pesSingle($id, $emp)
+    {
+        $evaluation = Pes::findOrFail($id);
+        $user = User::where('employee_no', '=', $emp)->first();
+        return View::make('admin.pes-single')
+            ->with('evaluation', $evaluation)
+            ->with('user', $user);
+    }
+
     public function pesResults()
     {
         $evaluations = Evaluation::all();

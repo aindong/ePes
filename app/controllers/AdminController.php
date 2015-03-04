@@ -73,6 +73,15 @@ class AdminController extends BaseController {
             ->with('finals', $finals);
     }
 
+    public function pesSingle($id, $emp)
+    {
+        $evaluation = Pes::findOrFail($id);
+        $user = User::where('employee_no', '=', $emp)->first();
+        return View::make('admin.pes-single')
+            ->with('evaluation', $evaluation)
+            ->with('user', $user);
+    }
+
     public function singleAccomplishments($id)
     {
 
