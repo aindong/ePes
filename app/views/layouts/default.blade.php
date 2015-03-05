@@ -128,7 +128,7 @@
                     <li><a href="/employees/pds/hobbies">Hobby/Skills</a></li>
                     <li><a href="/employees/pds/recognitions">Recognition</a></li>
                     <li><a href="/employees/pds/organizations">Organization</a></li>
-                    <li><a href="/employees/pds/questionaires">Other Questions</a></li>
+                    {{--<li><a href="/employees/pds/questionaires">Other Questions</a></li>--}}
                     <li><a href="/employees/pds/references">Reference</a></li>
                 </ul>
             </aside>
