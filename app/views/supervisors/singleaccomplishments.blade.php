@@ -23,6 +23,10 @@
         </form>
         <br/>
     </div>
+    <a href="#" class="btn btn-info pull-right print">Print</a>
+    <iframe id="print" src="/print/accomplishment?employee_no={{ $employee_no }}&from={{ Input::get('from') }}&to={{ Input::get('to') }}" frameborder="0" style="display: none"></iframe>
+    
+    <br/><br/>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
@@ -62,6 +66,19 @@
         $(document).ready(function() {
             var table = $('#example').DataTable();
         });
+
+        $('.print').click(function() {
+            printIframe('print');
+        });
+
+        function printIframe(id)
+        {
+            var iframe = document.frames ? document.frames[id] : document.getElementById(id);
+            var ifWin = iframe.contentWindow || iframe;
+            iframe.focus();
+            ifWin.printMe();
+            return false;
+        }
     </script>
 
     <script type="text/javascript">

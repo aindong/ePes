@@ -84,4 +84,43 @@ class EmployeesController extends \BaseController {
         Session::flash('success', 'Evaluation was successfully confirmed and submitted to HR.');
         return Redirect::to('/employees/pes');
     }
+
+    // PRINTS
+    public function printAccomplishment()
+    {
+        if(!Input::has('employee_no')) {
+            return Redirect::back();
+        }
+        $from = \Carbon\Carbon::today();
+        $to   = \Carbon\Carbon::today();
+
+        $range  = [
+            $from,
+            $to
+        ];
+
+        if(Input::has('from') && Input::has('to')) {
+            $from  = strtotime(Input::get('from'));
+            $to    = strtotime(Input::get('to'));
+
+            $range = [
+                \Carbon\Carbon::createFromTimestamp($from),
+                \Carbon\Carbon::createFromTimestamp($to)
+            ];
+        }
+
+        $employee_no = Input::get('employee_no');
+
+        $accomplishments = UsersAccomplishment::where('employee_no', '=', $employee_no)
+            ->whereBetween('dateto', $range)
+            ->get();
+
+        $employee = User::where('employee_no', $employee_no)->first();
+
+        $supervisor = User::where('role_id', 2)->where('department_id', $employee->department_id)->first();
+
+        return View::make('prints.accomplishment')->with('accomplishments', $accomplishments)
+            ->with('employee', $employee)
+            ->with('supervisor', $supervisor);
+    }
 }

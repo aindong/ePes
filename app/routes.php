@@ -109,3 +109,5 @@ Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'],
 
     Route::get('employees/{employee}/pds', ['as' => 'supervisors.pds.view', 'uses' => 'SupervisorsController@viewPds']);
 });
+
+Route::get('/print/accomplishment', ['as' => 'prints.accomplishment', 'uses' => 'EmployeesController@printAccomplishment']);

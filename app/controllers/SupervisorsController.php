@@ -90,7 +90,8 @@ class SupervisorsController extends \BaseController {
         }
 
         //print_r($accomplishments);
-        return View::make('supervisors.singleaccomplishments', compact('accomplishments'));
+        return View::make('supervisors.singleaccomplishments', compact('accomplishments'))
+            ->with('employee_no', $id);
     }
 
     public function viewPds($employee)
