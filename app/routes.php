@@ -111,3 +111,5 @@ Route::group(['before' => 'auth|hasRole:supervisor', 'prefix' => 'supervisors'],
 });
 
 Route::get('/print/accomplishment', ['as' => 'prints.accomplishment', 'uses' => 'EmployeesController@printAccomplishment']);
+Route::get('/events', ['as' => 'events', 'uses' => 'CelebrationsController@events']);
+Route::get('/jobs/{id}', ['as' => 'jobs', 'uses' => 'JobvacanciesController@jobs']);

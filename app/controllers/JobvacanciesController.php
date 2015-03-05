@@ -14,6 +14,13 @@ class JobvacanciesController extends \BaseController {
 		return View::make('admin.jobvacancies.index', compact('jobvacancies'));
 	}
 
+    public function jobs($id)
+    {
+        $job = Jobvacancy::findOrFail($id);
+
+        return Response::json($job, 200);
+    }
+
 	/**
 	 * Show the form for creating a new jobvacancy
 	 *

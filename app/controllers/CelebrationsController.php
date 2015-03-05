@@ -14,6 +14,28 @@ class CelebrationsController extends \BaseController {
 		return View::make('admin.celebrations.index', compact('celebrations'));
 	}
 
+    /**
+     * Display a listing of the resource.
+     * GET /events
+     *
+     * @return Response
+     */
+    public function events()
+    {
+        $events = Celebration::all();
+
+        $result = [];
+        foreach ($events as $event) {
+            $result[] = [
+                'title' => $event->name,
+                'start' => $event['start_at'],
+                'end'   => $event['end_at']
+            ];
+        }
+
+        return Response::json($result);
+    }
+
 	/**
 	 * Show the form for creating a new celebration
 	 *

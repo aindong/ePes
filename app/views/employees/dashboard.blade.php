@@ -18,7 +18,7 @@
             <td>{{ date('M d Y', strtotime($jobvacancy->created_at)) }}</td>
             <td>{{ date('M d Y', strtotime($jobvacancy->created_at)) }}</td>
             <td>
-                <a href="#" class="btn btn-primary">View</a>
+                <a href="#" class="btn btn-primary viewJob" data-id="{{ $jobvacancy->id }}" data-toggle="modal" data-target="#myModal" >View</a>
             </td>
         </tr>
         @endforeach
@@ -28,6 +28,25 @@
     <br/><br/>
     <h3>Event Calendar</h3>
     <div id='calendar'></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Loading...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
 
 @section('page-script')
@@ -42,9 +61,26 @@
                     left: 'prev,next today',
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
-                }
-//                events: '/admin/seminars'
-            })
+                },
+                events: '/events'
+            });
+
+            $('.viewJob').on('click', function(e) {
+                e.preventDefault();
+
+                var id = $(this).attr('data-id');
+                $.ajax({
+                    url: '/jobs/' + id,
+                    type: 'get',
+                    success: function(data) {
+                        var body = $('.modal-body');
+                        body.html(data.description);
+
+                        var title = $('.modal-title');
+                        title.html(data.title);
+                    }
+                });
+            });
         });
     </script>
 @stop
