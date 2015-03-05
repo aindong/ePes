@@ -1,32 +1,39 @@
 @extends('layouts.default')
 
 @section('content')
-    @if(Auth::getUser()->lockpds == 'locked')
-        <div class="lock">
-            <h1>YOUR PDS IS LOCKED.</h1>
-            <p>If you need to change something, ask the HR Department to unlock it.</p>
-        </div>
-    @endif
-    @if(Session::has('success'))
-        <div class="alert alert-success">
-            <span>{{ Session::get('success') }}</span>
-        </div>
-    @endif
-    <h2>Hobbies/Skills <a href="/employees/pds/hobbies/create" class="btn btn-primary">Add New</a></h2>
+    <h2>Skill Search</h2>
+    <span style="font-style: italic; color: red">Note: This list is based on the employees who have filled up their BIOS/PDS</span><br/>
+    <span style="font-style: italic; color: red">Note: This list is based on the number of employees who have filled up their SKILLS/HOBBIES on their PDS</span><br/>
+    <br/>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
-            <th>Hobby</th>
-            <th>Actions</th>
+            <th>Employee No</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Telephone</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Skills</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($usershobbies as $usershobby)
+        @foreach($users as $user)
             <tr>
-                <td>{{ $usershobby->hobby }}</td>
+                <td>{{{ $user->employee_no }}}</td>
+                <td>{{ $user->firstname }} {{ $user->lastname }}</td>
+                <td>{{ $user->residentialaddress }}</td>
+                <td>{{ $user->gender }}</td>
+                <td>{{ $user->telno }}</td>
+                <td>{{ $user->celno }}</td>
+                <td>{{ $user->email }}</td>
                 <td>
-                    <a href="hobbies/{{ $usershobby->id }}/edit" class="btn btn-warning">Update</a>
-                    <a href="#" class="deleteItem btn btn-danger" data-item="{{ $usershobby->id }}">Delete</a>
+                    <ul>
+                    @foreach($user->skills as $skill)
+                        <li>{{ $skill->hobby }}</li>
+                    @endforeach
+                    </ul>
                 </td>
             </tr>
         @endforeach

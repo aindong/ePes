@@ -7,6 +7,17 @@ class AdminController extends BaseController {
         return View::make('admin.dashboard');
     }
 
+    public function skillSearch()
+    {
+        $users = User::join('usersbios', 'users.employee_no', '=', 'usersbios.employee_no')
+            ->join('usershobbies', 'users.employee_no', '=', 'usershobbies.employee_no')
+            ->groupBy('users.employee_no')
+            ->get();
+
+        return View::make('admin.jobsearch')
+            ->with('users', $users);
+    }
+
     public function accomplishments()
     {
         $departments = Department::all();
