@@ -35,8 +35,9 @@
 
 </style>
 @section('content')
-    <h4>Evaluation Result of: {{{ isset($user->bio->lastname) ? ucfirst($user->bio->lastname) : '' }}}, {{{ isset($user->bio->firstname) ? ucfirst($user->bio->firstname) : '' }}} {{{ isset($user->bio->middlename) ? ucfirst($user->bio->middlename) : '' }}}.</h4>
-
+    <h4>Evaluation Result of: {{{ isset($user->bio->lastname) ? ucfirst($user->bio->lastname) : '' }}}, {{{ isset($user->bio->firstname) ? ucfirst($user->bio->firstname) : '' }}} {{{ isset($user->bio->middlename) ? ucfirst($user->bio->middlename) : '' }}}.
+        <a href="#" class="btn btn-primary printPes">Print</a></h4>
+    <iframe id="print" src="/print/pes?eval_id={{ $evaluation->id }}" frameborder="0" style="display: none;"></iframe>
     {{ Form::open(['url' => '/supervisors/doPes/'.$user->employee_no, 'method' => 'POST']) }}
     <h3>Instuctions</h3>
     <ol>
@@ -306,6 +307,19 @@
             $('.answer').on('change', function() {
                 calculate();
             });
+        });
+
+        function printIframe(id)
+        {
+            var iframe = document.frames ? document.frames[id] : document.getElementById(id);
+            var ifWin = iframe.contentWindow || iframe;
+            iframe.focus();
+            ifWin.printMe();
+            return false;
+        }
+
+        $('.printPes').click(function() {
+            printIframe('print');
         });
     </script>
 @stop

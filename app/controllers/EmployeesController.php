@@ -123,4 +123,16 @@ class EmployeesController extends \BaseController {
             ->with('employee', $employee)
             ->with('supervisor', $supervisor);
     }
+
+    public function printPes()
+    {
+        $eval_id     = Input::get('eval_id');
+
+        $pes = Pes::findOrFail($eval_id);
+
+        $employee = User::where('employee_no', $pes->employee_no)->first();
+
+        return View::make('prints.pes')->with('evaluation', $pes)
+            ->with('user', $employee);
+    }
 }
