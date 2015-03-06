@@ -72,6 +72,7 @@
                     <li class="<?php echo Request::is('admin/evaluations*') ? 'active' : ''; ?>"><a href="/admin/evaluations">Evaluation Schedules</a></li>
                     <li class="<?php echo Request::is('admin/pes*') ? 'active' : ''; ?>"><a href="/admin/pes">Performance Evaluations Reports</a></li>
                     <li class="<?php echo Request::is('admin/accomplishments*') ? 'active' : ''; ?>"><a href="/admin/accomplishments">Accomplishment Reports</a></li>
+                    <li class="<?php echo Request::is('admin/skillsearch*') ? 'active' : ''; ?>"><a href="/admin/skillsearch">Skill Search</a></li>
 
                     <li class="<?php echo Request::is('admin/logs*') ? 'active' : ''; ?>"><a href="/admin/logs">Audit Trail</a></li>
                 </ul>
@@ -124,10 +125,10 @@
                     <li><a href="/employees/pds/work-experiences">Work Experience</a></li>
                     <li><a href="/employees/pds/voluntary-works">Voluntary Work</a></li>
                     <li><a href="/employees/pds/trainings">Training</a></li>
-                    <li><a href="/employees/pds/hobbies">Hobby</a></li>
+                    <li><a href="/employees/pds/hobbies">Hobby/Skills</a></li>
                     <li><a href="/employees/pds/recognitions">Recognition</a></li>
                     <li><a href="/employees/pds/organizations">Organization</a></li>
-                    <li><a href="/employees/pds/questionaires">Other Questions</a></li>
+                    {{--<li><a href="/employees/pds/questionaires">Other Questions</a></li>--}}
                     <li><a href="/employees/pds/references">Reference</a></li>
                 </ul>
             </aside>
