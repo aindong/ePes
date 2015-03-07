@@ -35,6 +35,7 @@ class DepartmentsController extends \BaseController {
 
 		if ($validator->fails())
 		{
+            Session::flash('error', 'Error on creating a new department');
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
