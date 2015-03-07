@@ -16,6 +16,7 @@ class Department extends \Eloquent {
 	// Add your validation rules here
 	public static $rules = [
 		// 'title' => 'required'
+        'name'  => 'unique:departments'
 	];
 
 	// Don't forget to fill this array
