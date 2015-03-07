@@ -190,53 +190,53 @@
                     </tr>
                     <tr>
                         <td>Elementary</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $education['elementary']->schoolname }}</td>
+                        <td>{{ $education['elementary']->degreecourse }}</td>
+                        <td>{{ $education['elementary']->yeargraduated }}</td>
+                        <td>{{ $education['elementary']->units }}</td>
+                        <td>{{ $education['elementary']->attendancefrom }}</td>
+                        <td>{{ $education['elementary']->attendanceto }}</td>
+                        <td>{{ $education['elementary']->awards }}</td>
                     </tr>
                     <tr>
                         <td>Secondary</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $education['secondary']->schoolname }}</td>
+                        <td>{{ $education['secondary']->degreecourse }}</td>
+                        <td>{{ $education['secondary']->yeargraduated }}</td>
+                        <td>{{ $education['secondary']->units }}</td>
+                        <td>{{ $education['secondary']->attendancefrom }}</td>
+                        <td>{{ $education['secondary']->attendanceto }}</td>
+                        <td>{{ $education['secondary']->awards }}</td>
                     </tr>
                     <tr>
                         <td>Vocational/Trade Course</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $education['vocational']->schoolname }}</td>
+                        <td>{{ $education['vocational']->degreecourse }}</td>
+                        <td>{{ $education['vocational']->yeargraduated }}</td>
+                        <td>{{ $education['vocational']->units }}</td>
+                        <td>{{ $education['vocational']->attendancefrom }}</td>
+                        <td>{{ $education['vocational']->attendanceto }}</td>
+                        <td>{{ $education['vocational']->awards }}</td>
                     </tr>
                     <tr>
                         <td>College</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $education['college']->schoolname }}</td>
+                        <td>{{ $education['college']->degreecourse }}</td>
+                        <td>{{ $education['college']->yeargraduated }}</td>
+                        <td>{{ $education['college']->units }}</td>
+                        <td>{{ $education['college']->attendancefrom }}</td>
+                        <td>{{ $education['college']->attendanceto }}</td>
+                        <td>{{ $education['college']->awards }}</td>
                     </tr>
                     <tr>
                         <td>Graduate Studies</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $education['graduate']->schoolname }}</td>
+                        <td>{{ $education['graduate']->degreecourse }}</td>
+                        <td>{{ $education['graduate']->yeargraduated }}</td>
+                        <td>{{ $education['graduate']->units }}</td>
+                        <td>{{ $education['graduate']->attendancefrom }}</td>
+                        <td>{{ $education['graduate']->attendanceto }}</td>
+                        <td>{{ $education['graduate']->awards }}</td>
                     </tr>
                 </table>
 
@@ -256,12 +256,12 @@
                         <td>Date of Release</td>
                     </tr>
                     <tr>
-                        <td colspan="2">a </td>
-                        <td></td>
-                        <td></td>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td> </td>
+                        <td colspan="2">{{ $civil->careerservice }}</td>
+                        <td>{{ $civil->rating }}</td>
+                        <td>{{ $civil->examinationdate }}</td>
+                        <td colspan="2">{{ $civil->examinationplace }}</td>
+                        <td>{{ $civil->licensenumber }}</td>
+                        <td> {{ $civil->careerservice }}</td>
                     </tr>
                     <tr>
                         <td colspan="2">a</td>

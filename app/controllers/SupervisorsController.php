@@ -124,9 +124,13 @@ class SupervisorsController extends \BaseController {
             }
         }
 
+        // Get user civil service
+        $civils = UsersCivilService::where('employee_no', '=', $employee)->get();
+
         return View::make('supervisors.pds')
             ->with('bio', $bio)
-            ->with('educations', $education);
+            ->with('educations', $education)
+            ->with('civils', $civils);
     }
 
     public function pesSingle($id, $emp)
