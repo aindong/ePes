@@ -127,9 +127,33 @@ class SupervisorsController extends \BaseController {
         // Get user civil service
         $civils = UsersCivilService::where('employee_no', '=', $employee)->get();
 
+        // Get user work experience
+        $works = UsersWorkExperience::where('employee_no', '=', $employee)->get();
+
+        // Get user voluntary work
+        $voluntary = UsersVoluntaryWork::where('employee_no', '=', $employee)->get();
+
+        // Get user training
+        $trainings = UsersTraining::where('employee_no', '=', $employee)->get();
+
+        // Get user hobbies
+        $hobbies = UsersHobby::where('employee_no', '=', $employee)->get();
+
+        // Get user recognitions
+        $recognitions = UsersRecognition::where('employee_no', '=', $employee)->get();
+
+        // Get user organizations
+        $organizations = UsersOrganization::where('employee_no', '=', $employee)->get();
+
         return View::make('supervisors.pds')
             ->with('bio', $bio)
-            ->with('educations', $education)
+            ->with('educations', $educations)
+            ->with('works', $works)
+            ->with('voluntary', $voluntary)
+            ->with('trainings', $trainings)
+            ->with('hobbies', $hobbies)
+            ->with('recognitions', $recognitions)
+            ->with('organizations', $organizations)
             ->with('civils', $civils);
     }
 

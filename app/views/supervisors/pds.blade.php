@@ -16,45 +16,35 @@
                     </tr>
                     <tr>
                         <td>Surname</td>
-                        <td colspan="7">{{ $bio->lastname }}</td>
+                        <td colspan="7">{{ ucfirst($bio->lastname) }}</td>
                     </tr>
                     <tr>
                         <td>First Name</td>
-                        <td colspan="7">{{ $bio->firstname }}</td>
+                        <td colspan="7">{{ ucfirst($bio->firstname) }}</td>
                     </tr>
                     <tr>
                         <td>Middle Name</td>
-                        <td colspan="4">{{ $bio->middlename }}</td>
+                        <td colspan="4">{{ ucfirst($bio->middlename) }}</td>
                         <td colspan="2">Name extension eg. jr</td>
-                        <td> {{ $bio->nameextension }} </td>
+                        <td> {{ ucfirst($bio->nameextension) }} </td>
                     </tr>
                     <tr>
-                        <td colspan="2">Date of Birth (mm/dd/yyyy) </td>
-                        <td colspan="3">{{ $bio->birthdate }}</td>
+                        <td>Date of Birth (mm/dd/yyyy) </td>
+                        <td colspan="4">{{ date('m/d/Y', strtotime($bio->birthdate)) }}</td>
                         <td rowspan="3" colspan="2">Residential Address</td>
-                        <td rowspan="3">{{ $bio->residentialaddress }}</td>
+                        <td rowspan="3">{{ ucfirst($bio->residentialaddress) }}</td>
                     </tr>
                     <tr>
                         <td>Place of Birth </td>
-                        <td colspan="4">{{ $bio->birthplace }}</td>
+                        <td colspan="4">{{ ucfirst($bio->birthplace) }}</td>
                     </tr>
                     <tr>
                         <td>Sex </td>
-                        <td colspan="4">
-                            <input type="radio" name="sex" value="Male" checked>Male
-                            <input type="radio" name="sex" value="Female">Female
-                        </td>
+                        <td colspan="4"> {{ ucfirst($bio->gender) }} </td>
                     </tr>
                     <tr>
                         <td rowspan="3">Civil Status </td>
-                        <td rowspan="3" colspan="4">
-                            <input type="radio" name="status" value="single" checked>Single
-                            <input type="radio" name="status" value="married">Married<br>
-                            <input type="radio" name="status" value="widow">Widow
-                            <input type="radio" name="status" value="anulled">Anulled<br>
-                            <input type="radio" name="status" value="seperated">Seperated
-                            <input type="radio" name="status" value="others">Others please specify ____________
-                        </td>
+                        <td rowspan="3" colspan="4"> {{ ucfirst($bio->civilstatus) }} </td>
                         {{--<td colspan="2">Zip Code </td>--}}
                         {{--<td></td>--}}
                     </tr>
@@ -63,12 +53,12 @@
                         <td> {{ $bio->telno }} </td>
                     </tr>
                     <tr>
-                        <td rowspan="3" colspan="2">Permanent Address</td>
-                        <td rowspan="3">{{ $bio->permanentaddress }}</td>
+                        <td rowspan="4" colspan="2">Permanent Address</td>
+                        <td rowspan="4">{{ ucfirst($bio->permanentaddress) }}</td>
                     </tr>
                     <tr>
                         <td>Citizenship</td>
-                        <td colspan="4"> {{ $bio->citizenship }} </td>
+                        <td colspan="4"> {{ ucfirst($bio->citizenship) }} </td>
                     </tr>
                     <tr>
                         <td>Height (m)</td>
@@ -76,13 +66,13 @@
                     </tr>
                     <tr>
                         <td>Weight (kg)</td>
-                        <td colspan="7"> {{ $bio->weight }} </td>
+                        <td colspan="4"> {{ $bio->weight }} </td>
                         {{--<td colspan="2">Zip Code</td>--}}
                         {{--<td> </td>--}}
                     </tr>
                     <tr>
                         <td>Blood Type</td>
-                        <td colspan="4"> {{ $bio->bloodtype }} </td>
+                        <td colspan="4"> {{ ucfirst($bio->bloodtype) }} </td>
                         <td colspan="2">Telephone Number</td>
                         <td> </td>
                     </tr>
@@ -118,32 +108,33 @@
                     </tr>
                     <tr>
                         <td>Spouse's Surname</td>
-                        <td colspan="4"> {{ $bio->spouselastname }} </td>
-                        <td colspan="2">Name of Child/Children</td>
-                        <td>Date of Birth (mm/dd/yyyy) </td>
+                        <td colspan="4"> {{ ucfirst($bio->spouselastname) }} </td>
+                        <!-- <td colspan="2">Name of Child/Children</td>
+                        <td>Date of Birth (mm/dd/yyyy) </td> -->
                     </tr>
                     <tr>
                         <td>First Name</td>
-                        <td colspan="4">{{ $bio->spousefirstname }}</td>
-                        <td colspan="2"></td>
-                        <td></td>
+                        <td colspan="4">{{ ucfirst($bio->spousefirstname) }}</td>
+                        <!-- <td colspan="2"></td>
+                        <td></td> -->
                     </tr>
                     <tr>
                         <td>Middle Name</td>
-                        <td colspan="4">{{ $bio->spousemiddlename }}</td>
-                        <td colspan="2"></td>
-                        <td></td>
+                        <td colspan="4">{{ ucfirst($bio->spousemiddlename) }}</td>
+                        <!-- <td colspan="2"></td>
+                        <td></td> -->
                     </tr>
                     <tr>
                         <td>Occupation</td>
-                        <td colspan="4">{{ $bio->spouseoccupation }}</td>
-                        <td colspan="2"></td>
-                        <td></td>
+                        <td colspan="4">{{ ucfirst($bio->spouseoccupation) }}</td>
+                        <!-- <td colspan="2"></td>
+                        <td></td> -->
                     </tr>
                     <tr>
-                        <td colspan="5">Employer/Bus. Name</td>
-                        <td colspan="2">{{ $bio->spouseemployername }}</td>
-                        <td></td>
+                        <td>Employer/Bus. Name</td>
+                        <td colspan="4">{{ ucfirst($bio->spouseemployername) }}</td>
+                        <!-- <td colspan="2"></td>
+                        <td></td> -->
                     </tr>
                     {{--<tr>--}}
                         {{--<td colspan="8"><i>(Continue on separate sheet, if necessary)</i></td>--}}
@@ -151,22 +142,22 @@
                     <tr>
                         <td>Business Address</td>
                         <td colspan="4"></td>
-                        <td colspan="2"></td>
-                        <td></td>
+                        <!-- <td colspan="2"></td>
+                        <td></td> -->
                     </tr>
                     <tr>
                         <td>Telephone Number</td>
                         <td colspan="4"></td>
-                        <td colspan="2"></td>
-                        <td></td>
+                        <!-- <td colspan="2"></td>
+                        <td></td> -->
                     </tr>
                         <td>Father's Name</td>
-                        <td colspan="7">{{ $bio->fathername }}</td>
+                        <td colspan="7">{{ ucfirst($bio->fathername) }}</td>
                     </tr>
 
                     <tr>
                         <td>Mother's Name</td>
-                        <td colspan="7">{{ $bio->mothername }}</td>
+                        <td colspan="7">{{ ucfirst($bio->mothername) }}</td>
                     </tr>
                 </table>
 
@@ -188,56 +179,22 @@
                         <td>From</td>
                         <td>To</td>
                     </tr>
+                    @if($educations->isEmpty())
+                        <tr><td colspan="8"><i>No inputted work experience</i></td></tr>
+                    @endif
+                    @foreach($educations as $education)        
                     <tr>
-                        <td>Elementary</td>
-                        <td>{{ $education['elementary']->schoolname }}</td>
-                        <td>{{ $education['elementary']->degreecourse }}</td>
-                        <td>{{ $education['elementary']->yeargraduated }}</td>
-                        <td>{{ $education['elementary']->units }}</td>
-                        <td>{{ $education['elementary']->attendancefrom }}</td>
-                        <td>{{ $education['elementary']->attendanceto }}</td>
-                        <td>{{ $education['elementary']->awards }}</td>
+                        <td>{{ ucfirst($education->level) }}</td>
+                        <td>{{ ucfirst($education->schoolname) }}</td>
+                        <td>{{ ucfirst($education->degreecourse) }}</td>
+                        <td>{{ $education->yeargraduated }}</td>
+                        <td>{{ $education->units }}</td>
+                        <td>{{ date('m/d/Y', strtotime($education->attendancefrom)) }}</td>
+                        <td>{{ date('m/d/Y', strtotime($education->attendanceto)) }}</td>
+                        <td>{{ ucfirst($education->awards) }}</td>
                     </tr>
-                    <tr>
-                        <td>Secondary</td>
-                        <td>{{ $education['secondary']->schoolname }}</td>
-                        <td>{{ $education['secondary']->degreecourse }}</td>
-                        <td>{{ $education['secondary']->yeargraduated }}</td>
-                        <td>{{ $education['secondary']->units }}</td>
-                        <td>{{ $education['secondary']->attendancefrom }}</td>
-                        <td>{{ $education['secondary']->attendanceto }}</td>
-                        <td>{{ $education['secondary']->awards }}</td>
-                    </tr>
-                    <tr>
-                        <td>Vocational/Trade Course</td>
-                        <td>{{ $education['vocational']->schoolname }}</td>
-                        <td>{{ $education['vocational']->degreecourse }}</td>
-                        <td>{{ $education['vocational']->yeargraduated }}</td>
-                        <td>{{ $education['vocational']->units }}</td>
-                        <td>{{ $education['vocational']->attendancefrom }}</td>
-                        <td>{{ $education['vocational']->attendanceto }}</td>
-                        <td>{{ $education['vocational']->awards }}</td>
-                    </tr>
-                    <tr>
-                        <td>College</td>
-                        <td>{{ $education['college']->schoolname }}</td>
-                        <td>{{ $education['college']->degreecourse }}</td>
-                        <td>{{ $education['college']->yeargraduated }}</td>
-                        <td>{{ $education['college']->units }}</td>
-                        <td>{{ $education['college']->attendancefrom }}</td>
-                        <td>{{ $education['college']->attendanceto }}</td>
-                        <td>{{ $education['college']->awards }}</td>
-                    </tr>
-                    <tr>
-                        <td>Graduate Studies</td>
-                        <td>{{ $education['graduate']->schoolname }}</td>
-                        <td>{{ $education['graduate']->degreecourse }}</td>
-                        <td>{{ $education['graduate']->yeargraduated }}</td>
-                        <td>{{ $education['graduate']->units }}</td>
-                        <td>{{ $education['graduate']->attendancefrom }}</td>
-                        <td>{{ $education['graduate']->attendanceto }}</td>
-                        <td>{{ $education['graduate']->awards }}</td>
-                    </tr>
+                    @endforeach
+                    
                 </table>
 
                 <table>
@@ -255,22 +212,19 @@
                         <td>Number</td>
                         <td>Date of Release</td>
                     </tr>
+                    @if($civils->isEmpty())
+                        <tr><td colspan="8"><i>No inputted civil service eligibility...</i></td></tr>
+                    @endif
+                    @foreach($civils as $civil)        
                     <tr>
                         <td colspan="2">{{ $civil->careerservice }}</td>
                         <td>{{ $civil->rating }}</td>
-                        <td>{{ $civil->examinationdate }}</td>
+                        <td>{{ date('m/d/Y', strtotime($civil->examinationdate)) }}</td>
                         <td colspan="2">{{ $civil->examinationplace }}</td>
                         <td>{{ $civil->licensenumber }}</td>
                         <td> {{ $civil->careerservice }}</td>
                     </tr>
-                    <tr>
-                        <td colspan="2">a</td>
-                        <td></td>
-                        <td></td>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td> </td>
-                    </tr>
+                    @endforeach
                 </table>
 
                 <table>
@@ -290,36 +244,21 @@
                         <td>From</td>
                         <td>To</td>
                     </tr>
-                    <tr>
-                        <td>a</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    @if($works->isEmpty())
+                        <tr><td colspan="8"><i>No inputted work experience...</i></td></tr>
+                    @endif
+                    @foreach($works as $work) 
+                    <tr>  
+                        <td>{{ date('m/d/Y', strtotime($work->datefrom)) }}</td>
+                        <td>{{ date('m/d/Y', strtotime($work->dateto)) }}</td>
+                        <td>{{ $work->position }}</td>
+                        <td>{{ $work->department }}</td>
+                        <td>{{ $work->salary }}</td>
+                        <td>{{ $work->salarygrade }}</td>
+                        <td>{{ $work->statusappointment }}</td>
+                        <td>{{ $work->governmentservice }}</td>
                     </tr>
-                    <tr>
-                        <td>a</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>a</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    @endforeach
                 </table>
 
                 <table>
@@ -336,27 +275,18 @@
                         <td>From</td>
                         <td>To</td>
                     </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td></td>
-                        <td></td>
-                        <td colspan="2"></td>
-                        <td></td>
+                    @if($voluntary->isEmpty())
+                        <tr><td colspan="8"><i>No inputted voluntary work...</i></td></tr>
+                    @endif
+                    @foreach($voluntary as $vol) 
+                    <tr>  
+                        <td colspan="3">{{ $vol->organization }}</td>
+                        <td>{{ date('m/d/Y', strtotime($vol->datefrom)) }}</td>
+                        <td>{{ date('m/d/Y', strtotime($vol->dateto)) }}</td>
+                        <td colspan="2">{{ $vol->numberofhours }}</td>
+                        <td>{{ $vol->position }}</td>
                     </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td></td>
-                        <td></td>
-                        <td colspan="2"></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td></td>
-                        <td></td>
-                        <td colspan="2"></td>
-                        <td></td>
-                    </tr>
+                    @endforeach
                 </table>
 
                 <table>
@@ -373,27 +303,18 @@
                         <td>From</td>
                         <td>To</td>
                     </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td></td>
-                        <td></td>
-                        <td colspan="2"></td>
-                        <td></td>
+                    @if($trainings->isEmpty())
+                        <tr><td colspan="8"><i>No inputted trainings...</i></td></tr>
+                    @endif
+                    @foreach($trainings as $training) 
+                    <tr>  
+                        <td colspan="3">{{ $training->seminar }}</td>
+                        <td>{{ date('m/d/Y', strtotime($training->datefrom)) }}</td>
+                        <td>{{ date('m/d/Y', strtotime($training->dateto)) }}</td>
+                        <td colspan="2">{{ $training->numberofhours }}</td>
+                        <td>{{ $training->sponsor }}</td>
                     </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td></td>
-                        <td></td>
-                        <td colspan="2"></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td></td>
-                        <td></td>
-                        <td colspan="2"></td>
-                        <td></td>
-                    </tr>
+                    @endforeach
                 </table>
 
                 <table>
@@ -405,22 +326,18 @@
                         <td colspan="2">Non-Academic Distinction/Recognition</td>
                         <td colspan="2">MEMBERSHIP IN ASSOCIATION/ORGANIZATION</td>
                     </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td colspan="2"></td>
-                        <td colspan="2"></td>
+                    
+                    <?php $highest = max(count($hobbies), count($recognitions), count($organizations)) ?>
+
+                    @for($x = 0; $x < $highest; $x++ )
+                    <tr>   
+                        <td colspan="3"> {{ isset($hobbies[$x]) ? $hobbies[$x]->hobby : 'No hobbies inputted...' }} </td>
+                        <td colspan="3"> {{ isset($recognitions[$x]) ? $recognitions[$x]->recognition : 'No recognitions inputted...' }} </td>
+                        <td colspan="2"> {{ isset($organizations[$x]) ? $organizations[$x]->organization : 'No organizations inputted...' }} </td>
                     </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td colspan="2"></td>
-                        <td colspan="2"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">a</td>
-                        <td colspan="2"></td>
-                        <td colspan="2"></td>
-                    </tr>
+                    @endfor
                 </table>
+
             </form>
         </body>
 </html>
