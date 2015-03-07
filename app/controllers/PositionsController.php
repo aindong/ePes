@@ -35,7 +35,7 @@ class PositionsController extends \BaseController {
 
 		if ($validator->fails())
 		{
-            Session::flash('success', 'Error in creating a new position');
+            Session::flash('error', 'Error in creating a new position');
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
@@ -83,7 +83,7 @@ class PositionsController extends \BaseController {
 		$validator = Validator::make($data = Input::all(), Position::$rules);
 
 		if ($validator->fails()) {
-            Session::flash('success', 'Error updating a position');
+            Session::flash('error', 'Error updating a position');
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
