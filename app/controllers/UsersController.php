@@ -186,7 +186,10 @@ class UsersController extends \BaseController {
 			return Response::json(['message' => 'error'], 400);
 		}
 
-		User::destroy($id);
+        $user = User::findOrFail($id)->delete();
+
+        $log = AuditTrail::where('employee_no', $user->employee_no)->delete();
+
 
 		return Response::json(['message' => 'deleted successfully'], 200);
 	}
