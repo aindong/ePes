@@ -24,7 +24,7 @@
         @foreach($users as $user)
         <tr>
             <td>{{{ $user->employee_no }}}</td>
-            <td></td>
+            <td>{{{ isset($user->department->name) ? ucfirst($user->department->name) : '' }}}</td>
             <td>{{{ ucfirst($user->position) }}}</td>
             <td>{{{ ucfirst($user->role->name) }}}</td>
             <td>{{{ strtoupper($user->lockpds) }}}</td>
