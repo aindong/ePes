@@ -45,7 +45,7 @@
                 <tr>
                     <td>{{{ $user->employee_no }}}</td>
                     <td>{{{ isset($user->bio->lastname) ? ucfirst($user->bio->lastname) : '' }}}, {{{ isset($user->bio->firstname) ? ucfirst($user->bio->firstname) : '' }}} {{{ isset($user->bio->middlename) ? ucfirst($user->bio->middlename) : '' }}}.</td>
-                    <td>{{{ ucfirst($user->department->name) }}}</td>
+                    <td>{{{ isset($user->department->name) ? ucfirst($user->department->name) : '' }}}</td>
                     <td>{{{ ucfirst($user->position) }}}</td>
                     <td>{{{ ucfirst($user->role->name) }}}</td>
                     <td>
