@@ -55,7 +55,7 @@
                 <span style="font-weight: 600">Name of Employee:</span> {{{ isset($user->bio->lastname) ? ucfirst($user->bio->lastname) : '' }}}, {{{ isset($user->bio->firstname) ? ucfirst($user->bio->firstname) : '' }}} {{{ isset($user->bio->middlename) ? ucfirst($user->bio->middlename) : '' }}}.
             </div>
             <div class="col-md-2">
-                <span style="font-weight: 600">Office:</span> {{ $user->department->name }}
+                <span style="font-weight: 600">Office:</span> {{ isset($user->department->name) ? ucfirst($user->department->name) ? '' }}
             </div>
             <div class="col-md-4"></div>
         </div>
