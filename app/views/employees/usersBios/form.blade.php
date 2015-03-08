@@ -75,7 +75,7 @@
 <div class="rows">
     <div class="form-group col-md-4">
         {{ Form::label('height', 'Height (m) *', ['class' => 'form-label']) }}
-        {{ Form::text('height', null, [ class' => 'form-control', 'required' => 'required', 'placeholder' => 'Height']) }}
+        {{ Form::text('height', null, [ 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Height']) }}
     </div>
 
     <div class="form-group col-md-4">
