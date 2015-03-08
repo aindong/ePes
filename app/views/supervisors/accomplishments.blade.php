@@ -52,7 +52,9 @@
 
                         @if(Auth::getUser()->role->name != 'admin')
                             <a href="/supervisors/accomplishments/{{ $user->employee_no }}" class="btn btn-info">View Accomplishments</a>
-                            <a href="/supervisors/pes/{{ $user->employee_no }}" class="btn btn-primary">Evaluate</a>
+                            @if($evaluation)
+                                <a href="/supervisors/pes/{{ $user->employee_no }}" class="btn btn-primary">Evaluate</a>
+                            @endif
                             <a href="/supervisors/employees/{{ $user->employee_no }}/pds" class="btn btn-info">View PDS</a>
                         @else
                             <a href="/admin/accomplishments/{{ $user->employee_no }}" class="btn btn-info">View Accomplishments</a>

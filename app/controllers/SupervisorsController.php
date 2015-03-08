@@ -12,19 +12,19 @@ class SupervisorsController extends \BaseController {
     {
         $user = User::where('employee_no', '=', $id)->first();
 
-        $schedule = Evaluation::latest()->first();
+        $schedule = Evaluation::orderBy('id', 'desc')->first();
 
-        if(strtotime($schedule->start_at) >= time() && strtotime($schedule->end_at) <= time())
-        {
+        if (time() >= strtotime($schedule->start_at) && time() <= strtotime($schedule->end_at)) {
+            return View::make('supervisors.pes', compact('user'));
+        } else {
             return Redirect::back();
         }
 
-        return View::make('supervisors.pes', compact('user'));
     }
 
     public function doPes($id)
     {
-        $schedule = Evaluation::latest()->first();
+        $schedule = Evaluation::orderBy('id', 'desc')->first();
 
         $data = Input::all();
 
@@ -61,7 +61,20 @@ class SupervisorsController extends \BaseController {
     public function accomplishments()
     {
         $users = User::where('department_id', '=', Auth::getUser()->department_id)->where('role_id', '=', 4)->get();
-        return View::make('supervisors.accomplishments', compact('users'));
+
+        $schedule = Evaluation::orderBy('id', 'desc')->first();
+        $evaluation = false;
+
+        if (time() >= strtotime($schedule->start_at) && time() <= strtotime($schedule->end_at)) {
+            $evaluation = true;
+        } else {
+            $evaluation = false;
+        }
+
+        //echo $schedule->id . ' - '. strtotime($schedule->start_at) . ' - ' . time() . ' - ' . strtotime($schedule->end_at). ' ' . $evaluation; exit;
+
+        return View::make('supervisors.accomplishments', compact('users'))
+            ->with('evaluation', $evaluation);
     }
 
     public function confirmAccomplishments($id, $status)
