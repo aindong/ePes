@@ -91,14 +91,14 @@
 
 <div class="rows">
     <div class="form-group col-md-4">
-        {{ Form::label('gsis', 'GSIS *', ['class' => 'form-label']) }}
+        {{ Form::label('gsis', 'GSIS ID No. *', ['class' => 'form-label']) }}
         {{ Form::text('gsis', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'GSIS Number']) }}
     </div>
 
     <div class="form-group col-md-4">
         {{
 
-         Form::label('pagibig', 'Pagibig *', ['class' => 'form-label']) }}
+         Form::label('pagibig', 'Pagibig ID No. *', ['class' => 'form-label']) }}
         {{ Form::text('pagibig', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Pagibig Number']) }}
     </div>
 
@@ -108,7 +108,7 @@
     </div>
 
     <div class="form-group col-md-6">
-        {{ Form::label('sss', 'SSS *', ['class' => 'form-label']) }}
+        {{ Form::label('sss', 'SSS No.*', ['class' => 'form-label']) }}
         {{ Form::text('sss', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'SSS Number']) }}
     </div>
 
@@ -130,7 +130,7 @@
     </div>
 
     <div class="form-group col-md-4">
-        {{ Form::label('email', 'Email *', ['class' => 'form-label']) }}
+        {{ Form::label('email', 'Email Address *', ['class' => 'form-label']) }}
         {{ Form::text('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email Address']) }}
     </div>
 </div>
