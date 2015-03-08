@@ -9,4 +9,9 @@ class Pes extends \Eloquent {
     {
         return $this->belongsTo('User', 'employee_no', 'employee_no');
     }
+
+    public function evaluator()
+    {
+        return $this->belongsTo('User', 'user_id');
+    }
 }

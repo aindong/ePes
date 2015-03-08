@@ -5,7 +5,8 @@ class SupervisorsController extends \BaseController {
 
     public function index()
     {
-        return View::make('supervisors.dashboard');
+        $user = User::findOrFail(Auth::getUser()->id);
+        return View::make('supervisors.dashboard', compact('user'));
     }
 
     public function pes($id)
@@ -20,6 +21,22 @@ class SupervisorsController extends \BaseController {
             return Redirect::back();
         }
 
+    }
+
+    public function updateUser($id)
+    {
+        if ($id != Auth::getUser()->id) {
+           Session::flash('error', 'Error updating profile');
+           return Redirect::back()->withInput();
+        }
+
+        $user = User::findOrFail($id);
+        $user->firstname = Input::get('firstname');
+        $user->lastname  = Input::get('lastname');
+        $user->save();
+
+        Session::flash('success', 'Successfully updated your profile');
+        return Redirect::back();
     }
 
     public function doPes($id)
@@ -40,6 +57,7 @@ class SupervisorsController extends \BaseController {
         $pes = new Pes();
         $pes->employee_no    = $id;
         $pes->evaluation_id  = $schedule->id;
+        $pes->user_id        = Auth::getUser()->id;
         $pes->status         = 'inactive';
         $pes->q1             = $data['q1'];
         $pes->q2             = $data['q2'];
@@ -225,17 +243,26 @@ class SupervisorsController extends \BaseController {
                     $adjective = 'P (POOR)';
                 }
 
+                $firstname = '';
+                $lastname  = '';
+                if (isset($result->user->bio->lastname)) {
+                    $lastname = $result->user->bio->lastname;
+                }
 
+                if (isset($result->user->bio->firstname)) {
+                    $firstname = $result->user->bio->firstname;
+                }
 
                 $finals[] = [
                     'id'          => $result->id,
                     'employee_no' => $result->employee_no,
-                    'name'        => $result->user->bio->lastname . ', ' . $result->user->bio->firstname,
+                    'name'        => $lastname . ', ' . $firstname,
                     'performance' => $performance,
                     'critical'    => $critical,
                     'overall'     => $overall,
                     'adjective'   => $adjective,
-                    'status'      => $result->status
+                    'status'      => $result->status,
+                    'evaluator'   => $result->evaluator->firstname . ' ' . $result->evaluator->lastname
                 ];
             }
         }

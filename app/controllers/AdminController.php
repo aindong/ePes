@@ -75,15 +75,26 @@ class AdminController extends BaseController {
                 $adjective = 'P (POOR)';
             }
 
+            $firstname = '';
+            $lastname  = '';
+            if (isset($result->user->bio->lastname)) {
+                $lastname = $result->user->bio->lastname;
+            }
+
+            if (isset($result->user->bio->firstname)) {
+                $firstname = $result->user->bio->firstname;
+            }
+
             $finals[] = [
                 'id'          => $result->id,
                 'employee_no' => $result->employee_no,
-                'name'        => $result->user->bio->lastname . ', ' . $result->user->bio->firstname,
+                'name'        => $lastname . ', ' . $firstname,
                 'performance' => $performance,
                 'critical'    => $critical,
                 'overall'     => $overall,
                 'adjective'   => $adjective,
-                'status'      => $result->status
+                'status'      => $result->status,
+                'evaluator'   => $result->evaluator->firstname . ' ' . $result->evaluator->lastname
             ];
         }
 
