@@ -63,7 +63,7 @@
 <div class="rows">
     <div class="form-group col-md-6">
         {{ Form::label('civilstatus', 'Civil status *', ['class' => 'form-label']) }}
-        {{ Form::select('civilstatus', ['single' => 'Single', 'married' => 'Married', 'widowed' => 'Widowed'], null, ['class' => 'form-control', 'required' => 'required']) }}
+        {{ Form::select('civilstatus', ['single' => 'Single', 'married' => 'Married', 'widowed' => 'Widowed', 'separated' => 'Separated', 'annulled' => 'Annulled'], null, ['class' => 'form-control', 'required' => 'required']) }}
     </div>
 
     <div class="form-group col-md-6">
