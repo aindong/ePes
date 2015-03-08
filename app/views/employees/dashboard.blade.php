@@ -47,6 +47,25 @@
             </div>
         </div>
     </div>
+
+    {{--Events--}}
+    <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Loading...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
 
 @section('page-script')
@@ -62,7 +81,10 @@
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                events: '/events'
+                events: '/events',
+                eventClick: function(calEvent, jsEvent, view) {
+                    alert(calEvent.id);
+                }
             });
 
             $('.viewJob').on('click', function(e) {

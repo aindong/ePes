@@ -27,6 +27,7 @@ class CelebrationsController extends \BaseController {
         $result = [];
         foreach ($events as $event) {
             $result[] = [
+                'id'    => $event->id,
                 'title' => $event->name,
                 'start' => $event['start_at'],
                 'end'   => $event['end_at']
