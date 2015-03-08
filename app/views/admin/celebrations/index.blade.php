@@ -5,7 +5,7 @@
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
-            <th>Name</th>
+            {{--<th>Name</th>--}}
             <th>Event Name</th>
             <th>Description</th>
             <th>Start Date</th>
@@ -18,7 +18,7 @@
         <tbody>
         @foreach($celebrations as $celebration)
         <tr>
-            <td>{{ $celebration->user_id }}</td>
+            {{--<td>{{ $celebration->user_id }}</td>--}}
             <td>{{ $celebration->name }}</td>
             <td>{{ $celebration->description }}</td>
             <td>{{ date('M d Y', strtotime($celebration->start_at)) }}</td>
