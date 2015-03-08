@@ -104,7 +104,15 @@ class DepartmentsController extends \BaseController {
 			return Response::json(['message' => 'error'], 400);
 		}
 
-		Department::destroy($id);
+        $department = Department::findOrFail($id);
+
+        $users = User::where('department_id', $department->id)->get();
+
+        if ($users->count() > 0) {
+            return Response::json(['message' => 'You cant delete a department with a user'], 400);
+        }
+
+        $department->delete();
 
 		return Response::json(['message' => 'deleted successfully'], 200);
 	}
