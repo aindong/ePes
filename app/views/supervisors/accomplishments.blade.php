@@ -27,6 +27,8 @@
         {{ Form::close() }}
     @endif
 
+    <span style="font-style: italic; color: red">Note: SELECT A DATE TO PRINT FIRST, TO GET THE BEST RESULT.</span><br/>
+
     <h2>Accomplishments</h2>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
