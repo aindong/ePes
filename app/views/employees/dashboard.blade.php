@@ -83,7 +83,20 @@
                 },
                 events: '/events',
                 eventClick: function(calEvent, jsEvent, view) {
-                    alert(calEvent.id);
+                    var id = calEvent.id;
+                    $.ajax({
+                        url: '/events/' + id,
+                        type: 'get',
+                        success: function(data) {
+                            $('#eventModal').modal('show');
+
+                            var body = $('.modal-body');
+                            body.html(data.description);
+
+                            var title = $('.modal-title');
+                            title.html(data.title);
+                        }
+                    });
                 }
             });
 

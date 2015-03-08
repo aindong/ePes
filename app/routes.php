@@ -116,4 +116,5 @@ Route::get('/print/accomplishment', ['as' => 'prints.accomplishment', 'uses' => 
 Route::get('/print/pes', ['as' => 'prints.pes', 'uses' => 'EmployeesController@printPes']);
 
 Route::get('/events', ['as' => 'events', 'uses' => 'CelebrationsController@events']);
+Route::get('/events/{id}', ['as' => 'events', 'uses' => 'CelebrationsController@eventsSingle']);
 Route::get('/jobs/{id}', ['as' => 'jobs', 'uses' => 'JobvacanciesController@jobs']);

@@ -37,6 +37,13 @@ class CelebrationsController extends \BaseController {
         return Response::json($result);
     }
 
+    public function eventsSingle($id)
+    {
+        $event = Celebration::findOrFail($id);
+
+        return Response::json($event);
+    }
+
 	/**
 	 * Show the form for creating a new celebration
 	 *
