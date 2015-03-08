@@ -12,6 +12,13 @@ class SupervisorsController extends \BaseController {
     {
         $user = User::where('employee_no', '=', $id)->first();
 
+        $schedule = Evaluation::latest()->first();
+
+        if(strtotime($schedule->start_at) >= time() && strtotime($schedule->end_at) <= time())
+        {
+            return Redirect::back();
+        }
+
         return View::make('supervisors.pes', compact('user'));
     }
 
