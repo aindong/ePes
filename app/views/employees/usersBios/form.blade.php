@@ -74,12 +74,12 @@
 
 <div class="rows">
     <div class="form-group col-md-4">
-        {{ Form::label('height', 'Height *', ['class' => 'form-label']) }}
-        {{ Form::text('height', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Height']) }}
+        {{ Form::label('height', 'Height (m) *', ['class' => 'form-label']) }}
+        {{ Form::text('height', null, [ class' => 'form-control', 'required' => 'required', 'placeholder' => 'Height']) }}
     </div>
 
     <div class="form-group col-md-4">
-        {{ Form::label('weight', 'Weight *', ['class' => 'form-label']) }}
+        {{ Form::label('weight', 'Weight (kg) *', ['class' => 'form-label']) }}
         {{ Form::text('weight', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Weight']) }}
     </div>
 
