@@ -189,6 +189,11 @@ class UsersController extends \BaseController {
         $user = User::findOrFail($id);
 
         $log = AuditTrail::where('user_id', $user->id)->delete();
+
+        // Dependents
+        $pes = Pes::where('employee_no', $user->employee_no)->delete();
+        $accomplishments = UsersAccomplishment::where('employee_no', $user->employee_no)->delete();
+
         $user->delete();
 
 		return Response::json(['message' => 'deleted successfully'], 200);
