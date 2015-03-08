@@ -27,7 +27,7 @@
     </label>
 </p>
 
-<a href="/employees/pds/accomplishments" class="btn btn-danger">Back</a>
+<a href="/employees/accomplishments" class="btn btn-danger">Back</a>
 <button type="submit" class="btn btn-primary btnSubmit" disabled>Submit</button>
 
 @section('page-script')
