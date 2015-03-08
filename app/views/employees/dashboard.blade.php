@@ -94,7 +94,7 @@
                             body.html(data.description);
 
                             var title = $('.modal-title');
-                            title.html(data.title);
+                            title.html(data.name);
                         }
                     });
                 }
