@@ -24,7 +24,7 @@
                     </tr>
                     <tr>
                         <td>Middle Name</td>
-                        <td colspan="4">{{ ($bio->middlename) ? ucfirst($bio->middlename) : '' }}</td>
+                        <td colspan="4">{{ isset($bio->middlename) ? ucfirst($bio->middlename) : '' }}</td>
                         <td colspan="2">Name extension eg. jr</td>
                         <td> {{ isset($bio->nameextension) ? ucfirst($bio->nameextension) : '' }} </td>
                     </tr>
