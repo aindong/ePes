@@ -37,7 +37,7 @@
                     <a href="/admin/users/{{ $user->id }}/lock" class="btn btn-primary">Lock</a>
                 @endif
                 @if(isset($user->bio->firstname))
-                    <a href="/admin/users/{{ $user->id }}/show" class="btn btn-info">View PDS</a>
+                    <a href="/admin/employees/{{ $user->employee_no }}/pds" class="btn btn-info">View PDS</a>
                 @endif
                 <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
                 <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>

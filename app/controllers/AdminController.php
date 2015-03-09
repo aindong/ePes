@@ -103,6 +103,69 @@ class AdminController extends BaseController {
             ->with('finals', $finals);
     }
 
+    public function viewPds($employee)
+    {
+        // Get user bio
+        $bio = UsersBio::where('employee_no', '=', $employee)->first();
+
+        // Get user education
+        $educations = UsersEducation::where('employee_no', '=', $employee)->get();
+
+        $education = [];
+
+        foreach ($educations as $education) {
+            switch ($education->level) {
+                case 'elementary':
+                    $education['elementary'] = $education;
+                    break;
+                case 'secondary':
+                    $education['secondary']  = $education;
+                    break;
+                case 'vocational':
+                    $education['vocational'] = $education;
+                    break;
+                case 'college':
+                    $education['college']    = $education;
+                    break;
+                case 'graduate studies':
+                    $education['graduate']   = $education;
+                    break;
+            }
+        }
+
+        // Get user civil service
+        $civils = UsersCivilService::where('employee_no', '=', $employee)->get();
+
+        // Get user work experience
+        $works = UsersWorkExperience::where('employee_no', '=', $employee)->get();
+
+        // Get user voluntary work
+        $voluntary = UsersVoluntaryWork::where('employee_no', '=', $employee)->get();
+
+        // Get user training
+        $trainings = UsersTraining::where('employee_no', '=', $employee)->get();
+
+        // Get user hobbies
+        $hobbies = UsersHobby::where('employee_no', '=', $employee)->get();
+
+        // Get user recognitions
+        $recognitions = UsersRecognition::where('employee_no', '=', $employee)->get();
+
+        // Get user organizations
+        $organizations = UsersOrganization::where('employee_no', '=', $employee)->get();
+
+        return View::make('supervisors.pds')
+            ->with('bio', $bio)
+            ->with('educations', $educations)
+            ->with('works', $works)
+            ->with('voluntary', $voluntary)
+            ->with('trainings', $trainings)
+            ->with('hobbies', $hobbies)
+            ->with('recognitions', $recognitions)
+            ->with('organizations', $organizations)
+            ->with('civils', $civils);
+    }
+
     public function pesSingle($id, $emp)
     {
         $evaluation = Pes::findOrFail($id);

@@ -32,6 +32,8 @@ Route::group(['before' => 'auth|hasRole:admin', 'prefix' => 'admin'], function()
 
     Route::get('/skillsearch', ['as' => 'admin.skillsearch', 'uses' => 'AdminController@skillSearch']);
 
+    Route::get('/employees/{employee}/pds', ['as' => 'supervisors.pds.view', 'uses' => 'AdminController@viewPds']);
+
 	// Users management
 	Route::resource('users', 'UsersController');
     Route::get('users/{id}/unlock', ['as' => 'admin.users.unlock', 'uses' => 'UsersController@unLock']);
