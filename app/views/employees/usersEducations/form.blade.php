@@ -64,7 +64,7 @@
         autoclose: true,
         todayBtn: true,
         pickerPosition: "bottom-left",
-        minView: 'day'
+        minView: 'month'
     });
 </script>
 @stop
