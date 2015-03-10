@@ -34,7 +34,7 @@
 <div class="row">
     <div class="form-group col-md-4">
         {{ Form::label('birthdate', 'Birthday *', ['class' => 'form-label']) }}
-        {{ Form::text('birthdate', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Birthdate']) }}
+        {{ Form::text('birthdate', null, ['class' => 'form-control form_datetime', 'required' => 'required', 'placeholder' => 'Birthdate']) }}
     </div>
 
     <div class="form-group col-md-4">
@@ -186,3 +186,15 @@
     <a href="/employees/pds/bios" class="btn btn-danger">Back</a>
     <button type="submit" class="btn btn-primary">Submit</button>
 </div>
+
+@section('page-script')
+    <script type="text/javascript">
+        $(".form_datetime").datetimepicker({
+            format: "mm/dd/yyyy",
+            autoclose: true,
+            todayBtn: true,
+            pickerPosition: "bottom-left",
+            minView: 'month'
+        });
+    </script>
+@stop
