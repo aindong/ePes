@@ -9,7 +9,7 @@
     </div>
 @endif
 <legend>Personal Information</legend>
-<div class="rows">
+<div class="row">
     <div class="form-group col-md-4">
         {{ Form::label('firstname', 'First Name *', ['class' => 'form-label']) }}
         {{ Form::text('firstname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'First name']) }}
@@ -31,7 +31,7 @@
     </div>
 </div>
 
-<div class="rows">
+<div class="row">
     <div class="form-group col-md-4">
         {{ Form::label('birthdate', 'Birthday *', ['class' => 'form-label']) }}
         {{ Form::text('birthdate', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Birthdate']) }}
@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<div class="rows">
+<div class="row">
     <div class="form-group col-md-6">
         {{ Form::label('residentialaddress', 'Current address *', ['class' => 'form-label']) }}
         {{ Form::textarea('residentialaddress', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Current address']) }}
@@ -60,7 +60,7 @@
     </div>
 </div>
 
-<div class="rows">
+<div class="row">
     <div class="form-group col-md-6">
         {{ Form::label('civilstatus', 'Civil status *', ['class' => 'form-label']) }}
         {{ Form::select('civilstatus', ['single' => 'Single', 'married' => 'Married', 'widowed' => 'Widowed', 'separated' => 'Separated', 'annulled' => 'Annulled'], null, ['class' => 'form-control', 'required' => 'required']) }}
@@ -72,7 +72,7 @@
     </div>
 </div>
 
-<div class="rows">
+<div class="row">
     <div class="form-group col-md-4">
         {{ Form::label('height', 'Height (m) *', ['class' => 'form-label']) }}
         {{ Form::text('height', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '3', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Height']) }}
@@ -89,7 +89,7 @@
     </div>
 </div>
 
-<div class="rows">
+<div class="row">
     <div class="form-group col-md-4">
         {{ Form::label('gsis', 'GSIS ID No. *', ['class' => 'form-label']) }}
         {{ Form::text('gsis', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '11', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'GSIS Number']) }}
@@ -118,7 +118,7 @@
     </div>
 </div>
 
-<div class="rows">
+<div class="row">
     <div class="form-group col-md-4">
         {{ Form::label('telno', 'Telephone # *', ['class' => 'form-label']) }}
         {{ Form::text('telno', null, ['data-parsley-maxlength' => '12', 'data-parsley-type' => 'number', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Telephone Number']) }}
@@ -135,7 +135,7 @@
     </div>
 </div>
 
-<div class="rows">
+<div class="row">
     <div class="form-group col-md-12">
         {{ Form::label('agencyemployeeno', 'Agency Employee # *', ['class' => 'form-label']) }}
         {{ Form::text('agencyemployeeno', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Agency Employee Number']) }}
