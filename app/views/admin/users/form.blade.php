@@ -9,10 +9,10 @@
     {{ Form::text('employee_no', null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
-{{--<div class="form-group">--}}
-    {{--{{ Form::label('password', 'Password *', ['class' => 'form-label']) }}--}}
-    {{--{{ Form::password('password', ['class' => 'form-control', 'required' => 'required']) }}--}}
-{{--</div>--}}
+<div class="form-group">
+    {{ Form::label('password', 'Password', ['class' => 'form-label']) }}
+    {{ Form::password('password', ['class' => 'form-control']) }}
+</div>
 
 <div class="form-group">
     {{ Form::label('department_id', 'Department *', ['class' => 'form-label']) }}
