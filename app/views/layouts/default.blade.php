@@ -153,6 +153,7 @@
 <script src="/js/bootstrap-datetimepicker.min.js"></script>
 <script src="/js/moment.js"></script>
 <script src="/packages/FullCalendar/fullcalendar.min.js"></script>
+<script src="/js/parseley.min.js"></script>
 @yield('page-script')
 </body>
 </html>
