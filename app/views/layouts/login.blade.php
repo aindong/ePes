@@ -187,7 +187,7 @@ body{
 			<input type="text" placeholder="Employee ID" name="employee_no" class="form-control"><br>
 			<input type="password" placeholder="password" name="password" class="form-control"><br>
 			<input type="submit" class="btn btn-primary" value="Submit">
-			<button class="btn btn-default showRegister" type="button">Register</button>
+			<button class="btn btn-default showRegister" type="button">Create an account</button>
 		</div>
 		{{ Form::close() }}
 
