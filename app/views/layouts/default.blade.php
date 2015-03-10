@@ -66,7 +66,7 @@
             margin: 2px 0 3px;
             padding: 0;
             list-style-type: none;
-            font-size: 0.9em;
+            font-size: 0.7em;
             line-height: 0.9em;
             opacity: 0;
 
@@ -74,6 +74,7 @@
             -o-transition: all .3s ease-in;
             -moz-transition: all .3s ease-in;
             -webkit-transition: all .3s ease-in;
+            color: red;
         }
 
         .parsley-errors-list.filled {
