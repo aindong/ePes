@@ -85,7 +85,7 @@
 
     <div class="form-group col-md-4">
         {{ Form::label('bloodtype', 'Blood Type *', ['class' => 'form-label']) }}
-        {{ Form::text('bloodtype', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Bloodtype']) }}
+        {{ Form::select('bloodtype',['A' => 'A', 'B' => 'B', 'AB' => 'AB', 'O' => 'O'], null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Bloodtype']) }}
     </div>
 </div>
 
