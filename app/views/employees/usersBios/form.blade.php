@@ -75,12 +75,12 @@
 <div class="rows">
     <div class="form-group col-md-4">
         {{ Form::label('height', 'Height (m) *', ['class' => 'form-label']) }}
-        {{ Form::text('height', null, ['data-parseley-type' => 'number', 'data-parsley-maxlength' => '3', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Height']) }}
+        {{ Form::text('height', null, ['data-parseley-type' => 'digits', 'data-parsley-maxlength' => '3', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Height']) }}
     </div>
 
     <div class="form-group col-md-4">
         {{ Form::label('weight', 'Weight (kg) *', ['class' => 'form-label']) }}
-        {{ Form::text('weight', null, ['data-parseley-type' => 'number', 'data-parsley-maxlength' => '3', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Weight']) }}
+        {{ Form::text('weight', null, ['data-parseley-type' => 'digits', 'data-parsley-maxlength' => '3', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Weight']) }}
     </div>
 
     <div class="form-group col-md-4">
@@ -92,41 +92,41 @@
 <div class="rows">
     <div class="form-group col-md-4">
         {{ Form::label('gsis', 'GSIS ID No. *', ['class' => 'form-label']) }}
-        {{ Form::text('gsis', null, ['data-parseley-type' => 'number', 'data-parsley-maxlength' => '11', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'GSIS Number']) }}
+        {{ Form::text('gsis', null, ['data-parseley-type' => 'digits', 'data-parsley-maxlength' => '11', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'GSIS Number']) }}
     </div>
 
     <div class="form-group col-md-4">
         {{
 
          Form::label('pagibig', 'Pagibig ID No. *', ['class' => 'form-label']) }}
-        {{ Form::text('pagibig', null, ['data-parseley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Pagibig Number']) }}
+        {{ Form::text('pagibig', null, ['data-parseley-type' => 'digits', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Pagibig Number']) }}
     </div>
 
     <div class="form-group col-md-4">
         {{ Form::label('philhealth', 'Philhealth *', ['class' => 'form-label']) }}
-        {{ Form::text('philhealth', null, ['data-parseley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Philhealth Number']) }}
+        {{ Form::text('philhealth', null, ['data-parseley-type' => 'digits', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Philhealth Number']) }}
     </div>
 
     <div class="form-group col-md-6">
         {{ Form::label('sss', 'SSS No.*', ['class' => 'form-label']) }}
-        {{ Form::text('sss', null, ['data-parseley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'SSS Number']) }}
+        {{ Form::text('sss', null, ['data-parseley-type' => 'digits', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'SSS Number']) }}
     </div>
 
     <div class="form-group col-md-6">
         {{ Form::label('tin', 'TIN # *', ['class' => 'form-label']) }}
-        {{ Form::text('tin', null, ['data-parseley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'TIN Number']) }}
+        {{ Form::text('tin', null, ['data-parseley-type' => 'digits', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'TIN Number']) }}
     </div>
 </div>
 
 <div class="rows">
     <div class="form-group col-md-4">
         {{ Form::label('telno', 'Telephone # *', ['class' => 'form-label']) }}
-        {{ Form::text('telno', null, ['data-parsley-maxlength' => '12', 'data-parseley-type' => 'number', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Telephone Number']) }}
+        {{ Form::text('telno', null, ['data-parsley-maxlength' => '12', 'data-parseley-type' => 'digits', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Telephone Number']) }}
     </div>
 
     <div class="form-group col-md-4">
         {{ Form::label('celno', 'Cellphone # *', ['class' => 'form-label']) }}
-        {{ Form::text('celno', null, ['data-parsley-maxlength' => '11', 'data-parseley-type' => 'number', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Cellphone Number']) }}
+        {{ Form::text('celno', null, ['data-parsley-maxlength' => '11', 'data-parseley-type' => 'digits', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Cellphone Number']) }}
     </div>
 
     <div class="form-group col-md-4">
@@ -178,7 +178,7 @@
 
     <div class="form-group col-md-12">
         {{ Form::label('spousetelno', 'Spouse Telephone Number', ['class' => 'form-label']) }}
-        {{ Form::text('spousetelno', null, ['data-parsley-maxlength' => '12', 'data-parseley-type' => 'number', 'class' => 'form-control', 'placeholder' => 'Spouse Telephone Number']) }}
+        {{ Form::text('spousetelno', null, ['data-parsley-maxlength' => '12', 'data-parseley-type' => 'digits', 'class' => 'form-control', 'placeholder' => 'Spouse Telephone Number']) }}
     </div>
 </div>
 
