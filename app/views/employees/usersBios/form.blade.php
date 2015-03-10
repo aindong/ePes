@@ -8,7 +8,7 @@
         <span>{{ Session::get('success') }}</span>
     </div>
 @endif
-<legend>Bio</legend>
+<legend>Personal Information</legend>
 <div class="rows">
     <div class="form-group col-md-4">
         {{ Form::label('firstname', 'First Name *', ['class' => 'form-label']) }}
