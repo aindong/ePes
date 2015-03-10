@@ -7,7 +7,7 @@
             <p>If you need to change something, ask the HR Department to unlock it.</p>
         </div>
     @endif
-    {{ Form::model($usersbio, ['route' => ['employees.pds.bios.update', $usersbio->id], 'method' => 'put']) }}
+    {{ Form::model($usersbio, ['route' => ['employees.pds.bios.update', $usersbio->id], 'method' => 'put', 'id' => 'demo-form', 'data-parsley-validate', 'novalidate']) }}
         @include('employees.usersBios.form')
     {{ Form::close() }}
 @stop
