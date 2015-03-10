@@ -182,5 +182,7 @@
     </div>
 </div>
 
-<a href="/employees/pds/bios" class="btn btn-danger">Back</a>
-<button type="submit" class="btn btn-primary">Submit</button>
+<div class="col-md-12">
+    <a href="/employees/pds/bios" class="btn btn-danger">Back</a>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
