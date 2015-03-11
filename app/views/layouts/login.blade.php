@@ -188,6 +188,8 @@ body{
 			<input type="password" placeholder="password" name="password" class="form-control"><br>
 			<input type="submit" class="btn btn-primary" value="Submit">
 			<button class="btn btn-default showRegister" type="button">Create an account</button>
+            <br/>
+            <button class="btn btn-info">Forgot your password?</button>
 		</div>
 		{{ Form::close() }}
 
@@ -199,6 +201,8 @@ body{
           <input type="password" placeholder="confirm password" name="password2" class="form-control" required="required"><br>
 		  <input type="submit" class="btn btn-primary" value="Submit" class="form-control">
 		  <button class="btn btn-default showLogin" type="button">Login</button>
+          <br/>
+          <button class="btn btn-info">Forgot your password?</button>
 	  </div>
 	  {{ Form::close() }}
 
