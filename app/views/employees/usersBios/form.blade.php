@@ -91,47 +91,47 @@
 
 <div class="row">
     <div class="form-group col-md-4">
-        {{ Form::label('gsis', 'GSIS ID No. *', ['class' => 'form-label']) }}
-        {{ Form::text('gsis', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '11', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'GSIS Number']) }}
+        {{ Form::label('gsis', 'GSIS ID No.', ['class' => 'form-label']) }}
+        {{ Form::text('gsis', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '11', 'class' => 'form-control', 'placeholder' => 'GSIS Number']) }}
     </div>
 
     <div class="form-group col-md-4">
         {{
 
-         Form::label('pagibig', 'Pagibig ID No. *', ['class' => 'form-label']) }}
-        {{ Form::text('pagibig', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Pagibig Number']) }}
+         Form::label('pagibig', 'Pagibig ID No.', ['class' => 'form-label']) }}
+        {{ Form::text('pagibig', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'placeholder' => 'Pagibig Number']) }}
     </div>
 
     <div class="form-group col-md-4">
-        {{ Form::label('philhealth', 'Philhealth *', ['class' => 'form-label']) }}
-        {{ Form::text('philhealth', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Philhealth Number']) }}
+        {{ Form::label('philhealth', 'Philhealth', ['class' => 'form-label']) }}
+        {{ Form::text('philhealth', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'placeholder' => 'Philhealth Number']) }}
     </div>
 
     <div class="form-group col-md-6">
-        {{ Form::label('sss', 'SSS No.*', ['class' => 'form-label']) }}
-        {{ Form::text('sss', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'SSS Number']) }}
+        {{ Form::label('sss', 'SSS No.', ['class' => 'form-label']) }}
+        {{ Form::text('sss', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'placeholder' => 'SSS Number']) }}
     </div>
 
     <div class="form-group col-md-6">
-        {{ Form::label('tin', 'TIN # *', ['class' => 'form-label']) }}
-        {{ Form::text('tin', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'TIN Number']) }}
+        {{ Form::label('tin', 'TIN #', ['class' => 'form-label']) }}
+        {{ Form::text('tin', null, ['data-parsley-type' => 'number', 'data-parsley-maxlength' => '12', 'class' => 'form-control', 'placeholder' => 'TIN Number']) }}
     </div>
 </div>
 
 <div class="row">
     <div class="form-group col-md-4">
-        {{ Form::label('telno', 'Telephone # *', ['class' => 'form-label']) }}
-        {{ Form::text('telno', null, ['data-parsley-maxlength' => '12', 'data-parsley-type' => 'number', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Telephone Number']) }}
+        {{ Form::label('telno', 'Telephone #', ['class' => 'form-label']) }}
+        {{ Form::text('telno', null, ['data-parsley-maxlength' => '12', 'data-parsley-type' => 'number', 'class' => 'form-control', 'placeholder' => 'Telephone Number']) }}
     </div>
 
     <div class="form-group col-md-4">
-        {{ Form::label('celno', 'Cellphone # *', ['class' => 'form-label']) }}
-        {{ Form::text('celno', null, ['data-parsley-maxlength' => '11', 'data-parsley-type' => 'number', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Cellphone Number']) }}
+        {{ Form::label('celno', 'Cellphone #', ['class' => 'form-label']) }}
+        {{ Form::text('celno', null, ['data-parsley-maxlength' => '11', 'data-parsley-type' => 'number', 'class' => 'form-control', 'placeholder' => 'Cellphone Number']) }}
     </div>
 
     <div class="form-group col-md-4">
-        {{ Form::label('email', 'Email Address *', ['class' => 'form-label']) }}
-        {{ Form::text('email', null, ['data-parsley-type' => 'email', 'class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email Address']) }}
+        {{ Form::label('email', 'Email Address', ['class' => 'form-label']) }}
+        {{ Form::text('email', null, ['data-parsley-type' => 'email', 'class' => 'form-control', 'placeholder' => 'Email Address']) }}
     </div>
 </div>
 
