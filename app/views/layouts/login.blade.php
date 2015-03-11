@@ -234,8 +234,11 @@ body{
       </div>
   </div>
 
-  <script src='/js/jquery.js'></script>
-  <script sr="/packages/bootstrap/js/bootstrap.min.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="/packages/bootstrap/js/bootstrap.min.js"></script>
+
   <script>
 	  $(function() {
 		  var registerForm = $('.registerForm'),
