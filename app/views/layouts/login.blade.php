@@ -188,8 +188,8 @@ body{
 			<input type="password" placeholder="password" name="password" class="form-control"><br>
 			<input type="submit" class="btn btn-primary" value="Submit">
 			<button class="btn btn-default showRegister" type="button">Create an account</button>
-            <br/>
-            <button class="btn btn-info">Forgot your password?</button>
+            <br/><br/>
+            <button class="btn btn-info" type="button" data-toggle="modal" data-target="#myModal">Forgot your password?</button>
 		</div>
 		{{ Form::close() }}
 
@@ -201,13 +201,32 @@ body{
           <input type="password" placeholder="confirm password" name="password2" class="form-control" required="required"><br>
 		  <input type="submit" class="btn btn-primary" value="Submit" class="form-control">
 		  <button class="btn btn-default showLogin" type="button">Login</button>
-          <br/>
-          <button class="btn btn-info">Forgot your password?</button>
+          <br/><br/>
+          <button class="btn btn-info" type="button" data-toggle="modal" data-target="#forgotModal">Forgot your password?</button>
 	  </div>
 	  {{ Form::close() }}
 
-  <script src='/js/jquery.js'></script>
+  {{--Events--}}
+  <div class="modal fade" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Information</h4>
+              </div>
+              <div class="modal-body">
+                  Please see/contact Ms. Diane Gabuni of PHRMO to reset your password.
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+              </div>
+          </div>
+      </div>
+  </div>
 
+  <script src='/js/jquery.js'></script>
+  <script sr="/packages/bootstrap/js/bootstrap.min.js"></script>
   <script>
 	  $(function() {
 		  var registerForm = $('.registerForm'),
