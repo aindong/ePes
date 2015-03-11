@@ -36,7 +36,7 @@ body{
 	background-position: center;
 	background-size: cover;
 	-webkit-filter: blur(5px);
-	z-index: -1;
+	z-index: -2;
 }
 
 .grad{
@@ -198,7 +198,7 @@ body{
 			<input type="submit" class="btn btn-primary" value="Submit">
 			<button class="btn btn-default showRegister" type="button">Create an account</button>
             <br/><br/>
-            <button class="btn btn-info" type="button" data-toggle="modal" data-target="#myModal">Forgot your password?</button>
+            <button class="btn btn-info" type="button" data-toggle="modal" data-target="#forgotModal">Forgot your password?</button>
 		</div>
 		{{ Form::close() }}
 
@@ -212,10 +212,10 @@ body{
 		  <button class="btn btn-default showLogin" type="button">Login</button>
           <br/><br/>
           <button class="btn btn-info" type="button" data-toggle="modal" data-target="#forgotModal">Forgot your password?</button>
-	  </div>
+      </div>
 	  {{ Form::close() }}
 
-  {{--Events--}}
+  {{--Modal--}}
   <div class="modal fade" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
           <div class="modal-content">
