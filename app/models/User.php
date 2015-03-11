@@ -36,7 +36,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	public static $rules = [];
+	public static $rules = [
+        'employee_no'   => 'unique:users'
+    ];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
