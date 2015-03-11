@@ -37,7 +37,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	public static $rules = [
-        'employee_no'   => 'unique:users'
+        'employee_no'   => 'unique:users,employee_no'
     ];
 
 	/**

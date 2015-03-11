@@ -131,6 +131,8 @@ class UsersController extends \BaseController {
 	{
 		$user = User::findOrFail($id);
 
+        User::$rules['employee_no'] = 'unique:users,employee_no,'.$id;
+
 		$validator = Validator::make($data = Input::all(), User::$rules);
 
 		if ($validator->fails())
