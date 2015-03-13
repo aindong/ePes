@@ -45,7 +45,11 @@
                 <td>{{{ isset($accomplishment->user->bio->lastname) ? ucfirst($accomplishment->user->bio->lastname) : '' }}}, {{{ isset($accomplishment->user->bio->firstname) ? ucfirst($accomplishment->user->bio->firstname) : '' }}} {{{ isset($accomplishment->user->bio->middlename) ? ucfirst($accomplishment->user->bio->middlename) : '' }}}.</td>
                 <td>{{{ ucfirst($accomplishment->accomplishment) }}}</td>
                 <td>{{{ ucfirst($accomplishment->dateto) }}}</td>
-                <td>{{ ucfirst($accomplishment->status) }}</td>
+                @if($accomplishment->status == '')
+                    <td>Waiting</td>
+                @else
+                    <td>{{ ucfirst($accomplishment->status) }}</td>
+                @endif
                 @if(Auth::getUser()->role->name == 'supervisor')
                     @if($accomplishment->status == 'waiting' || $accomplishment->status == '')
                         <td><a class="btn btn-primary" href="/supervisors/confirm-accomplishment/{{ $accomplishment->id }}/confirmed">Confirm</a></td>
