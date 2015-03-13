@@ -252,15 +252,15 @@
     <br/><br/>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6 col-xs-6">
             <p style="text-align: center">Confirmed:</p>
             <br/>
-            <p style="text-align: center; border-bottom: 1px solid #000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p style="text-align: center; border-bottom: 1px solid #000"></p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6 col-xs-6">
             <p style="text-align: center">Attested by:</p>
             <br/>
-            <p style="text-align: center; border-bottom: 1px solid #000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p style="text-align: center; border-bottom: 1px solid #000"></p>
         </div>
     </div>
 
