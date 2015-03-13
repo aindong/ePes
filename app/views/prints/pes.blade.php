@@ -281,7 +281,7 @@
             <p style="text-align: center;border-top: 1px solid #000">Ratee</p>
         </div>
     </div>
-
+    <br/><br/>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
