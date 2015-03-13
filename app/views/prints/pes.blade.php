@@ -255,12 +255,12 @@
         <div class="col-md-6">
             <p style="text-align: center">Confirmed:</p>
             <br/>
-            <p style="text-align: center">_______________________________________</p>
+            <p style="text-align: center; border-bottom: 1px solid #000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
         <div class="col-md-6">
             <p style="text-align: center">Attested by:</p>
             <br/>
-            <p style="text-align: center">_______________________________________</p>
+            <p style="text-align: center; border-bottom: 1px solid #000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
     </div>
 
