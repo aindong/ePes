@@ -252,12 +252,13 @@
     <br/><br/>
 
     <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="col-md-4 col-sm-4 col-xs-4">
             <p style="text-align: center">Confirmed:</p>
             <br/>
             <p style="text-align: center; border-bottom: 1px solid #000"></p>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="col-md-1 col-sm-1 col-xs-1">
+        <div class="col-md-4 col-sm-4 col-xs-4">
             <p style="text-align: center">Attested by:</p>
             <br/>
             <p style="text-align: center; border-bottom: 1px solid #000"></p>
