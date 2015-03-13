@@ -257,12 +257,15 @@
             <p style="text-align: center">Confirmed:</p>
             <br/>
             <p style="text-align: center; border-bottom: 1px solid #000"></p>
+            <p style="text-align: center; font-style: italic; font-weight: 600">Immediate Supervisor</p>
+            <p style="text-align: center; font-style: italic">Rater</p>
         </div>
         <div class="col-md-1 col-sm-1 col-xs-1"></div>
         <div class="col-md-4 col-sm-4 col-xs-4">
             <p style="text-align: center">Attested by:</p>
             <br/>
             <p style="text-align: center; border-bottom: 1px solid #000"></p>
+            <p style="text-align: center; font-style: italic; font-weight: 600">Department Head/Chief of Office</p>
         </div>
     </div>
 
@@ -270,8 +273,21 @@
         <label for="honest" style="font-size: 18px; text-indent: 50px">
             The above rating has been discussed with me by my immediate supervisor on _________________. Areas for improvement have been mutually agreed upon and I fully commit myself to achieve these objectives.
         </label>
+    <br/><br/><br/>
 
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <p style="text-align: center;border-top: 1px solid #000">Ratee</p>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <p style="text-align: center;border-top: 1px solid #000">Date</p>
+        </div>
+    </div>
 
     <script src="/js/jquery.js"></script>
     <script src="/packages/bootstrap/js/bootstrap.min.js"></script>
