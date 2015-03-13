@@ -246,13 +246,28 @@
 
     {{ Form::close() }}
 
-        <label for="honest" style="font-size: 18px; text-indent: 20px">
+        <label for="honest" style="font-size: 18px; text-indent: 50px">
             I hereby certify that the above rating is an objective, honest, and an impartial evaluation of the employee’s performance and that I am responsible and liable for its correctness and truthfulness. I also confirm that I am cognizant that I may be held accountable in case the PHRMO and/or the PERC finds the above rating as unsound or erroneous.
         </label>
     <br/><br/>
-        {{--<label for="honest" style="font-size: 18px">--}}
-            {{--The above rating has been discussed with me by my immediate supervisor on _________________. Areas for improvement have been mutually agreed upon and I fully commit myself to achieve these objectives.--}}
-        {{--</label>--}}
+
+    <div class="row">
+        <div class="col-md-6">
+            <p style="text-align: center">Confirmed:</p>
+            <br/>
+            <p style="text-align: center">_______________________________________</p>
+        </div>
+        <div class="col-md-6">
+            <p style="text-align: center">Attested by:</p>
+            <br/>
+            <p style="text-align: center">_______________________________________</p>
+        </div>
+    </div>
+
+    <br/><br/>
+        <label for="honest" style="font-size: 18px; text-indent: 50px">
+            The above rating has been discussed with me by my immediate supervisor on _________________. Areas for improvement have been mutually agreed upon and I fully commit myself to achieve these objectives.
+        </label>
 
 
 
