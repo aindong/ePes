@@ -100,7 +100,7 @@
                     <li class="<?php echo Request::is('admin') ? 'active' : ''; ?>"><a href="/admin">Home <span class="sr-only">(current)</span></a></li>
                     <li class="<?php echo Request::is('admin/departments*') ? 'active' : ''; ?>"><a href="/admin/departments">Departments</a></li>
                     <li class="<?php echo Request::is('admin/positions*') ? 'active' : ''; ?>"><a href="/admin/positions">Positions</a></li>
-                    <li class="<?php echo Request::is('admin/users*') ? 'active' : ''; ?>"><a href="/admin/users">Users</a></li>
+                    <li class="<?php echo Request::is('admin/users*') ? 'active' : ''; ?>"><a href="/admin/users">Employees</a></li>
                     <li class="<?php echo Request::is('admin/events*') ? 'active' : ''; ?>"><a href="/admin/events">Events</a></li>
                     <li class="<?php echo Request::is('admin/jobvacancies*') ? 'active' : ''; ?>"><a href="/admin/jobvacancies">Job Vacancies</a></li>
                     <li class="<?php echo Request::is('admin/evaluations*') ? 'active' : ''; ?>"><a href="/admin/evaluations">Evaluation Schedules</a></li>

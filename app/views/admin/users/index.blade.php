@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <h2>Users Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
+    <h2>Employee Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
     <span style="font-style: italic; color: red">Note: This statistics is based on the number of employees who have filled up their BIOS/PDS</span><br/>
     <span>Total number of Job Orber Employees : {{ (int)$male + (int)$female }}</span><br/>
     <span>No. of Male Employees : {{ $male }}</span><br/>
