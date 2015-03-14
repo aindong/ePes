@@ -151,7 +151,7 @@
                     @if(Auth::getUser()->role->name == 'employee')
                         <li><a href=""><i><b>{{ isset(Auth::getUser()->bio->firstname) ? ucfirst(Auth::getUser()->bio->firstname) . ' ' . ucfirst(Auth::getUser()->bio->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
                     @else
-                        <li><a href=""><i><b>{{ isset(Auth::getUser()->firstname)? ucfirst(Auth::getUser()->firstname) . ' ' . ucfirst(Auth::getUser()->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
+                        <li><a href=""><i><b>{{ (Auth::getUser()->firstname != '')? ucfirst(Auth::getUser()->firstname) . ' ' . ucfirst(Auth::getUser()->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
                     @endif
                     <li><a href="/logout">Logout</a></li>
                 </ul>
