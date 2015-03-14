@@ -337,9 +337,9 @@
                     overall     = (part1 + part2),
                     rating      = '';
 
-            $('.part1').html(part1);
-            $('.part2').html(part2);
-            $('.overall').html(overall);
+            $('.part1').html(part1.toFixed(2));
+            $('.part2').html(part2.toFixed(2));
+            $('.overall').html(overall.toFixed(2));
 
             if (overall > 8) {
                 rating = 'O (OUTSTANDING)';
