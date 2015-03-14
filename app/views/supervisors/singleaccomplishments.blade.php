@@ -7,7 +7,7 @@
         </div>
     @endif
 
-    <h2>Users Accomplishments</h2>
+    <h2>Employee Accomplishments</h2>
     <div>
         <form action="" method="get">
             <div class="row">
