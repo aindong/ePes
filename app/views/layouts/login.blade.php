@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tarlac Online Employee Performance Evaluation System</title>
+  <title>HRMIAS - Human Resource Management Information and Information Assessment System</title>
 
     <style>
 @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
