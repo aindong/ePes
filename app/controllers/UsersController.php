@@ -12,10 +12,12 @@ class UsersController extends \BaseController {
 		$users = User::all();
         $male = UsersBio::join('users', 'users.employee_no', '=', 'usersbios.employee_no')
             ->where('usersbios.gender', '=', 'male')
+            ->where('users.deleted_at', null)
             ->count();
 
         $female = UsersBio::join('users', 'users.employee_no', '=', 'usersbios.employee_no')
             ->where('gender', '=', 'female')
+            ->where('users.deleted_at', null)
             ->count();
 
 		return View::make('admin.users.index', compact('users'))
