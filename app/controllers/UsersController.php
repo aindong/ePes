@@ -10,8 +10,15 @@ class UsersController extends \BaseController {
 	public function index()
 	{
 		$users = User::all();
-        $male = UsersBio::where('gender', '=', 'male')->where('deleted_at', null)->count();
-        $female = UsersBio::where('gender', '=', 'female')->where('deleted_at', null)->count();
+        $male = UsersBio::join('users', 'users.employee_no', '=', 'usersbios.employee_no')
+            ->where('usersbios.gender', '=', 'male')
+            ->where('deleted_at', null)
+            ->count();
+
+        $female = UsersBio::join('users', 'users.employee_no', '=', 'usersbios.employee_no')
+            ->where('gender', '=', 'female')
+            ->where('deleted_at', null)
+            ->count();
 
 		return View::make('admin.users.index', compact('users'))
             ->with('male', $male)
