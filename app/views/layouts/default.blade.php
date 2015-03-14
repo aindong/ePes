@@ -104,8 +104,15 @@
                     <li class="<?php echo Request::is('admin/events*') ? 'active' : ''; ?>"><a href="/admin/events">Events</a></li>
                     <li class="<?php echo Request::is('admin/jobvacancies*') ? 'active' : ''; ?>"><a href="/admin/jobvacancies">Job Vacancies</a></li>
                     <li class="<?php echo Request::is('admin/evaluations*') ? 'active' : ''; ?>"><a href="/admin/evaluations">Evaluation Schedules</a></li>
-                    <li class="<?php echo Request::is('admin/pes*') ? 'active' : ''; ?>"><a href="/admin/pes">Performance Evaluations Reports</a></li>
-                    <li class="<?php echo Request::is('admin/accomplishments*') ? 'active' : ''; ?>"><a href="/admin/accomplishments">Accomplishment Reports</a></li>
+
+                    <li class="dropdown <?php echo Request::is('admin/pes*') || Request::is('admin/accomplishments*') ? 'active' : ''; ?>">
+                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Reports <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/admin/pes">Performance Evaluations Reports</a></li>
+                            <li><a href="/admin/accomplishments">Accomplishment Reports</a></li>
+                        </ul>
+                    </li>
+
                     <li class="<?php echo Request::is('admin/skillsearch*') ? 'active' : ''; ?>"><a href="/admin/skillsearch">Skill Search</a></li>
 
                     <li class="<?php echo Request::is('admin/logs*') ? 'active' : ''; ?>"><a href="/admin/logs">Audit Trail</a></li>
