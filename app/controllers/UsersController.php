@@ -16,7 +16,7 @@ class UsersController extends \BaseController {
             ->count();
 
         $female = UsersBio::join('users', 'users.employee_no', '=', 'usersbios.employee_no')
-            ->where('gender', '=', 'female')
+            ->where('usersbios.gender', '=', 'female')
             ->where('users.deleted_at', null)
             ->count();
 
