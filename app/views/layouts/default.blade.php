@@ -148,7 +148,7 @@
                     </ul>
                 @endif
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href=""><i><b>{{ Auth::getUser()->employee_no }}</b></i></a></li>
+                    <li><a href=""><i><b>{{ strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
             </div>
