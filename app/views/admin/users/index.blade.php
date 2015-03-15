@@ -76,7 +76,10 @@
         $(document).ready(function() {
             var table = $('#example').DataTable();
 
-            table.columnDefs = [ { orderable: false, targets: [0] }];
+            table.columnDefs = [
+                { "orderable": false, "targets": 0 }
+            ];
+
 
             $('#checkAll').on('change', function() {
                 if ($(this).is(':checked')) {
