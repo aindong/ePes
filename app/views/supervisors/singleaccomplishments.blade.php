@@ -63,7 +63,7 @@
             <tr>
                 @if(Auth::getUser()->role->name == 'supervisor')
                 <td>
-                    <input type="checkbox" name="selected[]" value="{{ $accomplishment->id }}"/>
+                    <input type="checkbox" name="selected[]" value="{{ $accomplishment->id }}" class="selected"/>
                 </td>
                 @endif
                 <td>{{{ $accomplishment->user->employee_no }}}</td>
