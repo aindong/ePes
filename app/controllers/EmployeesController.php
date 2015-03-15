@@ -146,6 +146,7 @@ class EmployeesController extends \BaseController {
         $supervisor = User::where('department_id', $employee->department_id)->first();
 
         return View::make('prints.pes')->with('evaluation', $pes)
-            ->with('user', $employee);
+            ->with('user', $employee)
+            ->with('supervisort', $supervisor);
     }
 }
