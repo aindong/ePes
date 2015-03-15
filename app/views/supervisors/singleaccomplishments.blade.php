@@ -128,9 +128,11 @@
 
             $('#checkAll').on('change', function() {
                 if ($(this).is(':checked')) {
-                    $('.selected').attr('checked', true);
+                    $('.selected').prop('checked', true);
+                    console.log('checked');
                 } else {
-                    $('.selected').attr('checked', false);
+                    $('.selected').prop('checked', false);
+                    console.log('unchecked');
                 }
             });
         });
