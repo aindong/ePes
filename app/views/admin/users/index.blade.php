@@ -74,12 +74,13 @@
 @section('page-script')
     <script type="text/javascript">
         $(document).ready(function() {
-            var table = $('#example').dataTable( {
-                columnDefs: [ {
-                    targets: 0,
-                    searchable: false
+            var table ='';
+            $('#example').dataTable( {
+                "columnDefs": [ {
+                    "targets": 0,
+                    "searchable": false
                 } ]
-            });
+            } );
 
             $('#checkAll').on('change', function() {
                 if ($(this).is(':checked')) {
