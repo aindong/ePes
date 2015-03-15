@@ -256,7 +256,7 @@
         <div class="col-md-4 col-sm-4 col-xs-4">
             <p style="text-align: center">Confirmed:</p>
             <br/>
-            <p style="text-align: center; border-bottom: 1px solid #000">{{ $supervisor->firstname }} {{ $supervisor->lastname }}</p>
+            <p style="text-align: center; border-bottom: 1px solid #000">{{ $pes->evaluator->firstname }} {{ $pes->evaluator->lastname }}</p>
             <p style="text-align: center; font-style: italic; font-weight: 600">Immediate Supervisor</p>
             <p style="text-align: center; font-style: italic">Rater</p>
         </div>
@@ -279,7 +279,7 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <p style="text-align: center">Ratee</p>
-            <p style="text-align: center;border-top: 1px solid #000">{{ $supervisor->firstname }} {{ $supervisor->lastname }}</p>
+            <p style="text-align: center;border-top: 1px solid #000">{{ $pes->evaluator->firstname }} {{ $pes->evaluator->lastname }}</p>
         </div>
     </div>
     <br/><br/>
