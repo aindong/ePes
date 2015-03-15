@@ -49,7 +49,9 @@
         <thead>
         <tr>
             @if(Auth::getUser()->role->name == 'supervisor')
-                <th></th>
+                <th style="text-align: center; vertical-align:middle;">
+                    <input type="checkbox" id="checkAll"/>
+                </th>
             @endif
             <th>Employee No</th>
             <th>Name</th>
@@ -63,7 +65,7 @@
         @foreach($accomplishments as $accomplishment)
             <tr>
                 @if(Auth::getUser()->role->name == 'supervisor')
-                <td>
+                <td style="text-align: center; vertical-align:middle;">
                     <input type="checkbox" name="selected[]" value="{{ $accomplishment->id }}" class="selected"/>
                 </td>
                 @endif
@@ -112,12 +114,24 @@
 
                            }
                         });
-
-                        //alert('Successfully changed the status of selected Accomplishments.');
                     }
                 });
 
+                //location.reload();
+            });
+
+            $(document).ajaxStop(function() {
+                // place code to be executed on completion of last outstanding ajax call here
+                alert('Successfully changed the status of selected Accomplishments.');
                 location.reload();
+            });
+
+            $('#checkAll').on('change', function() {
+                if ($(this).is(':checked')) {
+                    $('.selected').attr('checked', true);
+                } else {
+                    $('.selected').attr('checked', false);
+                }
             });
         });
 
