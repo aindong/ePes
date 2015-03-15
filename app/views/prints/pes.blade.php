@@ -271,7 +271,7 @@
 
     <br/><br/>
         <label for="honest" style="font-size: 18px; text-indent: 50px">
-            The above rating has been discussed with me by my immediate supervisor on _________________. Areas for improvement have been mutually agreed upon and I fully commit myself to achieve these objectives.
+            The above rating has been discussed with me by my immediate supervisor on <span style="border-bottom: 1px solid #000">{{ date('M d Y', strtotime($evaluation->created_at)) }}</span>. Areas for improvement have been mutually agreed upon and I fully commit myself to achieve these objectives.
         </label>
     <br/><br/><br/>
 
@@ -286,7 +286,8 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <p style="text-align: center;border-top: 1px solid #000">Date</p>
+            <p style="text-align: center">Date</p>
+            <p style="text-align: center;border-bottom: 1px solid #000">{{ date('M d Y', strtotime($evaluation->created_at)) }}</p>
         </div>
     </div>
 
