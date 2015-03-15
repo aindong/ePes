@@ -42,9 +42,9 @@
 
     $('#honest').on('change', function(e) {
         if($(this).is(':checked')) {
-            $('.btnSubmit').prop('disabled', false);
+            $('.btnSubmit').attr('disabled', false);
         } else {
-            $('.btnSubmit').prop('disabled', true);
+            $('.btnSubmit').attr('disabled', true);
         }
     });
 </script>

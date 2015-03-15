@@ -78,9 +78,9 @@
 
             $('#checkAll').on('change', function() {
                 if ($(this).is(':checked')) {
-                    $('.selected').attr('checked', true);
+                    $('.selected').prop('checked', true);
                 } else {
-                    $('.selected').attr('checked', false);
+                    $('.selected').prop('checked', false);
                 }
             });
 
