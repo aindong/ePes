@@ -81,7 +81,7 @@
         $(document).ready(function() {
             var table = $('#example').DataTable({
                 columnDefs: [
-                    { targets: 'no-sort', orderable: false }
+                    { targets: 0, orderable: false }
                 ]
             });
 
