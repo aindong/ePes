@@ -264,7 +264,7 @@
         <div class="col-md-4 col-sm-4 col-xs-4">
             <p style="text-align: center">Attested by:</p>
             <br/>
-            <p style="text-align: center; border-bottom: 1px solid #000"></p>
+            <p style="text-align: center; border-bottom: 1px solid #000">&nbsp;</p>
             <p style="text-align: center; font-style: italic; font-weight: 600">Department Head/Chief of Office</p>
         </div>
     </div>
