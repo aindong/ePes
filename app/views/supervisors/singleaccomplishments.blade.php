@@ -28,7 +28,7 @@
     
     <br/><br/>
 
-    <form id="tableForm"></form>
+    <form id="tableForm" action="" method="post"></form>
 
     @if(Auth::getUser()->role->name == 'supervisor')
         <label for="action" class="form-label">Action for selected items</label>
@@ -88,6 +88,8 @@
         @endforeach
         </tbody>
     </table>
+
+    </form>
 @stop
 
 @section('page-script')
