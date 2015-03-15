@@ -26,7 +26,7 @@
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
-            <th style="text-align: center; vertical-align:middle;">
+            <th style="text-align: center; vertical-align:middle;" class="no-sort">
                 <input type="checkbox" id="checkAll"/>
             </th>
             <th>Employee No</th>
@@ -43,7 +43,7 @@
         @foreach($users as $user)
         <tr>
             <td style="text-align: center; vertical-align:middle;">
-                <input type="checkbox" name="selected[]" value="{{ $user->id }}" class="selected"/>
+                <input type="checkbox" name="selected[]" value="{{ $user->id }}"/>
             </td>
             <td>{{{ $user->employee_no }}}</td>
             <td>{{{ isset($user->department->name) ? ucfirst($user->department->name) : '' }}}</td>
@@ -82,10 +82,12 @@
                         .nodes();
 
                 if ($(this).is(':checked')) {
-                    $( cells ).prop('checked', true);
+                    $('.selected', table.fnGetNodes()).prop('checked', true);
                 } else {
-                    $( cells ).prop('checked', false);
+                    $('.selected', table.fnGetNodes()).prop('checked', false);
                 }
+
+
             });
 
             $('.btnAction').on('click', function() {
