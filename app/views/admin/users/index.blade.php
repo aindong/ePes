@@ -83,10 +83,10 @@
 
                 if ($(this).is(':checked')) {
                     //$('.selected', table.fnGetNodes()).prop('checked', true);
-                    $( cells ).prop('checked', true);
+                    $(':checkbox', table.rows().nodes()).prop('checked', true);
                 } else {
                     //$('.selected', table.fnGetNodes()).prop('checked', false);
-                    $( cells ).prop('checked', false);
+                    $(':checkbox', table.rows().nodes()).prop('checked', false);
                 }
 
 
