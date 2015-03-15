@@ -80,7 +80,7 @@
                 var cells = table
                         .cells( ":checkbox" )
                         .nodes();
-                console.log($(cells));
+
                 if ($(this).is(':checked')) {
                     //$('.selected', table.fnGetNodes()).prop('checked', true);
                     $( cells ).prop('checked', true);
