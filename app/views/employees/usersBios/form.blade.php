@@ -26,7 +26,7 @@
     </div>
 
     <div class="form-group col-md-2">
-        {{ Form::label('nameextension', 'Extension', ['class' => 'form-label']) }}
+        {{ Form::label('nameextension', 'Suffix', ['class' => 'form-label']) }}
         {{ Form::select('nameextension', ['' => 'N/A', 'jr' => 'Jr', 'sr' => 'Sr', 'iii' => 'III', 'iv' => 'IV', 'v' => 'V'], null, ['class' => 'form-control']) }}
     </div>
 </div>
@@ -43,7 +43,7 @@
     </div>
 
     <div class="form-group col-md-4">
-        {{ Form::label('gender', 'Gender *', ['class' => 'form-label']) }}
+        {{ Form::label('gender', 'Sex *', ['class' => 'form-label']) }}
         {{ Form::select('gender', ['male' => 'Male', 'female' => 'Female'], null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Gender']) }}
     </div>
 </div>
