@@ -75,9 +75,9 @@
     <script type="text/javascript">
         $(document).ready(function() {
             var table = $('#example').DataTable( {
-                "columnDefs": [ {
-                    "targets": 0,
-                    "searchable": false
+                columnDefs: [ {
+                    targets: 0,
+                    searchable: false
                 } ]
             });
 
