@@ -43,7 +43,7 @@
         @foreach($users as $user)
         <tr>
             <td style="text-align: center; vertical-align:middle;">
-                <input type="checkbox" name="selected[]" value="{{ $user->id }}"/>
+                <input type="checkbox" name="selected[]" value="{{ $user->id }}" class="selected"/>
             </td>
             <td>{{{ $user->employee_no }}}</td>
             <td>{{{ isset($user->department->name) ? ucfirst($user->department->name) : '' }}}</td>
@@ -83,10 +83,10 @@
                 console.log($(cells));
                 if ($(this).is(':checked')) {
                     //$('.selected', table.fnGetNodes()).prop('checked', true);
-                    $( cells ).addClass( 'warning' );
+                    $( cells ).prop('checked', true);
                 } else {
                     //$('.selected', table.fnGetNodes()).prop('checked', false);
-                    $( cells ).addClass( 'warning' );
+                    $( cells ).prop('checked', false);
                 }
 
 
