@@ -79,18 +79,20 @@
 @section('page-script')
     <script type="text/javascript">
         $(document).ready(function() {
-            var table = $('#example').DataTable({
-                columnDefs: [
-                    { targets: 0, orderable: false }
-                ]
-            });
+            var table = $('#example').DataTable();
 
             $('#checkAll').on('change', function() {
+                var cells = table
+                        .cells( ":checkbox" )
+                        .nodes();
+
                 if ($(this).is(':checked')) {
-                    $('.selected').prop('checked', true);
+                    $( cells ).prop('checked', true);
                 } else {
-                    $('.selected').prop('checked', false);
+                    $( cells ).prop('checked', false);
                 }
+
+
             });
 
             $('.btnAction').on('click', function() {
