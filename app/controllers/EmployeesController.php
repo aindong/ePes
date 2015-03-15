@@ -147,6 +147,6 @@ class EmployeesController extends \BaseController {
 
         return View::make('prints.pes')->with('evaluation', $pes)
             ->with('user', $employee)
-            ->with('supervisort', $supervisor);
+            ->with('supervisor', $supervisor);
     }
 }
