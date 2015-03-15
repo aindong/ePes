@@ -28,8 +28,11 @@
     
     <br/><br/>
     @if(Auth::getUser()->role->name == 'supervisor')
-        <button class="btn btn-primary confirm">Confirm Selected</button>
-        <button class="btn btn-danger unconfirm">Unconfirm Selected</button>
+        <select id="action">
+            <option value="confirm">Confirm</option>
+            <option value="unconfirm">Unconfirm</option>
+        </select>
+        <button class="btn btn-danger btnAction">Go</button>
     @endif
     <form id="tableForm"></form>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
