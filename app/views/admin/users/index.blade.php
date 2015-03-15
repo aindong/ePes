@@ -7,9 +7,29 @@
     <span>No. of Male Employees : {{ $male }}</span><br/>
     <span>No. of Female Employees : {{ $female }}</span><br/>
     <br/>
+
+    @if(Auth::getUser()->role->name == 'supervisor')
+        <label for="action" class="form-label">Action for selected items</label>
+        <div class="input-group" style="width: 50%">
+            <select id="action" class="form-control">
+                <option value="lock">Lock</option>
+                <option value="unlock">Unlock</option>
+            </select>
+            <span class="input-group-btn">
+                <button class="btn btn-primary btnAction" type="submit">Go</button>
+            </span>
+        </div>
+    @endif
+    <br/>
+
+    <form id="tableForm" action="" method="post">
+
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
+            <th style="text-align: center; vertical-align:middle;">
+                <input type="checkbox" id="checkAll"/>
+            </th>
             <th>Employee No</th>
             <th>Department</th>
             <th>Position</th>
@@ -23,6 +43,9 @@
         <tbody>
         @foreach($users as $user)
         <tr>
+            <td style="text-align: center; vertical-align:middle;">
+                <input type="checkbox" name="selected[]" value="{{ $user->id }}" class="selected"/>
+            </td>
             <td>{{{ $user->employee_no }}}</td>
             <td>{{{ isset($user->department->name) ? ucfirst($user->department->name) : '' }}}</td>
             <td>{{{ ucfirst($user->position) }}}</td>
@@ -46,12 +69,47 @@
         @endforeach
         </tbody>
     </table>
+    </form>
 @stop
 
 @section('page-script')
     <script type="text/javascript">
         $(document).ready(function() {
             var table = $('#example').DataTable();
+
+            $('#checkAll').on('change', function() {
+                if ($(this).is(':checked')) {
+                    $('.selected').attr('checked', true);
+                } else {
+                    $('.selected').attr('checked', false);
+                }
+            });
+
+            $('.btnAction').on('click', function() {
+                var action     = $('#action').val();
+                var requestUrl = '/admin/users/';
+
+                $('.selected').each(function() {
+                    if($(this).is(':checked')) {
+
+                        $.ajax({
+                            url: requestUrl + $(this).val() + '/' + action,
+                            type: 'GET',
+                            success: function (data) {
+
+                            }
+                        });
+                    }
+                });
+
+                //location.reload();
+            });
+
+            $(document).ajaxStop(function() {
+                // place code to be executed on completion of last outstanding ajax call here
+                alert('Successfully changed the status of selected Accomplishments.');
+                location.reload();
+            });
 
             $('.deleteItem').on('click', function(e) {
                 e.preventDefault();
