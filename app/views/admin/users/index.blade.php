@@ -8,18 +8,17 @@
     <span>No. of Female Employees : {{ $female }}</span><br/>
     <br/>
 
-    @if(Auth::getUser()->role->name == 'supervisor')
-        <label for="action" class="form-label">Action for selected items</label>
-        <div class="input-group" style="width: 50%">
-            <select id="action" class="form-control">
-                <option value="lock">Lock</option>
-                <option value="unlock">Unlock</option>
-            </select>
-            <span class="input-group-btn">
-                <button class="btn btn-primary btnAction" type="submit">Go</button>
-            </span>
-        </div>
-    @endif
+    <label for="action" class="form-label">Action for selected items</label>
+    <div class="input-group" style="width: 50%">
+        <select id="action" class="form-control">
+            <option value="lock">Lock</option>
+            <option value="unlock">Unlock</option>
+        </select>
+        <span class="input-group-btn">
+            <button class="btn btn-primary btnAction" type="submit">Go</button>
+        </span>
+    </div>
+
     <br/>
 
     <form id="tableForm" action="" method="post">
@@ -107,7 +106,7 @@
 
             $(document).ajaxStop(function() {
                 // place code to be executed on completion of last outstanding ajax call here
-                alert('Successfully changed the status of selected Accomplishments.');
+                alert('Successfully changed the status of selected pds.');
                 location.reload();
             });
 
