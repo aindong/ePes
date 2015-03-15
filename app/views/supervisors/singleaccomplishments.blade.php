@@ -113,10 +113,11 @@
                            }
                         });
 
-                        alert('Successfully changed the status of selected Accomplishments.');
-                        location.reload();
+                        //alert('Successfully changed the status of selected Accomplishments.');
                     }
                 });
+
+                location.reload();
             });
         });
 
