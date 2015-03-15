@@ -16,7 +16,7 @@
 </div>
 
 <div class="form-group col-md-12">
-    {{ Form::label('telno', 'Telephone Number', ['class' => 'form-label']) }}
+    {{ Form::label('telno', 'Telephone/Cellphone Number', ['class' => 'form-label']) }}
     {{ Form::text('telno', null, ['class' => 'form-control', 'placeholder' => 'Telephone Number']) }}
 </div>
 
