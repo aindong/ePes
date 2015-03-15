@@ -80,11 +80,13 @@
                 var cells = table
                         .cells( ":checkbox" )
                         .nodes();
-
+                console.log($(cells));
                 if ($(this).is(':checked')) {
-                    $('.selected', table.fnGetNodes()).prop('checked', true);
+                    //$('.selected', table.fnGetNodes()).prop('checked', true);
+                    $( cells ).addClass( 'warning' );
                 } else {
-                    $('.selected', table.fnGetNodes()).prop('checked', false);
+                    //$('.selected', table.fnGetNodes()).prop('checked', false);
+                    $( cells ).addClass( 'warning' );
                 }
 
 
