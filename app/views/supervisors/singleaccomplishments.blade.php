@@ -28,8 +28,6 @@
     
     <br/><br/>
 
-    <form id="tableForm" action="" method="post">
-
     @if(Auth::getUser()->role->name == 'supervisor')
         <label for="action" class="form-label">Action for selected items</label>
         <div class="input-group" style="width: 50%">
@@ -43,6 +41,8 @@
         </div>
     @endif
     <br/>
+
+    <form id="tableForm" action="" method="post">
 
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
