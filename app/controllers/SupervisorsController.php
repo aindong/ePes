@@ -101,7 +101,7 @@ class SupervisorsController extends \BaseController {
         $accomplishment->status = $status;
         $accomplishment->save();
 
-        Session::flash('success', 'Successfully confirmed an accomplishment');
+        Session::flash('success', 'Successfully changed an accomplishment status');
         return Redirect::back();
     }
 
