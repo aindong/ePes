@@ -79,7 +79,11 @@
 @section('page-script')
     <script type="text/javascript">
         $(document).ready(function() {
-            var table = $('#example').DataTable();
+            var table = $('#example').DataTable({
+                columnDefs: [
+                    { targets: 'no-sort', orderable: false }
+                ]
+            });
 
             $('#checkAll').on('change', function() {
                 if ($(this).is(':checked')) {
