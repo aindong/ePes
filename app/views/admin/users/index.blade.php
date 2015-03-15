@@ -74,7 +74,9 @@
 @section('page-script')
     <script type="text/javascript">
         $(document).ready(function() {
-            var table = $('#example').DataTable();
+            var table = $('#example').DataTable({
+                columnDefs: [ { orderable: false, targets: [0] }
+            });
 
             $('#checkAll').on('change', function() {
                 if ($(this).is(':checked')) {
