@@ -27,13 +27,17 @@
     <iframe id="print" src="/print/accomplishment?employee_no={{ $employee_no }}&from={{ Input::get('from') }}&to={{ Input::get('to') }}" frameborder="0" style="display: none"></iframe>
     
     <br/><br/>
-    <button class="btn btn-primary confirm">Confirm Selected</button>
-    <button class="btn btn-danger unconfirm">Unconfirm Selected</button>
+    @if(Auth::getUser()->role->name == 'supervisor')
+        <button class="btn btn-primary confirm">Confirm Selected</button>
+        <button class="btn btn-danger unconfirm">Unconfirm Selected</button>
+    @endif
     <form id="tableForm"></form>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
-            <th></th>
+            @if(Auth::getUser()->role->name == 'supervisor')
+                <th></th>
+            @endif
             <th>Employee No</th>
             <th>Name</th>
             <th>Accomplishment</th>
@@ -45,9 +49,11 @@
         <tbody>
         @foreach($accomplishments as $accomplishment)
             <tr>
+                @if(Auth::getUser()->role->name == 'supervisor')
                 <td>
                     <input type="checkbox" name="selected[]" value="{{ $accomplishment->id }}"/>
                 </td>
+                @endif
                 <td>{{{ $accomplishment->user->employee_no }}}</td>
                 <td>{{{ isset($accomplishment->user->bio->lastname) ? ucfirst($accomplishment->user->bio->lastname) : '' }}}, {{{ isset($accomplishment->user->bio->firstname) ? ucfirst($accomplishment->user->bio->firstname) : '' }}} {{{ isset($accomplishment->user->bio->middlename) ? ucfirst($accomplishment->user->bio->middlename) : '' }}}.</td>
                 <td>{{{ ucfirst($accomplishment->accomplishment) }}}</td>
