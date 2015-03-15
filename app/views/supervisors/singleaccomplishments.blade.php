@@ -99,9 +99,22 @@
             var table = $('#example').DataTable();
 
             $('.btnAction').on('click', function() {
+                var action     = $('#action').val();
+                var requestUrl = '/supervisors/confirm-accomplishment/';
+
                 $('.selected').each(function() {
                     if($(this).is(':checked')) {
-                        console.log($(this).val());
+
+                        $.ajax({
+                           url: requestUrl + $(this).val() + '/' + action,
+                           type: 'GET',
+                           success: function (data) {
+
+                           }
+                        });
+
+                        alert('Successfully changed the status of selected Accomplishments.');
+                        location.reload();
                     }
                 });
             });
