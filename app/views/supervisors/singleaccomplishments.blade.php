@@ -28,7 +28,7 @@
     
     <br/><br/>
 
-    <form id="tableForm" action="" method="post"></form>
+    <form id="tableForm" action="" method="post">
 
     @if(Auth::getUser()->role->name == 'supervisor')
         <label for="action" class="form-label">Action for selected items</label>
