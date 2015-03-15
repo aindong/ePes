@@ -1,11 +1,6 @@
 @extends('layouts.default')
 
 @section('content')
-    <style>
-        .no-sort::after { display: none!important; }
-        .no-sort { pointer-events: none!important; cursor: default!important; }
-    </style>
-
     <h2>Employee Management <a href="/admin/users/create" class="btn btn-primary">Add New</a></h2>
     <span style="font-style: italic; color: red">Note: This statistics is based on the number of employees who have filled up their BIOS/PDS</span><br/>
     <span>Total number of Job Orber Employees : {{ (int)$male + (int)$female }}</span><br/>
@@ -31,7 +26,7 @@
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
-            <th style="text-align: center; vertical-align:middle;" class="no-sort">
+            <th style="text-align: center; vertical-align:middle;">
                 <input type="checkbox" id="checkAll"/>
             </th>
             <th>Employee No</th>
@@ -91,8 +86,6 @@
                 } else {
                     $( cells ).prop('checked', false);
                 }
-
-
             });
 
             $('.btnAction').on('click', function() {
