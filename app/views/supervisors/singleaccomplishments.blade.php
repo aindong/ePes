@@ -27,14 +27,23 @@
     <iframe id="print" src="/print/accomplishment?employee_no={{ $employee_no }}&from={{ Input::get('from') }}&to={{ Input::get('to') }}" frameborder="0" style="display: none"></iframe>
     
     <br/><br/>
-    @if(Auth::getUser()->role->name == 'supervisor')
-        <select id="action">
-            <option value="confirm">Confirm</option>
-            <option value="unconfirm">Unconfirm</option>
-        </select>
-        <button class="btn btn-danger btnAction">Go</button>
-    @endif
+
     <form id="tableForm"></form>
+
+    @if(Auth::getUser()->role->name == 'supervisor')
+        <label for="action" class="form-label">Action for selected items</label>
+        <div class="input-group" style="width: 50%">
+            <select id="action" class="form-control">
+                <option value="confirm">Confirm</option>
+                <option value="unconfirm">Unconfirm</option>
+            </select>
+            <span class="input-group-btn">
+                <button class="btn btn-primary btnAction" type="submit">Go</button>
+            </span>
+        </div>
+    @endif
+    <br/>
+
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="example">
         <thead>
         <tr>
