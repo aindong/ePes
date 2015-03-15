@@ -279,7 +279,7 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <p style="text-align: center">Ratee</p>
-            <p style="text-align: center;border-top: 1px solid #000">{{ $evaluation->evaluator->firstname }} {{ $evaluation->evaluator->lastname }}</p>
+            <p style="text-align: center;border-bottom: 1px solid #000">{{ $evaluation->evaluator->firstname }} {{ $evaluation->evaluator->lastname }}</p>
         </div>
     </div>
     <br/><br/>
