@@ -6,6 +6,7 @@
             <span>{{ Session::get('success') }}</span>
         </div>
     @endif
+    <div class="alert extraAlert" style="display: none;"></div>
 
     <h2>Employee Accomplishments</h2>
     <div>
@@ -32,8 +33,8 @@
         <label for="action" class="form-label">Action for selected items</label>
         <div class="input-group" style="width: 50%">
             <select id="action" class="form-control">
-                <option value="confirm">Confirm</option>
-                <option value="unconfirm">Unconfirm</option>
+                <option value="confirmed">Confirm</option>
+                <option value="waiting">Unconfirm</option>
             </select>
             <span class="input-group-btn">
                 <button class="btn btn-primary btnAction" type="submit">Go</button>
@@ -96,6 +97,14 @@
     <script type="text/javascript">
         $(document).ready(function() {
             var table = $('#example').DataTable();
+
+            $('.btnAction').on('click', function() {
+                $('.selected').each(function() {
+                    if($(this).is(':checked')) {
+                        console.log($(this).val());
+                    }
+                });
+            });
         });
 
         $('.print').click(function() {
