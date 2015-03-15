@@ -127,12 +127,16 @@
             });
 
             $('#checkAll').on('change', function() {
+                var cells = table
+                        .cells( ":checkbox" )
+                        .nodes();
+
                 if ($(this).is(':checked')) {
-                    $('.selected').prop('checked', true);
-                    console.log('checked');
+                    //$('.selected', table.fnGetNodes()).prop('checked', true);
+                    $(':checkbox', table.rows().nodes()).prop('checked', true);
                 } else {
-                    $('.selected').prop('checked', false);
-                    console.log('unchecked');
+                    //$('.selected', table.fnGetNodes()).prop('checked', false);
+                    $(':checkbox', table.rows().nodes()).prop('checked', false);
                 }
             });
         });

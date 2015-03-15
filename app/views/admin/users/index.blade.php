@@ -88,8 +88,6 @@
                     //$('.selected', table.fnGetNodes()).prop('checked', false);
                     $(':checkbox', table.rows().nodes()).prop('checked', false);
                 }
-
-
             });
 
             $('.btnAction').on('click', function() {
