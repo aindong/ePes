@@ -150,7 +150,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::getUser()->role->name == 'employee')
                         <li><a href="/employees/pds/bios"><i><b>{{ isset(Auth::getUser()->bio->firstname) ? ucfirst(Auth::getUser()->bio->firstname) . ' ' . ucfirst(Auth::getUser()->bio->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
-                    @else if(Auth::getUser()->role->name == 'supervisor')
+                    @elseif(Auth::getUser()->role->name == 'supervisor')
                         <li><a href="/supervisors/profile"><i><b>{{ (Auth::getUser()->firstname != '')? ucfirst(Auth::getUser()->firstname) . ' ' . ucfirst(Auth::getUser()->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
                     @else
                         <li><a href="/account/profile"><i><b>{{ (Auth::getUser()->firstname != '')? ucfirst(Auth::getUser()->firstname) . ' ' . ucfirst(Auth::getUser()->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
