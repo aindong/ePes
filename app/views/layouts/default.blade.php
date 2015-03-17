@@ -153,7 +153,7 @@
                     @elseif(Auth::getUser()->role->name == 'supervisor')
                         <li><a href="/supervisors/profile"><i><b>{{ (Auth::getUser()->firstname != '')? ucfirst(Auth::getUser()->firstname) . ' ' . ucfirst(Auth::getUser()->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
                     @else
-                        <li><a href="/account/profile"><i><b>{{ (Auth::getUser()->firstname != '')? ucfirst(Auth::getUser()->firstname) . ' ' . ucfirst(Auth::getUser()->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
+                        <li><a href="#"><i><b>{{ (Auth::getUser()->firstname != '')? ucfirst(Auth::getUser()->firstname) . ' ' . ucfirst(Auth::getUser()->lastname) : strtoupper(Auth::getUser()->employee_no) }}</b></i></a></li>
                     @endif
                     <li><a href="/logout">Logout</a></li>
                 </ul>
