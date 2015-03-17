@@ -116,7 +116,7 @@
                 location.reload();
             });
 
-            $('.deleteItem').on('click', function(e) {
+            $(document).on('click', '.deleteItem', function(e) {
                 e.preventDefault();
                 alert('clicked');
             });
