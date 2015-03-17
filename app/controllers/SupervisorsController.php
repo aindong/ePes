@@ -105,6 +105,11 @@ class SupervisorsController extends \BaseController {
         return Redirect::back();
     }
 
+    public function profile()
+    {
+        return View::make('supervisors.profile');
+    }
+
     public function singleAccomplishments($id)
     {
 

@@ -11,7 +11,7 @@
             <th>Employee No</th>
             <th>Name</th>
             <th>Address</th>
-            <th>Gender</th>
+            <th>Sex</th>
             <th>Telephone</th>
             <th>Mobile</th>
             <th>Email</th>
