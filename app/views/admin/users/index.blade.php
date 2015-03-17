@@ -118,7 +118,30 @@
 
             $(document).on('click', '.deleteItem', function(e) {
                 e.preventDefault();
-                alert('clicked');
+
+                if(!confirm('Are you sure to delete this item?')) {
+                    return false;
+                }
+                var id = $(this).attr('data-item');
+                var $that = $(this);
+
+                var url = location.href;
+
+                if(url.substr(-1) == '/') {
+                    url = url.substr(0, url.length - 1);
+                }
+
+                $.ajax({
+                    url:  url + '/' + id,
+                    type:"post",
+                    data: { _method:"DELETE" },
+                    success: function(data) {
+                        alert('Item successfully deleted');
+                        //location.reload();
+                        var rowSelected = $that.parent().parent();
+                        table.row(rowSelected).remove().draw();
+                    }
+                });
             });
         });
     </script>
