@@ -5,8 +5,7 @@ class SupervisorsController extends \BaseController {
 
     public function index()
     {
-        $user = User::findOrFail(Auth::getUser()->id);
-        return View::make('supervisors.dashboard', compact('user'));
+        return View::make('supervisors.dashboard');
     }
 
     public function pes($id)
@@ -107,7 +106,8 @@ class SupervisorsController extends \BaseController {
 
     public function profile()
     {
-        return View::make('supervisors.profile');
+        $user = User::findOrFail(Auth::getUser()->id);
+        return View::make('supervisors.profile', compact('user'));
     }
 
     public function singleAccomplishments($id)
