@@ -62,7 +62,7 @@
                     <a href="/admin/employees/{{ $user->employee_no }}/pds" class="btn btn-info">View PDS</a>
                 @endif
                 <a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Update</a>
-                @if($user->id == 1)
+                @if($user->id != 1)
                 <a href="#" class="deleteItem btn btn-danger" data-item="{{ $user->id }}">Delete</a>
                 @endif
             </td>
