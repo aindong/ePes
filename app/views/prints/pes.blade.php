@@ -279,7 +279,7 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <p style="text-align: center">Ratee</p>
-            <p style="text-align: center;border-bottom: 1px solid #000">{{ $evaluation->evaluator->firstname }} {{ $evaluation->evaluator->lastname }}</p>
+            <p style="text-align: center;border-bottom: 1px solid #000">{{{ isset($user->bio->lastname) ? ucfirst($user->bio->lastname) : '' }}}, {{{ isset($user->bio->firstname) ? ucfirst($user->bio->firstname) : '' }}} {{{ isset($user->bio->middlename) ? ucfirst($user->bio->middlename) : '' }}}</p>
         </div>
     </div>
     <br/><br/>
